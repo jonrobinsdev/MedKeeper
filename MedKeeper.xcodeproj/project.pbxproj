@@ -18,6 +18,12 @@
 		8F8E476A1BC22C460021E93A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E47691BC22C460021E93A /* AddViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFC31BC44037000FC2FE /* AddReminderView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC01BC44037000FC2FE /* AddReminderView2.xib */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFC41BC44037000FC2FE /* AddReminderView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC11BC44037000FC2FE /* AddReminderView3.xib */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFC51BC44037000FC2FE /* AddReminderView4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC21BC44037000FC2FE /* AddReminderView4.xib */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC71BC446C8000FC2FE /* AddReminderViewController2.swift */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC81BC446C8000FC2FE /* AddReminderViewController3.swift */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFCC1BC446C8000FC2FE /* AddReminderViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC91BC446C8000FC2FE /* AddReminderViewController4.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		8F8E47691BC22C460021E93A /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView1.xib; sourceTree = "<group>"; };
 		8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController1.swift; sourceTree = "<group>"; };
+		8FE8AFC01BC44037000FC2FE /* AddReminderView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView2.xib; sourceTree = "<group>"; };
+		8FE8AFC11BC44037000FC2FE /* AddReminderView3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView3.xib; sourceTree = "<group>"; };
+		8FE8AFC21BC44037000FC2FE /* AddReminderView4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView4.xib; sourceTree = "<group>"; };
+		8FE8AFC71BC446C8000FC2FE /* AddReminderViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController2.swift; sourceTree = "<group>"; };
+		8FE8AFC81BC446C8000FC2FE /* AddReminderViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController3.swift; sourceTree = "<group>"; };
+		8FE8AFC91BC446C8000FC2FE /* AddReminderViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +123,13 @@
 				8F8E473D1BC22BA30021E93A /* AlarmsViewController.swift */,
 				8F8E47691BC22C460021E93A /* AddViewController.swift */,
 				8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */,
+				8FE8AFC71BC446C8000FC2FE /* AddReminderViewController2.swift */,
+				8FE8AFC81BC446C8000FC2FE /* AddReminderViewController3.swift */,
+				8FE8AFC91BC446C8000FC2FE /* AddReminderViewController4.swift */,
 				8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */,
+				8FE8AFC01BC44037000FC2FE /* AddReminderView2.xib */,
+				8FE8AFC11BC44037000FC2FE /* AddReminderView3.xib */,
+				8FE8AFC21BC44037000FC2FE /* AddReminderView4.xib */,
 				8F8E47421BC22BA30021E93A /* Assets.xcassets */,
 				8F8E47441BC22BA30021E93A /* LaunchScreen.storyboard */,
 				8F8E47471BC22BA30021E93A /* Info.plist */,
@@ -240,7 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE8AFC51BC44037000FC2FE /* AddReminderView4.xib in Resources */,
+				8FE8AFC31BC44037000FC2FE /* AddReminderView2.xib in Resources */,
 				8F8E47461BC22BA30021E93A /* LaunchScreen.storyboard in Resources */,
+				8FE8AFC41BC44037000FC2FE /* AddReminderView3.xib in Resources */,
 				8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */,
 				8F8E47431BC22BA30021E93A /* Assets.xcassets in Resources */,
 				8F8E47411BC22BA30021E93A /* Main.storyboard in Resources */,
@@ -270,8 +291,11 @@
 			files = (
 				8F8E473E1BC22BA30021E93A /* AlarmsViewController.swift in Sources */,
 				8F8E473A1BC22BA30021E93A /* AppDelegate.swift in Sources */,
+				8FE8AFCC1BC446C8000FC2FE /* AddReminderViewController4.swift in Sources */,
 				8F8E476A1BC22C460021E93A /* AddViewController.swift in Sources */,
+				8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */,
 				8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */,
+				8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */,
 				8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

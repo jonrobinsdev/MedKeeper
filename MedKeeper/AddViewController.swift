@@ -15,15 +15,18 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true);
         
+        //First Controller
         let vc0 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
         
         self.addChildViewController(vc0);
+        vc0.view.frame = self.scrollView.bounds;
         self.scrollView.addSubview(vc0.view);
         vc0.didMoveToParentViewController(self);
         
-        let vc1 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
+        //Second Controller
+        let vc1 = AddReminderViewController2(nibName: "AddReminderView2", bundle: nil);
         
-        var frame1 = vc1.view.frame;
+        var frame1 = self.scrollView.bounds;
         frame1.origin.x = self.view.frame.size.width;
         vc1.view.frame = frame1;
         
@@ -31,9 +34,10 @@ class AddViewController: UIViewController {
         self.scrollView.addSubview(vc1.view);
         vc1.didMoveToParentViewController(self);
         
-        let vc2 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
+        //Third Controller
+        let vc2 = AddReminderViewController3(nibName: "AddReminderView3", bundle: nil);
         
-        var frame2 = vc2.view.frame;
+        var frame2 = self.scrollView.bounds;
         frame2.origin.x = self.view.frame.size.width*2;
         vc2.view.frame = frame2;
         
@@ -41,9 +45,10 @@ class AddViewController: UIViewController {
         self.scrollView.addSubview(vc2.view);
         vc2.didMoveToParentViewController(self);
         
-        let vc3 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
+        //Fourth Controller
+        let vc3 = AddReminderViewController4(nibName: "AddReminderView4", bundle: nil);
         
-        var frame3 = vc3.view.frame;
+        var frame3 = self.scrollView.bounds;
         frame3.origin.x = self.view.frame.size.width*3;
         vc3.view.frame = frame3;
         
@@ -51,7 +56,7 @@ class AddViewController: UIViewController {
         self.scrollView.addSubview(vc3.view);
         vc3.didMoveToParentViewController(self);
         
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*4, self.view.frame.size.height - 66);
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*4, self.view.frame.size.height - 250);
         
         // Do any additional setup after loading the view, typically from a nib.
     }
