@@ -16,6 +16,8 @@
 		8F8E47511BC22BA30021E93A /* MedKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E47501BC22BA30021E93A /* MedKeeperTests.swift */; };
 		8F8E475C1BC22BA30021E93A /* MedKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E475B1BC22BA30021E93A /* MedKeeperUITests.swift */; };
 		8F8E476A1BC22C460021E93A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E47691BC22C460021E93A /* AddViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */; settings = {ASSET_TAGS = (); }; };
+		8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +46,15 @@
 		8F8E47421BC22BA30021E93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F8E47451BC22BA30021E93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F8E47471BC22BA30021E93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F8E474C1BC22BA30021E93A /* MedKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F8E474C1BC22BA30021E93A /* MedKeeper.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedKeeper.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E47501BC22BA30021E93A /* MedKeeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedKeeperTests.swift; sourceTree = "<group>"; };
 		8F8E47521BC22BA30021E93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F8E47571BC22BA30021E93A /* MedKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F8E47571BC22BA30021E93A /* MedKeeper.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedKeeper.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E475B1BC22BA30021E93A /* MedKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedKeeperUITests.swift; sourceTree = "<group>"; };
 		8F8E475D1BC22BA30021E93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F8E47691BC22C460021E93A /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView1.xib; sourceTree = "<group>"; };
+		8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				8F8E47361BC22BA30021E93A /* MedKeeper.app */,
-				8F8E474C1BC22BA30021E93A /* MedKeeperTests.xctest */,
-				8F8E47571BC22BA30021E93A /* MedKeeperUITests.xctest */,
+				8F8E474C1BC22BA30021E93A /* MedKeeper.xctest */,
+				8F8E47571BC22BA30021E93A /* MedKeeper.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,10 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				8F8E47391BC22BA30021E93A /* AppDelegate.swift */,
+				8F8E473F1BC22BA30021E93A /* Main.storyboard */,
 				8F8E473B1BC22BA30021E93A /* ProfileViewController.swift */,
 				8F8E473D1BC22BA30021E93A /* AlarmsViewController.swift */,
 				8F8E47691BC22C460021E93A /* AddViewController.swift */,
-				8F8E473F1BC22BA30021E93A /* Main.storyboard */,
+				8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */,
+				8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */,
 				8F8E47421BC22BA30021E93A /* Assets.xcassets */,
 				8F8E47441BC22BA30021E93A /* LaunchScreen.storyboard */,
 				8F8E47471BC22BA30021E93A /* Info.plist */,
@@ -166,7 +172,7 @@
 			);
 			name = MedKeeperTests;
 			productName = MedKeeperTests;
-			productReference = 8F8E474C1BC22BA30021E93A /* MedKeeperTests.xctest */;
+			productReference = 8F8E474C1BC22BA30021E93A /* MedKeeper.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8F8E47561BC22BA30021E93A /* MedKeeperUITests */ = {
@@ -184,7 +190,7 @@
 			);
 			name = MedKeeperUITests;
 			productName = MedKeeperUITests;
-			productReference = 8F8E47571BC22BA30021E93A /* MedKeeperUITests.xctest */;
+			productReference = 8F8E47571BC22BA30021E93A /* MedKeeper.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F8E47461BC22BA30021E93A /* LaunchScreen.storyboard in Resources */,
+				8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */,
 				8F8E47431BC22BA30021E93A /* Assets.xcassets in Resources */,
 				8F8E47411BC22BA30021E93A /* Main.storyboard in Resources */,
 			);
@@ -265,6 +272,7 @@
 				8F8E473A1BC22BA30021E93A /* AppDelegate.swift in Sources */,
 				8F8E476A1BC22C460021E93A /* AddViewController.swift in Sources */,
 				8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */,
+				8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +417,7 @@
 				INFOPLIST_FILE = MedKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roundrobin.MedKeeper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MedKeeper;
 			};
 			name = Debug;
 		};
@@ -420,7 +428,7 @@
 				INFOPLIST_FILE = MedKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roundrobin.MedKeeper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MedKeeper;
 			};
 			name = Release;
 		};
@@ -431,7 +439,7 @@
 				INFOPLIST_FILE = MedKeeperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roundrobin.MedKeeperTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MedKeeper;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedKeeper.app/MedKeeper";
 			};
 			name = Debug;
@@ -443,7 +451,7 @@
 				INFOPLIST_FILE = MedKeeperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roundrobin.MedKeeperTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MedKeeper;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedKeeper.app/MedKeeper";
 			};
 			name = Release;
@@ -454,7 +462,7 @@
 				INFOPLIST_FILE = MedKeeperUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roundrobin.MedKeeperUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MedKeeper;
 				TEST_TARGET_NAME = MedKeeper;
 				USES_XCTRUNNER = YES;
 			};
@@ -466,7 +474,7 @@
 				INFOPLIST_FILE = MedKeeperUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roundrobin.MedKeeperUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MedKeeper;
 				TEST_TARGET_NAME = MedKeeper;
 				USES_XCTRUNNER = YES;
 			};
@@ -491,6 +499,7 @@
 				8F8E47621BC22BA40021E93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F8E47631BC22BA40021E93A /* Build configuration list for PBXNativeTarget "MedKeeperTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +508,7 @@
 				8F8E47651BC22BA40021E93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F8E47661BC22BA40021E93A /* Build configuration list for PBXNativeTarget "MedKeeperUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +517,7 @@
 				8F8E47681BC22BA40021E93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8F8E47351BC22BA30021E93A"
-               BuildableName = "MedKeeper.app"
+               BuildableName = "Medi-Mind.app"
                BlueprintName = "MedKeeper"
                ReferencedContainer = "container:MedKeeper.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8F8E474B1BC22BA30021E93A"
-               BuildableName = "MedKeeperTests.xctest"
+               BuildableName = "MedKeeper.xctest"
                BlueprintName = "MedKeeperTests"
                ReferencedContainer = "container:MedKeeper.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8F8E47561BC22BA30021E93A"
-               BuildableName = "MedKeeperUITests.xctest"
+               BuildableName = "MedKeeper.xctest"
                BlueprintName = "MedKeeperUITests"
                ReferencedContainer = "container:MedKeeper.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8F8E47351BC22BA30021E93A"
-            BuildableName = "MedKeeper.app"
+            BuildableName = "Medi-Mind.app"
             BlueprintName = "MedKeeper"
             ReferencedContainer = "container:MedKeeper.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8F8E47351BC22BA30021E93A"
-            BuildableName = "MedKeeper.app"
+            BuildableName = "Medi-Mind.app"
             BlueprintName = "MedKeeper"
             ReferencedContainer = "container:MedKeeper.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8F8E47351BC22BA30021E93A"
-            BuildableName = "MedKeeper.app"
+            BuildableName = "Medi-Mind.app"
             BlueprintName = "MedKeeper"
             ReferencedContainer = "container:MedKeeper.xcodeproj">
          </BuildableReference>
