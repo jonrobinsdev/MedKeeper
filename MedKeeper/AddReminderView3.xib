@@ -14,105 +14,30 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c53-FX-Tmo">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add A Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmw-oU-er1">
-                            <rect key="frame" x="235" y="14" width="131" height="22"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Lmw-oU-er1" firstAttribute="centerX" secondItem="c53-FX-Tmo" secondAttribute="centerX" id="2au-U4-C4a"/>
-                        <constraint firstAttribute="height" constant="50" id="2np-2e-SbL"/>
-                        <constraint firstItem="Lmw-oU-er1" firstAttribute="centerY" secondItem="c53-FX-Tmo" secondAttribute="centerY" id="I3B-3C-F9k"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the name of your medication?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="158" y="200" width="285" height="21"/>
+                    <rect key="frame" x="158" y="150" width="285" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-mN-Np2">
-                    <rect key="frame" x="158" y="246" width="285" height="30"/>
+                    <rect key="frame" x="158" y="196" width="285" height="30"/>
                     <animations/>
                     <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2d-DP-rjz">
-                    <rect key="frame" x="0.0" y="550" width="600" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHj-n3-AdV">
-                            <rect key="frame" x="490" y="8" width="100" height="35"/>
-                            <animations/>
-                            <color key="backgroundColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="Nkz-LU-y2T"/>
-                                <constraint firstAttribute="height" constant="35" id="avV-WT-AfX"/>
-                            </constraints>
-                            <state key="normal" title="Next">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6z-UB-XuW">
-                            <rect key="frame" x="10" y="8" width="100" height="35"/>
-                            <animations/>
-                            <color key="backgroundColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="Vft-O4-1Oc"/>
-                                <constraint firstAttribute="width" constant="100" id="gmL-Ya-1kG"/>
-                            </constraints>
-                            <state key="normal" title="Back">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="FHj-n3-AdV" firstAttribute="centerY" secondItem="i2d-DP-rjz" secondAttribute="centerY" id="I6y-32-eJ8"/>
-                        <constraint firstAttribute="height" constant="50" id="eC6-OW-NmL"/>
-                        <constraint firstItem="FHj-n3-AdV" firstAttribute="centerX" secondItem="i2d-DP-rjz" secondAttribute="centerX" id="fWk-Pd-YJn"/>
-                        <constraint firstItem="C6z-UB-XuW" firstAttribute="leading" secondItem="i2d-DP-rjz" secondAttribute="leading" constant="10" id="h9R-N7-hxh"/>
-                        <constraint firstItem="C6z-UB-XuW" firstAttribute="centerY" secondItem="i2d-DP-rjz" secondAttribute="centerY" id="owC-w4-rU5"/>
-                        <constraint firstAttribute="trailing" secondItem="FHj-n3-AdV" secondAttribute="trailing" constant="10" id="wCw-eh-T5m"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="fWk-Pd-YJn"/>
-                        </mask>
-                    </variation>
-                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="i2d-DP-rjz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2ZI-BM-5mG"/>
-                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="c53-FX-Tmo" secondAttribute="bottom" constant="150" id="7oD-cx-7y9"/>
                 <constraint firstItem="K1L-mN-Np2" firstAttribute="width" secondItem="Yz2-zw-TnJ" secondAttribute="width" id="Etk-0Y-I2Z"/>
-                <constraint firstItem="i2d-DP-rjz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HOq-De-Mnl"/>
                 <constraint firstItem="K1L-mN-Np2" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="25" id="HWT-IG-dfH"/>
-                <constraint firstAttribute="bottom" secondItem="i2d-DP-rjz" secondAttribute="bottom" id="PNg-tH-9ch"/>
-                <constraint firstItem="c53-FX-Tmo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ucj-fC-MMX"/>
-                <constraint firstAttribute="trailing" secondItem="i2d-DP-rjz" secondAttribute="trailing" id="i0R-f8-tgd"/>
-                <constraint firstAttribute="trailing" secondItem="c53-FX-Tmo" secondAttribute="trailing" id="k8s-hN-SwR"/>
-                <constraint firstItem="c53-FX-Tmo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mnh-pK-vRU"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="dg5-KX-sm0"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
                 <constraint firstItem="K1L-mN-Np2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tK0-PD-fbY"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="HOq-De-Mnl"/>
-                </mask>
-            </variation>
         </view>
     </objects>
 </document>

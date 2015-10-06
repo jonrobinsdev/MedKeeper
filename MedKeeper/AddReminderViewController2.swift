@@ -9,21 +9,13 @@
 import UIKit
 
 class AddReminderViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
-    @IBOutlet var amountPickerView: UIPickerView!
-
-    @IBOutlet var typePickerView: UIPickerView!
-    var amountPickerViewData = ["lol", "hi", "yup"];
-    var typePickerViewData = ["herp", "derp", "flerp"];
+    @IBOutlet var pickerView: UIPickerView!
+    var pickerViewData = [["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["herp", "derp", "flerp"]];
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        amountPickerView.delegate = self;
-        amountPickerView.dataSource = self;
-        typePickerView.delegate = self;
-        typePickerView.dataSource = self;
-
-        // Do any additional setup after loading the view.
+        pickerView.delegate = self;
+        pickerView.dataSource = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,25 +24,15 @@ class AddReminderViewController2: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return pickerViewData.count
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(pickerView == amountPickerView){
-            return 3
-        }
-        else{
-            return 3
-        }
+       return pickerViewData[component].count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if(pickerView == amountPickerView){
-            return amountPickerViewData[row]
-        }
-        else{
-            return typePickerViewData[row]
-        }
+        return pickerViewData[component][row]
     }
     
     /*

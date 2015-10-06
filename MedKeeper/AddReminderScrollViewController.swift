@@ -1,5 +1,5 @@
 //
-//  AddViewController.swift
+//  AddReminderScrollViewController.swift
 //  MedKeeper
 //
 //  Created by Jonathan Robins on 10/4/15.
@@ -8,13 +8,29 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddReminderScrollViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true);
+        loadViewControllersIntoScrollView();
         
+        
+        
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func loadViewControllersIntoScrollView(){
         //First Controller
         let vc0 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
         
@@ -57,17 +73,6 @@ class AddViewController: UIViewController {
         vc3.didMoveToParentViewController(self);
         
         self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*4, self.view.frame.size.height - 250);
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
