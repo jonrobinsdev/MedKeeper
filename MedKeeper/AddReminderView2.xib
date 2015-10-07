@@ -2,13 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController2">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController2" customModule="MedKeeper" customModuleProvider="target">
             <connections>
-                <outlet property="pickerView" destination="jiE-OQ-1TI" id="s4w-kH-UH1"/>
-                <outlet property="segmentedControl" destination="XmV-mb-kM6" id="6Kz-HV-QAl"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>
         </placeholder>
@@ -17,68 +14,62 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the dosage of your medication:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="159" y="150" width="282" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the type that properly describes your medication." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
+                    <rect key="frame" x="10" y="150" width="580" height="20"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiE-OQ-1TI">
-                    <rect key="frame" x="28" y="219" width="544" height="150"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laX-hZ-uzE">
+                    <rect key="frame" x="10" y="200" width="580" height="50"/>
                     <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="ec8-d3-eZ7"/>
-                        <constraint firstAttribute="height" constant="150" id="pJV-Z1-3BH"/>
+                        <constraint firstAttribute="height" constant="50" id="IG3-Yn-ARB"/>
                     </constraints>
+                    <state key="normal" title="Pill">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pillButtonPressed:" destination="-1" eventType="touchUpInside" id="SYZ-5G-lNZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQl-1c-feR">
+                    <rect key="frame" x="10" y="280" width="580" height="50"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Cur-De-v4m"/>
+                    </constraints>
+                    <state key="normal" title="Liquid">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="ec8-d3-eZ7"/>
+                            <exclude reference="Cur-De-v4m"/>
                         </mask>
                     </variation>
-                </pickerView>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-mb-kM6">
-                    <rect key="frame" x="50" y="181" width="500" height="29"/>
-                    <animations/>
-                    <segments>
-                        <segment title="Pills"/>
-                        <segment title="Syrup"/>
-                    </segments>
                     <connections>
-                        <action selector="segmentControlChanges:" destination="-1" eventType="valueChanged" id="a5m-Vv-kc3"/>
+                        <action selector="liquidButtonPressed:" destination="-1" eventType="touchUpInside" id="lh1-ZC-Mw5"/>
                     </connections>
-                </segmentedControl>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="5Y9-A1-SZJ"/>
-                <constraint firstItem="jiE-OQ-1TI" firstAttribute="top" secondItem="XmV-mb-kM6" secondAttribute="bottom" constant="10" id="8I2-he-tyT"/>
-                <constraint firstAttribute="trailingMargin" secondItem="jiE-OQ-1TI" secondAttribute="trailing" constant="20" id="GBt-MD-Fiv"/>
-                <constraint firstItem="XmV-mb-kM6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="NFF-XC-dsX"/>
-                <constraint firstItem="jiE-OQ-1TI" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="20" id="aI4-6Q-mXX"/>
-                <constraint firstItem="XmV-mb-kM6" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="10" id="ala-2r-5hs"/>
-                <constraint firstItem="XmV-mb-kM6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dGe-e1-ZG1"/>
-                <constraint firstItem="jiE-OQ-1TI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="20" id="eoQ-cG-n7R"/>
-                <constraint firstAttribute="trailing" secondItem="XmV-mb-kM6" secondAttribute="trailing" constant="50" id="fSa-zc-Bww"/>
+                <constraint firstItem="laX-hZ-uzE" firstAttribute="width" secondItem="Yz2-zw-TnJ" secondAttribute="width" id="4Gq-bY-OKB"/>
+                <constraint firstItem="laX-hZ-uzE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6XZ-04-YCt"/>
+                <constraint firstItem="laX-hZ-uzE" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="30" id="8eg-vL-Kvz"/>
+                <constraint firstItem="JQl-1c-feR" firstAttribute="top" secondItem="laX-hZ-uzE" secondAttribute="bottom" constant="30" id="JIO-Vk-y7F"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="MlJ-oB-M4x"/>
+                <constraint firstItem="JQl-1c-feR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WUe-Qm-JbR"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="dg5-KX-sm0"/>
+                <constraint firstItem="JQl-1c-feR" firstAttribute="width" secondItem="laX-hZ-uzE" secondAttribute="width" id="plE-jo-nda"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
-                <constraint firstAttribute="trailing" secondItem="jiE-OQ-1TI" secondAttribute="trailing" constant="40" id="zHR-6i-kjw"/>
+                <constraint firstAttribute="trailing" secondItem="Yz2-zw-TnJ" secondAttribute="trailing" constant="10" id="rm4-Ef-RdO"/>
+                <constraint firstItem="JQl-1c-feR" firstAttribute="height" secondItem="laX-hZ-uzE" secondAttribute="height" id="uJP-pP-zvD"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="aI4-6Q-mXX"/>
-                    <exclude reference="zHR-6i-kjw"/>
-                    <exclude reference="dGe-e1-ZG1"/>
-                </mask>
-            </variation>
         </view>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hoj-bd-YWd">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <animations/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-            <nil key="highlightedColor"/>
-        </label>
     </objects>
 </document>

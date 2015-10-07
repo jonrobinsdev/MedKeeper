@@ -8,21 +8,21 @@
 
 import UIKit
 
-class AddReminderScrollViewController: UIViewController {
+class AddReminderScrollViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet private var backButton: UIButton!
+    @IBOutlet private var nextButton: UIButton!
+    let vc0 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true);
         loadViewControllersIntoScrollView();
-        
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        checkScrollViewOffset();
     }
     
     override func viewDidLayoutSubviews() {
-        
+        self.vc0.nameField.becomeFirstResponder();
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,12 +32,12 @@ class AddReminderScrollViewController: UIViewController {
     
     func loadViewControllersIntoScrollView(){
         //First Controller
-        let vc0 = AddReminderViewController1(nibName: "AddReminderView1", bundle: nil);
+        vc0.view.frame = self.scrollView.bounds;
         
         self.addChildViewController(vc0);
-        vc0.view.frame = self.scrollView.bounds;
         self.scrollView.addSubview(vc0.view);
-        vc0.didMoveToParentViewController(self);
+        self.vc0.didMoveToParentViewController(self);
+        self.vc0.nameField.delegate = self;
         
         //Second Controller
         let vc1 = AddReminderViewController2(nibName: "AddReminderView2", bundle: nil);
@@ -75,5 +75,81 @@ class AddReminderScrollViewController: UIViewController {
         self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*4, self.view.frame.size.height - 250);
     }
     
+    @IBAction func next(sender: AnyObject) {
+        if(self.vc0.nameField.isFirstResponder()){
+            self.vc0.nameField.resignFirstResponder();
+            self.scrollView.scrollEnabled = true;
+        }
+        
+        let x = self.scrollView.contentOffset.x;
+        switch(x){
+        case 0:
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0);
+            break;
+        case self.view.frame.size.width:
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width*2, y: 0);
+            break;
+        case self.view.frame.size.width*2:
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width*3, y: 0);
+            break;
+        case self.view.frame.size.width*3:
+            break;
+        default:
+            break;
+        }
+        checkScrollViewOffset();
+    }
+    
+    @IBAction func back(sender: AnyObject) {
+        
+        let x = self.scrollView.contentOffset.x;
+        switch(x){
+        case 0:
+            break;
+        case self.view.frame.size.width:
+            self.scrollView.contentOffset = CGPoint(x: 0, y: 0);
+            break;
+        case self.view.frame.size.width*2:
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0);
+            break;
+        case self.view.frame.size.width*3:
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width*2, y: 0);
+            break;
+        default:
+            break;
+        }
+        checkScrollViewOffset();
+        
+    }
+    
+    func checkScrollViewOffset(){
+        if(self.scrollView.contentOffset.x == 0){
+            self.backButton.hidden = true;
+        }
+        else{
+            self.backButton.hidden = false;
+        }
+        
+        if(self.scrollView.contentOffset.x == self.view.frame.size.width*3){
+            self.nextButton.hidden = true;
+        }
+        else{
+            self.nextButton.hidden = false;
+        }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if(textField == self.vc0.nameField){
+            self.scrollView.scrollEnabled = false;
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == self.vc0.nameField){
+            self.vc0.nameField.resignFirstResponder();
+            self.scrollView.scrollEnabled = true;
+        }
+        return true
+    }
     
 }

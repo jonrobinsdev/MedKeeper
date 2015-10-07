@@ -8,17 +8,11 @@
 
 import UIKit
 
-class AddReminderViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
-    @IBOutlet var pickerView: UIPickerView!
-    @IBOutlet var segmentedControl: UISegmentedControl!
-    
-    var pillPickerViewData = [["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["pills", "mg"]];
-    var syrupPickerViewData = [["10", "20", "30", "40", "50", "60", "70", "80", "90", "100"], ["tsp", "Tbsp", "mL"]];
-    
+class AddReminderViewController2: UIViewController{
+  
+    internal var medicineType: NSString = "";
     override func viewDidLoad() {
-        super.viewDidLoad()
-        pickerView.delegate = self;
-        pickerView.dataSource = self;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,38 +20,18 @@ class AddReminderViewController2: UIViewController, UIPickerViewDelegate, UIPick
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        if(segmentedControl.selectedSegmentIndex == 0){
-            return pillPickerViewData.count
-        }
-        else{
-            return syrupPickerViewData.count
-        }
+    @IBAction func pillButtonPressed(sender: AnyObject) {
+        medicineType = "pill"
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(segmentedControl.selectedSegmentIndex == 0){
-            return pillPickerViewData[component].count
-        }
-        else{
-            return syrupPickerViewData[component].count
-        }
+    @IBAction func liquidButtonPressed(sender: AnyObject) {
+        medicineType = "liquid"
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if(segmentedControl.selectedSegmentIndex == 0){
-            return pillPickerViewData[component][row]
-        }
-        else{
-            return syrupPickerViewData[component][row]
-        }
+    internal func getMedicineType() -> NSString{
+        return self.medicineType
     }
-    @IBAction func segmentControlChanges(sender: AnyObject) {
-        self.pickerView.reloadAllComponents();
-        pickerView.selectRow(0, inComponent: 0, animated: true);
-        pickerView.selectRow(0, inComponent: 1, animated: true);
-    }
-    
+
     /*
     // MARK: - Navigation
 

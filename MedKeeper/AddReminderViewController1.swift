@@ -9,7 +9,8 @@
 import UIKit
 
 class AddReminderViewController1: UIViewController {
-
+    @IBOutlet var nameField: UITextField!
+    internal var name: String = "";
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +20,10 @@ class AddReminderViewController1: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    internal func getString() -> NSString{
+        return self.name;
     }
     
 
