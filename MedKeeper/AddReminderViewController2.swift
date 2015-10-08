@@ -10,7 +10,7 @@ import UIKit
 
 class AddReminderViewController2: UIViewController{
   
-    internal var medicineType: NSString = "";
+    internal var medicineType: String = "";
     override func viewDidLoad() {
         
     }
@@ -28,7 +28,7 @@ class AddReminderViewController2: UIViewController{
         medicineType = "liquid"
     }
     
-    internal func getMedicineType() -> NSString{
+    internal func getMedicineType() -> String{
         return self.medicineType
     }
 

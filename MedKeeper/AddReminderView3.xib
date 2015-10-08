@@ -42,7 +42,7 @@
                     <animations/>
                     <segments>
                         <segment title="Pills"/>
-                        <segment title="Liquids"/>
+                        <segment title="mg"/>
                     </segments>
                     <connections>
                         <action selector="segmentControlChanges:" destination="-1" eventType="valueChanged" id="a5m-Vv-kc3"/>
@@ -66,9 +66,9 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="dGe-e1-ZG1"/>
                     <exclude reference="aI4-6Q-mXX"/>
                     <exclude reference="zHR-6i-kjw"/>
-                    <exclude reference="dGe-e1-ZG1"/>
                 </mask>
             </variation>
         </view>

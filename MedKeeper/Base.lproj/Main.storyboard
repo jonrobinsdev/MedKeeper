@@ -133,18 +133,18 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHc-mR-YK8">
-                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="558" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biO-j9-TaD">
                                         <rect key="frame" x="265" y="8" width="100" height="35"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="IT2-Ia-REj"/>
                                             <constraint firstAttribute="width" constant="100" id="U8v-Pp-xys"/>
                                         </constraints>
                                         <state key="normal" title="Next">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="next:" destination="JVs-5J-ZEo" eventType="touchUpInside" id="zDW-vT-x0T"/>
@@ -153,13 +153,13 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIB-gA-YSI">
                                         <rect key="frame" x="8" y="8" width="100" height="35"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Fi7-fW-GLc"/>
                                             <constraint firstAttribute="width" constant="100" id="pBX-kW-oyN"/>
                                         </constraints>
                                         <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="back:" destination="JVs-5J-ZEo" eventType="touchUpInside" id="qUV-xr-ZHk"/>
@@ -167,7 +167,6 @@
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="biO-j9-TaD" firstAttribute="centerY" secondItem="HHc-mR-YK8" secondAttribute="centerY" id="8sX-du-gRg"/>
                                     <constraint firstAttribute="trailing" secondItem="biO-j9-TaD" secondAttribute="trailing" constant="10" id="ONT-QM-xi3"/>
@@ -196,7 +195,7 @@
                             <constraint firstItem="hNw-2T-RDX" firstAttribute="leading" secondItem="moR-Jm-NzZ" secondAttribute="leading" id="QA2-03-LoF"/>
                             <constraint firstItem="hNw-2T-RDX" firstAttribute="top" secondItem="far-Sn-rd7" secondAttribute="bottom" id="dlP-Jr-Dbh"/>
                             <constraint firstItem="ydX-fi-eXV" firstAttribute="leading" secondItem="moR-Jm-NzZ" secondAttribute="leading" id="glF-cw-EGe"/>
-                            <constraint firstItem="EHD-L6-87a" firstAttribute="top" secondItem="HHc-mR-YK8" secondAttribute="bottom" id="iqw-OL-3bc"/>
+                            <constraint firstItem="EHD-L6-87a" firstAttribute="top" secondItem="HHc-mR-YK8" secondAttribute="bottom" constant="10" id="iqw-OL-3bc"/>
                             <constraint firstAttribute="bottomMargin" secondItem="HHc-mR-YK8" secondAttribute="bottom" id="jZs-QK-1He"/>
                             <constraint firstItem="HHc-mR-YK8" firstAttribute="leading" secondItem="moR-Jm-NzZ" secondAttribute="leading" id="m2Q-KK-PYX"/>
                             <constraint firstAttribute="trailing" secondItem="hNw-2T-RDX" secondAttribute="trailing" id="wwW-oo-wSe"/>
