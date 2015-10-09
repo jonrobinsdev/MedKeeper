@@ -17,7 +17,6 @@ class AddReminderViewController2: UIViewController{
     override func viewDidLoad() {
         
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -25,12 +24,14 @@ class AddReminderViewController2: UIViewController{
     
     @IBAction func pillButtonPressed(sender: AnyObject) {
         medicineType = "Pill"
-        let parentController = self.parentViewController as! AddReminderScrollViewController
-        parentController.checkScrollViewOffset()
+        let parentView = self.view.superview as! UIScrollView
+        parentView.setContentOffset(CGPointMake(parentView.frame.size.width*2, 0), animated: true)
     }
     
     @IBAction func liquidButtonPressed(sender: AnyObject) {
         medicineType = "Liquid"
+        let parentView = self.view.superview as! UIScrollView
+        parentView.setContentOffset(CGPointMake(parentView.frame.size.width*2, 0), animated: true)
     }
     
     internal func getMedicineType() -> String{

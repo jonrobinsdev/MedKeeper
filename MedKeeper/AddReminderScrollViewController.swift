@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddReminderScrollViewController: UIViewController, UITextFieldDelegate {
+class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var scrollViewTitle: UILabel!
     @IBOutlet private var backButton: UIButton!
@@ -21,8 +21,8 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.scrollView.delegate = self;
         loadViewControllersIntoScrollView()
-        checkScrollViewOffset()
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,20 +82,19 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate {
         let x = self.scrollView.contentOffset.x
         switch(x){
         case 0:
-            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0)
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width, 0), animated: true)
             break
         case self.view.frame.size.width:
-            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width*2, y: 0)
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*2, 0), animated: true)
             break
         case self.view.frame.size.width*2:
-            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width*3, y: 0)
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*3, 0), animated: true)
             break
         case self.view.frame.size.width*3:
             break
         default:
             break
         }
-        checkScrollViewOffset()
     }
     
     @IBAction func back(sender: AnyObject) {
@@ -104,22 +103,36 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate {
         case 0:
             break
         case self.view.frame.size.width:
-            self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+            self.scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
             break
         case self.view.frame.size.width*2:
-            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0)
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width, 0), animated: true)
             break
         case self.view.frame.size.width*3:
-            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width*2, y: 0)
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*2, 0), animated: true)
             break
         default:
             break
         }
-        checkScrollViewOffset();
         
     }
     
-    func checkScrollViewOffset(){
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if(textField == self.vc1.nameField){
+            self.scrollView.scrollEnabled = false
+        }
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == self.vc1.nameField){
+            self.vc1.nameField.resignFirstResponder();
+            self.scrollView.scrollEnabled = true
+        }
+        return true
+    }
+    
+    func scrollViewDidScroll(_scrollView: UIScrollView){
         if(self.scrollView.contentOffset.x == 0){
             self.scrollViewTitle.text = "Set The Name"
             self.nextButton.setTitle("Next", forState: .Normal)
@@ -145,22 +158,6 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate {
         else{
             //self.nextButton.setTitle("Next", forState: .Normal)
         }
-        
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if(textField == self.vc1.nameField){
-            self.scrollView.scrollEnabled = false
-        }
-        
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if(textField == self.vc1.nameField){
-            self.vc1.nameField.resignFirstResponder();
-            self.scrollView.scrollEnabled = true;
-        }
-        return true
     }
     
 }
