@@ -10,7 +10,7 @@ import UIKit
 
 class AddReminderViewController1: UIViewController {
     @IBOutlet var nameField: UITextField!
-    internal var name: String = "";
+    internal var name: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +23,7 @@ class AddReminderViewController1: UIViewController {
     }
     
     internal func getString() -> NSString{
-        return self.name;
+        return self.name
     }
     
 

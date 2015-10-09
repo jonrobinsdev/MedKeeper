@@ -9,8 +9,11 @@
 import UIKit
 
 class AddReminderViewController2: UIViewController{
-  
-    internal var medicineType: String = "";
+    
+    @IBOutlet var pillButton: UIButton!
+    @IBOutlet var liquidButton: UIButton!
+    
+    internal var medicineType: String = ""
     override func viewDidLoad() {
         
     }
@@ -21,11 +24,13 @@ class AddReminderViewController2: UIViewController{
     }
     
     @IBAction func pillButtonPressed(sender: AnyObject) {
-        medicineType = "pill"
+        medicineType = "Pill"
+        let parentController = self.parentViewController as! AddReminderScrollViewController
+        parentController.checkScrollViewOffset()
     }
     
     @IBAction func liquidButtonPressed(sender: AnyObject) {
-        medicineType = "liquid"
+        medicineType = "Liquid"
     }
     
     internal func getMedicineType() -> String{

@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController2" customModule="MedKeeper" customModuleProvider="target">
             <connections>
+                <outlet property="liquidButton" destination="JQl-1c-feR" id="wUc-Yj-sYH"/>
+                <outlet property="pillButton" destination="laX-hZ-uzE" id="yCI-kY-Yig"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>
         </placeholder>

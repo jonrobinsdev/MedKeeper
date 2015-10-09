@@ -11,18 +11,19 @@ import UIKit
 class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet private var segmentedControl: UISegmentedControl!
-    internal var medicineType = "";
+    internal var medicineType = ""
     
-    var pillPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["pills"]];
-    var pillPickerViewData2 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mg"]];
-    var liquidPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["tsps"]];
-    var liquidPickerViewData2 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mL"]];
+    var pillPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["pills"]]
+    var pillPickerViewData2 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mg"]]
+    var liquidPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["tsps"]]
+    var liquidPickerViewData2 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mL"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView.delegate = self;
-        pickerView.dataSource = self;
+        pickerView.delegate = self
+        pickerView.dataSource = self
         self.pickerView.selectRow(3, inComponent: 0, animated: true)
+        NSLog("hello")
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +32,7 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        if(self.medicineType == "pill"){
+        if(self.medicineType == "Pill"){
             if(segmentedControl.selectedSegmentIndex == 0){
                 return pillPickerViewData1.count
             }
@@ -50,7 +51,7 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(self.medicineType == "pill"){
+        if(self.medicineType == "Pill"){
             if(segmentedControl.selectedSegmentIndex == 0){
                 return pillPickerViewData1[component].count
             }
@@ -69,7 +70,7 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if(self.medicineType == "pill"){
+        if(self.medicineType == "Pill"){
             if(segmentedControl.selectedSegmentIndex == 0){
                 return pillPickerViewData1[component][row]
             }
@@ -93,11 +94,14 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     internal func setType(type: String){
-        self.medicineType = type;
-        self.pickerView.reloadAllComponents();
-        self.segmentedControl.selectedSegmentIndex = 0;
-        self.pickerView.selectRow(3, inComponent: 0, animated: true)
-
+        if(self.medicineType != type){
+            self.medicineType = type
+            self.pickerView.reloadAllComponents()
+            self.pickerView.selectRow(3, inComponent: 0, animated: true)
+            //add in logic later to revert segment index back to 0
+            //self.segmentedControl.selectedSegmentIndex = 0
+        }
+        
     }
     
     /*
