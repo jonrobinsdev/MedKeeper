@@ -24,7 +24,6 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
         pickerView.delegate = self
         pickerView.dataSource = self
         self.pickerView.selectRow(3, inComponent: 0, animated: true)
-        NSLog("hello")
     }
     
     override func didReceiveMemoryWarning() {
