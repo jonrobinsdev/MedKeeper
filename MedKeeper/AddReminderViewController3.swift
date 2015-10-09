@@ -13,10 +13,11 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet private var segmentedControl: UISegmentedControl!
     internal var medicineType = ""
     
-    var pillPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["pills"]]
+    var pillPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"], ["pills"]]
     var pillPickerViewData2 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mg"]]
-    var liquidPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], ["tsps"]]
-    var liquidPickerViewData2 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mL"]]
+    var liquidPickerViewData1 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"], ["tsps"]]
+    var liquidPickerViewData2 = [["1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"], ["Tbps"]]
+    var liquidPickerViewData3 = [["5", "10", "15", "20", "25", "30", "35", "40", "45", "50","55", "60", "65", "70", "75", "80", "85", "90", "95", "100"], ["mL"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +45,14 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
             if(segmentedControl.selectedSegmentIndex == 0){
                 return liquidPickerViewData1.count
             }
-            else{
+            else if(segmentedControl.selectedSegmentIndex == 1){
                 return liquidPickerViewData2.count
+            }
+            else{
+                return liquidPickerViewData3.count
             }
         }
     }
-    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(self.medicineType == "Pill"){
             if(segmentedControl.selectedSegmentIndex == 0){
@@ -63,8 +66,11 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
             if(segmentedControl.selectedSegmentIndex == 0){
                 return liquidPickerViewData1[component].count
             }
-            else{
+            else if(segmentedControl.selectedSegmentIndex == 1){
                 return liquidPickerViewData2[component].count
+            }
+            else{
+                return liquidPickerViewData3[component].count
             }
         }
     }
@@ -82,8 +88,12 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
             if(segmentedControl.selectedSegmentIndex == 0){
                 return liquidPickerViewData1[component][row]
             }
-            else{
+            else if(segmentedControl.selectedSegmentIndex == 1){
+
                 return liquidPickerViewData2[component][row]
+            }
+            else{
+                return liquidPickerViewData3[component][row]
             }
         }
     }
@@ -96,12 +106,26 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     internal func setType(type: String){
         if(self.medicineType != type){
             self.medicineType = type
+            self.changeSegmentControl()
             self.pickerView.reloadAllComponents()
             self.pickerView.selectRow(3, inComponent: 0, animated: true)
-            //add in logic later to revert segment index back to 0
-            //self.segmentedControl.selectedSegmentIndex = 0
         }
         
+    }
+    
+    private func changeSegmentControl(){
+        if(self.medicineType == "Pill"){
+            self.segmentedControl.setTitle("Pills", forSegmentAtIndex: 0)
+            self.segmentedControl.setTitle("mg", forSegmentAtIndex: 1)
+            self.segmentedControl.removeSegmentAtIndex(2, animated: true)
+            self.segmentedControl.selectedSegmentIndex = 0
+        }
+        else {
+            self.segmentedControl.setTitle("tsp", forSegmentAtIndex: 0)
+            self.segmentedControl.setTitle("Tbsp", forSegmentAtIndex: 1)
+            self.segmentedControl.insertSegmentWithTitle("mL", atIndex: 2, animated: true);
+            self.segmentedControl.selectedSegmentIndex = 0
+        }
     }
     
     /*

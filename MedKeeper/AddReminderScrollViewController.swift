@@ -121,7 +121,6 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         if(textField == self.vc1.nameField){
             self.scrollView.scrollEnabled = false
         }
-        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

@@ -14,29 +14,28 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the name of your medication?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="158" y="150" width="285" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set the time for your alarm:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
+                    <rect key="frame" x="196" y="150" width="208" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-mN-Np2">
-                    <rect key="frame" x="158" y="196" width="285" height="30"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1T-zU-uRJ">
+                    <rect key="frame" x="140" y="206" width="320" height="216"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
+                        <!--2015-10-09 21:09:03 +0000-->
+                    </date>
+                </datePicker>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="K1L-mN-Np2" firstAttribute="width" secondItem="Yz2-zw-TnJ" secondAttribute="width" id="Etk-0Y-I2Z"/>
-                <constraint firstItem="K1L-mN-Np2" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="25" id="HWT-IG-dfH"/>
+                <constraint firstItem="A1T-zU-uRJ" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="35" id="I6C-nb-EVb"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="Pnu-0Z-3x5"/>
+                <constraint firstItem="A1T-zU-uRJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dV7-Ht-zWX"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
-                <constraint firstItem="K1L-mN-Np2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tK0-PD-fbY"/>
             </constraints>
         </view>
     </objects>
