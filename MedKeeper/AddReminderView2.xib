@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the type that properly describes your medication." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="0.0" y="150" width="600" height="20"/>
+                    <rect key="frame" x="0.0" y="100" width="600" height="20"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laX-hZ-uzE">
-                    <rect key="frame" x="0.0" y="200" width="600" height="50"/>
+                    <rect key="frame" x="0.0" y="150" width="600" height="50"/>
                     <animations/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQl-1c-feR">
-                    <rect key="frame" x="0.0" y="280" width="600" height="50"/>
+                    <rect key="frame" x="0.0" y="230" width="600" height="50"/>
                     <animations/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -66,7 +66,7 @@
                 <constraint firstItem="JQl-1c-feR" firstAttribute="top" secondItem="laX-hZ-uzE" secondAttribute="bottom" constant="30" id="JIO-Vk-y7F"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MlJ-oB-M4x"/>
                 <constraint firstItem="JQl-1c-feR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WUe-Qm-JbR"/>
-                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="dg5-KX-sm0"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="dg5-KX-sm0"/>
                 <constraint firstItem="JQl-1c-feR" firstAttribute="width" secondItem="laX-hZ-uzE" secondAttribute="width" id="plE-jo-nda"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
                 <constraint firstAttribute="trailing" secondItem="Yz2-zw-TnJ" secondAttribute="trailing" id="rm4-Ef-RdO"/>
