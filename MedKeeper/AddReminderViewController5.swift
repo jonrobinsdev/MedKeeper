@@ -1,5 +1,5 @@
 //
-//  AddReminderViewController4.swift
+//  AddReminderViewController5.swift
 //  MedKeeper
 //
 //  Created by Jonathan Robins on 10/5/15.
@@ -9,11 +9,14 @@
 import UIKit
 
 class AddReminderViewController5: UIViewController {
-
+    @IBOutlet var yesButton: UIButton!
+    @IBOutlet var noButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        yesButton.layer.cornerRadius = yesButton.frame.size.height/4
+        noButton.layer.cornerRadius = noButton.frame.size.height/4
+        
     }
 
     override func didReceiveMemoryWarning() {

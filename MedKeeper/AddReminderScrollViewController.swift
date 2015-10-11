@@ -17,7 +17,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc2 = AddReminderViewController2(nibName: "AddReminderView2", bundle: nil)
     let vc3 = AddReminderViewController3(nibName: "AddReminderView3", bundle: nil)
     let vc4 = AddReminderViewController4(nibName: "AddReminderView4", bundle: nil)
-    let vc5 = AddReminderViewController4(nibName: "AddReminderView5", bundle: nil)
+    let vc5 = AddReminderViewController5(nibName: "AddReminderView5", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         self.scrollView.addSubview(vc5.view)
         vc5.didMoveToParentViewController(self)
         
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*4, self.view.frame.size.height - 250)
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*5, self.view.frame.size.height - 250)
     }
     
     @IBAction func next(sender: AnyObject) {
