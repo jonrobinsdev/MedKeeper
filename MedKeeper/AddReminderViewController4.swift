@@ -8,19 +8,14 @@
 
 import UIKit
 
-class AddReminderViewController4: UIViewController {
-
+class AddReminderViewController4: UIViewController{
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

@@ -18,6 +18,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc3 = AddReminderViewController3(nibName: "AddReminderView3", bundle: nil)
     let vc4 = AddReminderViewController4(nibName: "AddReminderView4", bundle: nil)
     let vc5 = AddReminderViewController5(nibName: "AddReminderView5", bundle: nil)
+    let vc6 = AddReminderViewController6(nibName: "AddReminderView6", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +81,17 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         self.scrollView.addSubview(vc5.view)
         vc5.didMoveToParentViewController(self)
         
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*5, self.view.frame.size.height - 250)
+        //Sixth Controller
+        var frame5 = self.scrollView.bounds
+        frame5.origin.x = self.view.frame.size.width*5
+        vc6.view.frame = frame5
+        
+        self.addChildViewController(vc6);
+        self.scrollView.addSubview(vc6.view)
+        vc6.didMoveToParentViewController(self)
+
+        
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*6, self.view.frame.size.height - 250)
     }
     
     @IBAction func next(sender: AnyObject) {
@@ -102,6 +113,9 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             break
         case self.view.frame.size.width*3:
             self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*4, 0), animated: true)
+            break
+        case self.view.frame.size.width*4:
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*5, 0), animated: true)
             break
         case self.view.frame.size.width*4:
             break
@@ -126,6 +140,9 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             break
         case self.view.frame.size.width*4:
             self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*3, 0), animated: true)
+            break
+        case self.view.frame.size.width*5:
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*4, 0), animated: true)
             break
         default:
             break
@@ -167,7 +184,10 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*3){
             self.nextButton.setTitle("Next", forState: .Normal)
         }
-        else if(self.scrollView.contentOffset.x == self.view.frame.size.width*3){
+        else if(self.scrollView.contentOffset.x == self.view.frame.size.width*4){
+            self.nextButton.setTitle("Next", forState: .Normal)
+        }
+        else if(self.scrollView.contentOffset.x == self.view.frame.size.width*5){
             self.nextButton.setTitle("Save", forState: .Normal)
         }
         else{
