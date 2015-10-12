@@ -13,7 +13,7 @@ class AddReminderViewController2: UIViewController{
     @IBOutlet var pillButton: UIButton!
     @IBOutlet var liquidButton: UIButton!
     
-    internal var medicineType: String = ""
+    internal var medicineType: String = "Pill"
     override func viewDidLoad() {
         
     }

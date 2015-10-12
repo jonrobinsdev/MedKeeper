@@ -17,7 +17,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc2 = AddReminderViewController2(nibName: "AddReminderView2", bundle: nil)
     let vc3 = AddReminderViewController3(nibName: "AddReminderView3", bundle: nil)
     let vc4 = AddReminderViewController4(nibName: "AddReminderView4", bundle: nil)
-    let vc5 = AddReminderViewController5(nibName: "AddReminderView5", bundle: nil)
+    var vc5 : UIViewController = AddReminderViewController5a(nibName: "AddReminderView5a", bundle: nil)
     let vc6 = AddReminderViewController6(nibName: "AddReminderView6", bundle: nil)
 
     override func viewDidLoad() {
@@ -179,13 +179,25 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*2){
             self.nextButton.setTitle("Next", forState: .Normal)
             let medicineType = self.vc2.getMedicineType()
-            self.vc3.setType(medicineType);
+            self.vc3.setType(medicineType)
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*3){
             self.nextButton.setTitle("Next", forState: .Normal)
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*4){
             self.nextButton.setTitle("Next", forState: .Normal)
+            let alarmType = self.vc4.getAlarmType()
+            if(alarmType == "Normal"){
+                vc5 = AddReminderViewController5a(nibName: "AddReminderView5a", bundle: nil)
+            }
+            else{
+                vc5 = AddReminderViewController5b(nibName: "AddReminderView5b", bundle: nil)
+            }
+            vc5.view.removeFromSuperview()
+            var frame4 = self.scrollView.bounds
+            frame4.origin.x = self.view.frame.size.width*4
+            vc5.view.frame = frame4
+            self.scrollView.addSubview(vc5.view)
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*5){
             self.nextButton.setTitle("Save", forState: .Normal)

@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController4" customModule="MedKeeper" customModuleProvider="target">
             <connections>
+                <outlet property="intervalAlarmButton" destination="JQl-1c-feR" id="VDM-q3-6EF"/>
+                <outlet property="normalAlarmButton" destination="laX-hZ-uzE" id="A8O-Pe-7DH"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>
         </placeholder>
@@ -31,6 +33,9 @@
                     <state key="normal" title="Normal">
                         <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="normalAlarmButtonPressed:" destination="-1" eventType="touchUpInside" id="xr3-dh-fqE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQl-1c-feR">
                     <rect key="frame" x="0.0" y="230" width="600" height="50"/>
@@ -47,6 +52,9 @@
                             <exclude reference="Cur-De-v4m"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="intervalAlarmButtonPressed:" destination="-1" eventType="touchUpInside" id="Daz-AH-kPl"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

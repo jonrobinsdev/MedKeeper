@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController5" customModule="MedKeeper" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController5a" customModule="MedKeeper" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>

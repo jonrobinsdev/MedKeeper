@@ -1,5 +1,5 @@
 //
-//  AddReminderViewController4.swift
+//  AddReminderViewController5a.swift
 //  MedKeeper
 //
 //  Created by Jonathan Robins on 10/5/15.
@@ -8,32 +8,20 @@
 
 import UIKit
 
-class AddReminderViewController4: UIViewController{
-    @IBOutlet var normalAlarmButton: UIButton!
-    @IBOutlet var intervalAlarmButton: UIButton!
-    
-    internal var alarmType = "Normal";
+class AddReminderViewController5a: UIViewController {
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
-    @IBAction func normalAlarmButtonPressed(sender: AnyObject) {
-        self.alarmType = "Normal"
-    }
     
-    @IBAction func intervalAlarmButtonPressed(sender: AnyObject) {
-        self.alarmType = "Interval"
-    }
     
-    internal func getAlarmType() -> String{
-        return self.alarmType
-    }
 
-    
     /*
     // MARK: - Navigation
 

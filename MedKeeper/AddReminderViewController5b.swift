@@ -1,5 +1,5 @@
 //
-//  AddReminderViewController5.swift
+//  AddReminderViewController5b.swift
 //  MedKeeper
 //
 //  Created by Jonathan Robins on 10/5/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddReminderViewController5: UIViewController {
+class AddReminderViewController5b: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +19,7 @@ class AddReminderViewController5: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
