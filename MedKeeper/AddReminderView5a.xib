@@ -23,16 +23,6 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1T-zU-uRJ">
-                    <rect key="frame" x="140" y="484" width="320" height="115"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="115" id="RMd-XO-nrf"/>
-                    </constraints>
-                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
-                        <!--2015-10-09 21:09:03 +0000-->
-                    </date>
-                </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-Uh-7GV">
                     <rect key="frame" x="549" y="517" width="31" height="35"/>
                     <animations/>
@@ -63,6 +53,16 @@
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1T-zU-uRJ">
+                    <rect key="frame" x="140" y="485" width="320" height="115"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="115" id="RMd-XO-nrf"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
+                        <!--2015-10-09 21:09:03 +0000-->
+                    </date>
+                </datePicker>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController5b" customModule="MedKeeper" customModuleProvider="target">
             <connections>
+                <outlet property="fromDatePicker" destination="UyK-4o-4zs" id="9yV-QY-Ek3"/>
+                <outlet property="intervalPickerView" destination="EMB-Jg-kr7" id="9DW-um-2Vh"/>
+                <outlet property="toDatePicker" destination="vL3-D9-KQu" id="pLQ-Ef-A36"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>
         </placeholder>
@@ -14,17 +17,87 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your alarm(s) for consumption." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="168" y="10" width="265" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
+                    <rect key="frame" x="20" y="10" width="560" height="20"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="6ZE-au-XHF"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Set your alarm's active range and interval.">
+                            <attributes>
+                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="6ZE-au-XHF"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p77-eV-PKA">
+                    <rect key="frame" x="20" y="70" width="50" height="24"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="O5J-Ju-v7c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p77-eV-PKA">
-                    <rect key="frame" x="272" y="290" width="56" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrF-ft-1Ed">
+                    <rect key="frame" x="20" y="154" width="50" height="24"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="dnx-cL-TC0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TW-cC-eb7">
+                    <rect key="frame" x="20" y="238" width="50" height="24"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-4o-4zs">
+                    <rect key="frame" x="30" y="32" width="320" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="aci-VU-ZD3"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
+                        <!--2015-10-09 21:09:03 +0000-->
+                    </date>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-D9-KQu">
+                    <rect key="frame" x="30" y="116" width="320" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="FC8-jb-8jG"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
+                        <!--2015-10-09 21:09:03 +0000-->
+                    </date>
+                </datePicker>
+                <pickerView contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="EMB-Jg-kr7">
+                    <rect key="frame" x="90" y="200" width="65" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="C2x-dZ-Gzb"/>
+                        <constraint firstAttribute="width" constant="65" id="DbF-5X-CCs"/>
+                    </constraints>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEi-IO-CcD">
+                    <rect key="frame" x="175" y="238" width="51" height="24"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -32,11 +105,37 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="7TW-cC-eb7" firstAttribute="top" secondItem="zrF-ft-1Ed" secondAttribute="bottom" constant="60" id="0OY-zk-0OY"/>
+                <constraint firstItem="UyK-4o-4zs" firstAttribute="leading" secondItem="p77-eV-PKA" secondAttribute="trailing" constant="-40" id="3mc-F7-uvN"/>
+                <constraint firstAttribute="trailing" secondItem="Yz2-zw-TnJ" secondAttribute="trailing" constant="20" id="8FJ-1n-nFa"/>
+                <constraint firstItem="7TW-cC-eb7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="EPz-Ho-RCn"/>
+                <constraint firstItem="iEi-IO-CcD" firstAttribute="leading" secondItem="EMB-Jg-kr7" secondAttribute="trailing" constant="20" id="GHY-4y-HfB"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HoR-zU-ORT"/>
+                <constraint firstItem="UyK-4o-4zs" firstAttribute="centerY" secondItem="p77-eV-PKA" secondAttribute="centerY" id="I5w-89-VIq"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NWx-cr-RQX"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Pcw-zS-RhO"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Pnu-0Z-3x5"/>
+                <constraint firstItem="zrF-ft-1Ed" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Qvg-wr-pMW"/>
+                <constraint firstItem="EMB-Jg-kr7" firstAttribute="width" secondItem="7TW-cC-eb7" secondAttribute="width" id="XBT-aB-haA"/>
+                <constraint firstItem="iEi-IO-CcD" firstAttribute="centerY" secondItem="7TW-cC-eb7" secondAttribute="centerY" id="Zfq-ww-2TN"/>
+                <constraint firstItem="EMB-Jg-kr7" firstAttribute="leading" secondItem="7TW-cC-eb7" secondAttribute="trailing" constant="20" id="Zk3-Oo-51Z"/>
+                <constraint firstItem="p77-eV-PKA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cPk-OS-TbB"/>
+                <constraint firstItem="7TW-cC-eb7" firstAttribute="width" secondItem="p77-eV-PKA" secondAttribute="width" id="eJM-BT-R3R"/>
+                <constraint firstItem="zrF-ft-1Ed" firstAttribute="top" secondItem="p77-eV-PKA" secondAttribute="bottom" constant="60" id="jqB-dB-Kn0"/>
+                <constraint firstItem="vL3-D9-KQu" firstAttribute="centerY" secondItem="zrF-ft-1Ed" secondAttribute="centerY" id="k4f-AT-7Xz"/>
+                <constraint firstItem="vL3-D9-KQu" firstAttribute="leading" secondItem="zrF-ft-1Ed" secondAttribute="trailing" constant="-40" id="odv-KX-2jW"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
+                <constraint firstItem="zrF-ft-1Ed" firstAttribute="width" secondItem="p77-eV-PKA" secondAttribute="width" id="tnv-H5-ALu"/>
+                <constraint firstItem="p77-eV-PKA" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="40" id="u7e-u9-ozS"/>
+                <constraint firstItem="EMB-Jg-kr7" firstAttribute="centerY" secondItem="7TW-cC-eb7" secondAttribute="centerY" id="u9p-pn-HAj"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="HoR-zU-ORT"/>
+                    <exclude reference="NWx-cr-RQX"/>
+                    <exclude reference="XBT-aB-haA"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
