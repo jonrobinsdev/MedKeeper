@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController3" customModule="MedKeeper" customModuleProvider="target">
             <connections>
+                <outlet property="dosageTextField" destination="qBx-bh-1qb" id="ZNy-L8-AVK"/>
                 <outlet property="pickerView" destination="jiE-OQ-1TI" id="s4w-kH-UH1"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>

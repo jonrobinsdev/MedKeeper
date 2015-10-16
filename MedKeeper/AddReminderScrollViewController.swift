@@ -19,16 +19,19 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc4 = AddReminderViewController4(nibName: "AddReminderView4", bundle: nil)
     var vc5 : UIViewController = AddReminderViewController5a(nibName: "AddReminderView5a", bundle: nil)
     let vc6 = AddReminderViewController6(nibName: "AddReminderView6", bundle: nil)
-
+    var directionIsForward : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.scrollView.delegate = self
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.scrollView.delegate = self;
         loadViewControllersIntoScrollView()
+        self.vc1.nameField.becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
-        self.vc1.nameField.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,13 +65,15 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         self.addChildViewController(vc3)
         self.scrollView.addSubview(vc3.view)
         vc3.didMoveToParentViewController(self)
+        self.vc3.dosageTextField.delegate = self
+        self.vc3.dosageTextField.keyboardType = UIKeyboardType.NumbersAndPunctuation
         
         //Fourth Controller
         var frame3 = self.scrollView.bounds
         frame3.origin.x = self.view.frame.size.width*3
         vc4.view.frame = frame3
         
-        self.addChildViewController(vc4);
+        self.addChildViewController(vc4)
         self.scrollView.addSubview(vc4.view)
         vc4.didMoveToParentViewController(self)
         
@@ -76,8 +81,8 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         var frame4 = self.scrollView.bounds
         frame4.origin.x = self.view.frame.size.width*4
         vc5.view.frame = frame4
-        
-        self.addChildViewController(vc5);
+    
+        self.addChildViewController(vc5)
         self.scrollView.addSubview(vc5.view)
         vc5.didMoveToParentViewController(self)
         
@@ -86,7 +91,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         frame5.origin.x = self.view.frame.size.width*5
         vc6.view.frame = frame5
         
-        self.addChildViewController(vc6);
+        self.addChildViewController(vc6)
         self.scrollView.addSubview(vc6.view)
         vc6.didMoveToParentViewController(self)
 
@@ -95,11 +100,16 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     }
     
     @IBAction func next(sender: AnyObject) {
-        if(self.vc1.nameField.isFirstResponder()){
-            self.vc1.nameField.resignFirstResponder()
-            self.scrollView.scrollEnabled = true
-        }
-        
+        self.next()
+    }
+    
+    @IBAction func back(sender: AnyObject) {
+        self.back()
+    }
+    
+    
+    func next(){
+        self.directionIsForward = true
         let x = self.scrollView.contentOffset.x
         switch(x){
         case 0:
@@ -124,7 +134,8 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         }
     }
     
-    @IBAction func back(sender: AnyObject) {
+    func back(){
+        self.directionIsForward = false
         let x = self.scrollView.contentOffset.x
         switch(x){
         case 0:
@@ -147,27 +158,16 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         default:
             break
         }
-        
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if(textField == self.vc1.nameField){
-            self.scrollView.scrollEnabled = false
-        }
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if(textField == self.vc1.nameField){
-            self.vc1.nameField.resignFirstResponder();
-            self.scrollView.scrollEnabled = true
-        }
-        return true
     }
     
     func scrollViewDidScroll(_scrollView: UIScrollView){
+        self.view.endEditing(true)
         if(self.scrollView.contentOffset.x == 0){
             self.nextButton.setTitle("Next", forState: .Normal)
             self.backButton.hidden = true
+            if(directionIsForward){
+                self.vc1.nameField.becomeFirstResponder()
+            }
         }
         else{
             self.backButton.hidden = false
@@ -180,6 +180,9 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             self.nextButton.setTitle("Next", forState: .Normal)
             let medicineType = self.vc2.getMedicineType()
             self.vc3.setType(medicineType)
+            if(directionIsForward){
+                self.vc3.dosageTextField.becomeFirstResponder()
+            }
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*3){
             self.nextButton.setTitle("Next", forState: .Normal)
@@ -205,6 +208,28 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         else{
             
         }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if(textField == self.vc1.nameField){
+            self.scrollView.scrollEnabled = false
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if(textField == self.vc1.nameField){
+            self.scrollView.scrollEnabled = true
+            if(directionIsForward){
+                self.next()
+            }
+        }
+        else if(textField == self.vc3.dosageTextField){
+            if(directionIsForward){
+                self.next()
+            }
+        }
+        return true
     }
     
 }

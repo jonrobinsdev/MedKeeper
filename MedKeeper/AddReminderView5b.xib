@@ -67,7 +67,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-4o-4zs">
-                    <rect key="frame" x="30" y="32" width="320" height="100"/>
+                    <rect key="frame" x="30" y="32" width="570" height="100"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="aci-VU-ZD3"/>
@@ -77,7 +77,7 @@
                     </date>
                 </datePicker>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-D9-KQu">
-                    <rect key="frame" x="30" y="116" width="320" height="100"/>
+                    <rect key="frame" x="30" y="116" width="570" height="100"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="FC8-jb-8jG"/>
@@ -110,8 +110,10 @@
                 <constraint firstAttribute="trailing" secondItem="Yz2-zw-TnJ" secondAttribute="trailing" constant="20" id="8FJ-1n-nFa"/>
                 <constraint firstItem="7TW-cC-eb7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="EPz-Ho-RCn"/>
                 <constraint firstItem="iEi-IO-CcD" firstAttribute="leading" secondItem="EMB-Jg-kr7" secondAttribute="trailing" constant="20" id="GHY-4y-HfB"/>
+                <constraint firstAttribute="trailing" secondItem="vL3-D9-KQu" secondAttribute="trailing" id="Gdb-jb-l9f"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HoR-zU-ORT"/>
                 <constraint firstItem="UyK-4o-4zs" firstAttribute="centerY" secondItem="p77-eV-PKA" secondAttribute="centerY" id="I5w-89-VIq"/>
+                <constraint firstAttribute="trailing" secondItem="UyK-4o-4zs" secondAttribute="trailing" id="IxJ-M5-9XZ"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NWx-cr-RQX"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Pcw-zS-RhO"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Pnu-0Z-3x5"/>

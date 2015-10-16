@@ -10,7 +10,7 @@ import UIKit
 
 class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     @IBOutlet private var pickerView: UIPickerView!
-    @IBOutlet private var segmentedControl: UISegmentedControl!
+    @IBOutlet var dosageTextField: UITextField!
     internal var medicineType = "Pill"
 
     var pillPickerViewData = ["Pills", "mg"]
