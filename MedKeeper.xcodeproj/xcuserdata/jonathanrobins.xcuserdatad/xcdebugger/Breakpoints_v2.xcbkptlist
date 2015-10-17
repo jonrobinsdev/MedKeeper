@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MedKeeper/AddReminderViewController1.swift"
-            timestampString = "466660640.683487"
+            timestampString = "466735488.558908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "getString()"
             landmarkType = "5">
          </BreakpointContent>

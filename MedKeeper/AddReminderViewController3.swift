@@ -9,12 +9,12 @@
 import UIKit
 
 class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet var dosageTextField: UITextField!
-    internal var medicineType = "Pill"
-
-    var pillPickerViewData = ["Pills", "mg"]
-    var liquidPickerViewData = ["Tbps", "tsps", "mL"]
+    private var medicineType = "Pill"
+    private var pillPickerViewData = ["Pills", "mg"]
+    private var liquidPickerViewData = ["Tbps", "tsps", "mL"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,23 +8,44 @@
 
 import UIKit
 
-class AddReminderViewController5b: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet var fromDatePicker: UIDatePicker!
-    @IBOutlet var toDatePicker: UIDatePicker!
-    @IBOutlet var intervalPickerView: UIPickerView!
-    var pickerViewData = ["1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "12.5", "13", "13.5", "14", "14.5", "15", "15.5", "16", "16.5", "17", "17.5", "18", "18.5", "19", "19.5", "20", "20.5", "21", "21.5", "22", "22.5", "23", "23.5", "24"];
+class AddReminderViewController5b: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    @IBOutlet var fromRangeField: UITextField!
+    @IBOutlet var toRangeField: UITextField!
+    @IBOutlet private  var intervalPickerView: UIPickerView!
+    private var pickerViewData = ["1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "12.5", "13", "13.5", "14", "14.5", "15", "15.5", "16", "16.5", "17", "17.5", "18", "18.5", "19", "19.5", "20", "20.5", "21", "21.5", "22", "22.5", "23", "23.5", "24"];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //pickerView
         self.intervalPickerView.delegate = self
         self.intervalPickerView.dataSource = self
         self.intervalPickerView.selectRow(4, inComponent: 0, animated: true)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func fromRangeFieldEditingDidBegin(sender: UITextField) {
+        //var customTimeView:UIView = UIView;
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Time
+        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents:UIControlEvents.ValueChanged)
+        sender.inputView = datePickerView
+    }
+    @IBAction func toRangeFieldEditingDidBegin(sender: UITextField) {
+        
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        fromRangeField.text = dateFormatter.stringFromDate(sender.date)
+    }
+
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController5b" customModule="MedKeeper" customModuleProvider="target">
             <connections>
-                <outlet property="fromDatePicker" destination="UyK-4o-4zs" id="9yV-QY-Ek3"/>
+                <outlet property="fromRangeField" destination="a9s-ve-AtK" id="ohN-3b-5Ut"/>
                 <outlet property="intervalPickerView" destination="EMB-Jg-kr7" id="9DW-um-2Vh"/>
-                <outlet property="toDatePicker" destination="vL3-D9-KQu" id="pLQ-Ef-A36"/>
+                <outlet property="toRangeField" destination="8jG-tV-eXS" id="z2r-HL-JPZ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>
         </placeholder>
@@ -26,7 +26,7 @@
                     <attributedString key="attributedText">
                         <fragment content="Set your alarm's active range and interval.">
                             <attributes>
-                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="17" name="HelveticaNeue"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
@@ -46,7 +46,7 @@
                         <constraint firstAttribute="width" constant="50" id="O5J-Ju-v7c"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrF-ft-1Ed">
@@ -56,36 +56,16 @@
                         <constraint firstAttribute="width" constant="50" id="dnx-cL-TC0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TW-cC-eb7">
                     <rect key="frame" x="20" y="238" width="50" height="24"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-4o-4zs">
-                    <rect key="frame" x="30" y="32" width="570" height="100"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="aci-VU-ZD3"/>
-                    </constraints>
-                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
-                        <!--2015-10-09 21:09:03 +0000-->
-                    </date>
-                </datePicker>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-D9-KQu">
-                    <rect key="frame" x="30" y="116" width="570" height="100"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="FC8-jb-8jG"/>
-                    </constraints>
-                    <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
-                        <!--2015-10-09 21:09:03 +0000-->
-                    </date>
-                </datePicker>
                 <pickerView contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="EMB-Jg-kr7">
                     <rect key="frame" x="90" y="200" width="65" height="100"/>
                     <animations/>
@@ -98,22 +78,41 @@
                     <rect key="frame" x="175" y="238" width="51" height="24"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9s-ve-AtK">
+                    <rect key="frame" x="90" y="67" width="490" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="fromRangeFieldEditingDidBegin:" destination="-1" eventType="editingDidEnd" id="cuh-f9-yr3"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-tV-eXS">
+                    <rect key="frame" x="90" y="151" width="490" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="toRangeFieldEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="M8j-Kg-rCV"/>
+                    </connections>
+                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7TW-cC-eb7" firstAttribute="top" secondItem="zrF-ft-1Ed" secondAttribute="bottom" constant="60" id="0OY-zk-0OY"/>
-                <constraint firstItem="UyK-4o-4zs" firstAttribute="leading" secondItem="p77-eV-PKA" secondAttribute="trailing" constant="-40" id="3mc-F7-uvN"/>
                 <constraint firstAttribute="trailing" secondItem="Yz2-zw-TnJ" secondAttribute="trailing" constant="20" id="8FJ-1n-nFa"/>
+                <constraint firstItem="a9s-ve-AtK" firstAttribute="leading" secondItem="p77-eV-PKA" secondAttribute="trailing" constant="20" id="BLR-13-adM"/>
                 <constraint firstItem="7TW-cC-eb7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="EPz-Ho-RCn"/>
                 <constraint firstItem="iEi-IO-CcD" firstAttribute="leading" secondItem="EMB-Jg-kr7" secondAttribute="trailing" constant="20" id="GHY-4y-HfB"/>
-                <constraint firstAttribute="trailing" secondItem="vL3-D9-KQu" secondAttribute="trailing" id="Gdb-jb-l9f"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HoR-zU-ORT"/>
-                <constraint firstItem="UyK-4o-4zs" firstAttribute="centerY" secondItem="p77-eV-PKA" secondAttribute="centerY" id="I5w-89-VIq"/>
-                <constraint firstAttribute="trailing" secondItem="UyK-4o-4zs" secondAttribute="trailing" id="IxJ-M5-9XZ"/>
+                <constraint firstAttribute="trailing" secondItem="a9s-ve-AtK" secondAttribute="trailing" constant="20" id="KCp-VV-BKP"/>
+                <constraint firstAttribute="trailing" secondItem="8jG-tV-eXS" secondAttribute="trailing" constant="20" id="Mfq-c7-sFW"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NWx-cr-RQX"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Pcw-zS-RhO"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Pnu-0Z-3x5"/>
@@ -122,11 +121,12 @@
                 <constraint firstItem="iEi-IO-CcD" firstAttribute="centerY" secondItem="7TW-cC-eb7" secondAttribute="centerY" id="Zfq-ww-2TN"/>
                 <constraint firstItem="EMB-Jg-kr7" firstAttribute="leading" secondItem="7TW-cC-eb7" secondAttribute="trailing" constant="20" id="Zk3-Oo-51Z"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cPk-OS-TbB"/>
+                <constraint firstItem="8jG-tV-eXS" firstAttribute="leading" secondItem="zrF-ft-1Ed" secondAttribute="trailing" constant="20" id="dVU-48-XEo"/>
                 <constraint firstItem="7TW-cC-eb7" firstAttribute="width" secondItem="p77-eV-PKA" secondAttribute="width" id="eJM-BT-R3R"/>
                 <constraint firstItem="zrF-ft-1Ed" firstAttribute="top" secondItem="p77-eV-PKA" secondAttribute="bottom" constant="60" id="jqB-dB-Kn0"/>
-                <constraint firstItem="vL3-D9-KQu" firstAttribute="centerY" secondItem="zrF-ft-1Ed" secondAttribute="centerY" id="k4f-AT-7Xz"/>
-                <constraint firstItem="vL3-D9-KQu" firstAttribute="leading" secondItem="zrF-ft-1Ed" secondAttribute="trailing" constant="-40" id="odv-KX-2jW"/>
+                <constraint firstItem="a9s-ve-AtK" firstAttribute="centerY" secondItem="p77-eV-PKA" secondAttribute="centerY" id="qhg-b2-ri6"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
+                <constraint firstItem="8jG-tV-eXS" firstAttribute="centerY" secondItem="zrF-ft-1Ed" secondAttribute="centerY" id="sD8-02-xLo"/>
                 <constraint firstItem="zrF-ft-1Ed" firstAttribute="width" secondItem="p77-eV-PKA" secondAttribute="width" id="tnv-H5-ALu"/>
                 <constraint firstItem="p77-eV-PKA" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="40" id="u7e-u9-ozS"/>
                 <constraint firstItem="EMB-Jg-kr7" firstAttribute="centerY" secondItem="7TW-cC-eb7" secondAttribute="centerY" id="u9p-pn-HAj"/>

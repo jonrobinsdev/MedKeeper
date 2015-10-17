@@ -9,8 +9,10 @@
 import UIKit
 
 class AddReminderViewController1: UIViewController {
+    
     @IBOutlet var nameField: UITextField!
-    internal var name: String = ""
+    private var name: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         // Do any additional setup after loading the view.

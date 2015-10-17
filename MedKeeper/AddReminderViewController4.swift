@@ -9,10 +9,11 @@
 import UIKit
 
 class AddReminderViewController4: UIViewController{
-    @IBOutlet var normalAlarmButton: UIButton!
-    @IBOutlet var intervalAlarmButton: UIButton!
     
-    internal var alarmType = "Normal";
+    @IBOutlet private var normalAlarmButton: UIButton!
+    @IBOutlet private var intervalAlarmButton: UIButton!
+    private var alarmType = "Normal";
+    
     override func viewDidLoad() {
         
     }

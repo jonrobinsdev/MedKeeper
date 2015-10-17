@@ -10,10 +10,10 @@ import UIKit
 
 class AddReminderViewController2: UIViewController{
     
-    @IBOutlet var pillButton: UIButton!
-    @IBOutlet var liquidButton: UIButton!
+    @IBOutlet private var pillButton: UIButton!
+    @IBOutlet private var liquidButton: UIButton!
+    private var medicineType: String = "Pill"
     
-    internal var medicineType: String = "Pill"
     override func viewDidLoad() {
         
     }

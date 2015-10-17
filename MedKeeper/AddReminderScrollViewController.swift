@@ -9,6 +9,7 @@
 import UIKit
 
 class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+    
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var scrollViewTitle: UILabel!
     @IBOutlet private var backButton: UIButton!
@@ -195,6 +196,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             }
             else{
                 vc5 = AddReminderViewController5b(nibName: "AddReminderView5b", bundle: nil)
+                
             }
             vc5.view.removeFromSuperview()
             var frame4 = self.scrollView.bounds

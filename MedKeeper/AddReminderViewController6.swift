@@ -9,8 +9,10 @@
 import UIKit
 
 class AddReminderViewController6: UIViewController {
-    @IBOutlet var yesButton: UIButton!
-    @IBOutlet var noButton: UIButton!
+    
+    @IBOutlet private var yesButton: UIButton!
+    @IBOutlet private var noButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
