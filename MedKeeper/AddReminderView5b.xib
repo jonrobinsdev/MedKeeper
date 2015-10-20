@@ -87,9 +87,6 @@
                     <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="fromRangeFieldEditingDidBegin:" destination="-1" eventType="editingDidEnd" id="cuh-f9-yr3"/>
-                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-tV-eXS">
                     <rect key="frame" x="90" y="151" width="490" height="30"/>
@@ -97,9 +94,6 @@
                     <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="toRangeFieldEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="M8j-Kg-rCV"/>
-                    </connections>
                 </textField>
             </subviews>
             <animations/>

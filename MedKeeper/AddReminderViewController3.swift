@@ -14,7 +14,7 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet var dosageTextField: UITextField!
     private var medicineType = "Pill"
     private var pillPickerViewData = ["Pills", "mg"]
-    private var liquidPickerViewData = ["Tbps", "tsps", "mL"]
+    private var liquidPickerViewData = ["Tbsp", "tsp", "mL"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

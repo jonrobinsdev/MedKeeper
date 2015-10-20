@@ -24,10 +24,14 @@ class AddReminderViewController4: UIViewController{
    
     @IBAction func normalAlarmButtonPressed(sender: AnyObject) {
         self.alarmType = "Normal"
+        let parentView = self.view.superview as! UIScrollView
+        parentView.setContentOffset(CGPointMake(parentView.frame.size.width*4, 0), animated: true)
     }
     
     @IBAction func intervalAlarmButtonPressed(sender: AnyObject) {
         self.alarmType = "Interval"
+        let parentView = self.view.superview as! UIScrollView
+        parentView.setContentOffset(CGPointMake(parentView.frame.size.width*4, 0), animated: true)
     }
     
     internal func getAlarmType() -> String{

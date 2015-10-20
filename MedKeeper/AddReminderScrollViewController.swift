@@ -196,7 +196,6 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             }
             else{
                 vc5 = AddReminderViewController5b(nibName: "AddReminderView5b", bundle: nil)
-                
             }
             vc5.view.removeFromSuperview()
             var frame4 = self.scrollView.bounds
