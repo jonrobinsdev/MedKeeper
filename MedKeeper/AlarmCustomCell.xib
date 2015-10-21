@@ -12,7 +12,28 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiZ-Lz-IC3">
+                        <rect key="frame" x="275" y="2" width="40" height="40"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="SQZ-em-emX"/>
+                            <constraint firstAttribute="height" constant="40" id="VZD-k6-wWz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <state key="normal" title="X">
+                            <color key="titleColor" red="0.95695346593856812" green="0.28699794411659241" blue="0.089426763355731964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HOt-4M-XGb"/>
+                        </connections>
+                    </button>
+                </subviews>
                 <animations/>
+                <constraints>
+                    <constraint firstItem="yiZ-Lz-IC3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ndP-si-KTw"/>
+                    <constraint firstAttribute="trailing" secondItem="yiZ-Lz-IC3" secondAttribute="trailing" constant="5" id="nxJ-ZE-HzJ"/>
+                </constraints>
             </tableViewCellContentView>
             <animations/>
         </tableViewCell>

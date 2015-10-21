@@ -14,9 +14,14 @@ class AddReminderViewController5b: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet var toRangeField: UITextField!
     @IBOutlet private  var intervalPickerView: UIPickerView!
     private var pickerViewData = ["1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "12.5", "13", "13.5", "14", "14.5", "15", "15.5", "16", "16.5", "17", "17.5", "18", "18.5", "19", "19.5", "20", "20.5", "21", "21.5", "22", "22.5", "23", "23.5", "24"]
-    
+    let dateFormatter = NSDateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //dateFormatter
+        dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         //pickerView
         self.intervalPickerView.delegate = self
@@ -46,20 +51,15 @@ class AddReminderViewController5b: UIViewController, UIPickerViewDelegate, UIPic
             datePickerView.addTarget(self, action: Selector("toDatePickerValueChanged:"), forControlEvents:UIControlEvents.ValueChanged)
         }
         textField.inputView = datePickerView
+        textField.text = dateFormatter.stringFromDate(datePickerView.date)
     }
     
     func fromDatePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        fromRangeField.text = dateFormatter.stringFromDate(sender.date)
+        self.fromRangeField.text = dateFormatter.stringFromDate(sender.date)
     }
     
     func toDatePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        toRangeField.text = dateFormatter.stringFromDate(sender.date)
+        self.toRangeField.text = dateFormatter.stringFromDate(sender.date)
         
     }
     

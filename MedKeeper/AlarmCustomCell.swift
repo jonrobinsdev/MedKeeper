@@ -9,10 +9,14 @@
 import UIKit
 
 class AlarmCustomCell: UITableViewCell {
-
+    
+    var delegate : AlarmCustomCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.textLabel!.font = UIFont.systemFontOfSize(22.0)
+        self.textLabel!.backgroundColor = UIColor.clearColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -21,4 +25,7 @@ class AlarmCustomCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func deleteButtonPressed(cell: AnyObject) {
+        delegate?.deleteButtonPressed(self)
+    }
 }

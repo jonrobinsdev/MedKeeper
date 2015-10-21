@@ -8,7 +8,11 @@
 
 import UIKit
 
-class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol AlarmCustomCellDelegate {
+    func deleteButtonPressed(cell: AlarmCustomCell)
+}
+
+class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITableViewDataSource, AlarmCustomCellDelegate {
     
     @IBOutlet var addAlarmButton: UIButton!
     @IBOutlet var datePicker: UIDatePicker!
@@ -16,8 +20,10 @@ class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITabl
     var alarmList: NSMutableArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.alarmTableView.delegate = self
         self.alarmTableView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +39,9 @@ class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITabl
 
         self.alarmList.insertObject(alarmValue, atIndex: self.alarmList.count)
         self.alarmTableView.reloadData()
+        
+        let indexPath = NSIndexPath(forRow: alarmList.count-1, inSection: 0)
+        self.alarmTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -51,8 +60,16 @@ class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITabl
                 cell = tableView.dequeueReusableCellWithIdentifier("alarmCustomCell") as? AlarmCustomCell
             }
             cell.textLabel!.text = alarmList[indexPath.row] as? String
+            cell.delegate = self;
             return cell
     }
+    
+    func deleteButtonPressed(cell: AlarmCustomCell){
+        let indexPath: NSIndexPath = self.alarmTableView.indexPathForCell(cell)!
+        self.alarmList.removeObjectAtIndex(indexPath.row)
+        self.alarmTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+    }
+    
     /*
     // MARK: - Navigation
 

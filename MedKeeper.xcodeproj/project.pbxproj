@@ -176,6 +176,8 @@
 				8FE8AFC81BC446C8000FC2FE /* AddReminderViewController3.swift */,
 				8FE8AFC91BC446C8000FC2FE /* AddReminderViewController4.swift */,
 				8F9CC4221BCB350C0011CF37 /* AddReminderViewController5a.swift */,
+				8F9107941BD745DF001DD4C3 /* AlarmCustomCell.swift */,
+				8F9107951BD745DF001DD4C3 /* AlarmCustomCell.xib */,
 				8F9CC4241BCB35140011CF37 /* AddReminderViewController5b.swift */,
 				8F9CC41C1BCB266F0011CF37 /* AddReminderViewController6.swift */,
 				8F91078D1BD739AF001DD4C3 /* AddReminderViewController7.swift */,
@@ -187,8 +189,6 @@
 				8F9CC4201BCB2DD90011CF37 /* AddReminderView5b.xib */,
 				8F9CC41B1BCB266F0011CF37 /* AddReminderView6.xib */,
 				8F91078C1BD739AF001DD4C3 /* AddReminderView7.xib */,
-				8F9107941BD745DF001DD4C3 /* AlarmCustomCell.swift */,
-				8F9107951BD745DF001DD4C3 /* AlarmCustomCell.xib */,
 			);
 			name = "Add Reminder Screens";
 			sourceTree = "<group>";
