@@ -20,6 +20,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc4 = AddReminderViewController4(nibName: "AddReminderView4", bundle: nil)
     var vc5 : UIViewController = AddReminderViewController5a(nibName: "AddReminderView5a", bundle: nil)
     let vc6 = AddReminderViewController6(nibName: "AddReminderView6", bundle: nil)
+    let vc7 = AddReminderViewController7(nibName: "AddReminderView7", bundle: nil)
     var directionIsForward : Bool = true
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         loadViewControllersIntoScrollView()
-        self.vc1.nameField.becomeFirstResponder()
+        //self.vc1.nameField.becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
@@ -95,9 +96,17 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         self.addChildViewController(vc6)
         self.scrollView.addSubview(vc6.view)
         vc6.didMoveToParentViewController(self)
-
         
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*6, self.view.frame.size.height - 250)
+        //Seventh Controller
+        var frame6 = self.scrollView.bounds
+        frame6.origin.x = self.view.frame.size.width*6
+        vc7.view.frame = frame6
+        
+        self.addChildViewController(vc7)
+        self.scrollView.addSubview(vc7.view)
+        vc7.didMoveToParentViewController(self)
+        
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*7, self.view.frame.size.height - 250)
     }
     
     @IBAction func next(sender: AnyObject) {
@@ -128,6 +137,9 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         case self.view.frame.size.width*4:
             self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*5, 0), animated: true)
             break
+        case self.view.frame.size.width*5:
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*6, 0), animated: true)
+            break
         case self.view.frame.size.width*4:
             break
         default:
@@ -156,6 +168,9 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         case self.view.frame.size.width*5:
             self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*4, 0), animated: true)
             break
+        case self.view.frame.size.width*6:
+            self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*5, 0), animated: true)
+            break
         default:
             break
         }
@@ -167,7 +182,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             self.nextButton.setTitle("Next", forState: .Normal)
             self.backButton.hidden = true
             if(directionIsForward){
-                self.vc1.nameField.becomeFirstResponder()
+                //self.vc1.nameField.becomeFirstResponder()
             }
         }
         else{
@@ -182,7 +197,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             let medicineType = self.vc2.getMedicineType()
             self.vc3.setType(medicineType)
             if(directionIsForward){
-                self.vc3.dosageTextField.becomeFirstResponder()
+                //self.vc3.dosageTextField.becomeFirstResponder()
             }
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*3){
@@ -204,6 +219,8 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             self.scrollView.addSubview(vc5.view)
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*5){
+        }
+        else if(self.scrollView.contentOffset.x == self.view.frame.size.width*6){
             self.nextButton.setTitle("Save", forState: .Normal)
         }
         else{

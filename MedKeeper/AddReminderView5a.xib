@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReminderViewController5a" customModule="MedKeeper" customModuleProvider="target">
             <connections>
+                <outlet property="addAlarmButton" destination="Rgq-Uh-7GV" id="m3e-yD-dMW"/>
+                <outlet property="alarmTableView" destination="DIZ-k3-ftC" id="mIR-3F-Jxb"/>
+                <outlet property="datePicker" destination="A1T-zU-uRJ" id="zSW-Q4-rE8"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OD2-GD-BTH"/>
             </connections>
         </placeholder>
@@ -23,15 +26,19 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-Uh-7GV">
-                    <rect key="frame" x="549" y="517" width="31" height="35"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zep-0u-XjA">
+                    <rect key="frame" x="0.0" y="36" width="600" height="1"/>
                     <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="YkK-NH-xAA"/>
+                        <constraint firstAttribute="height" constant="1" id="BjO-Km-jH5"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                    <state key="normal" title="+"/>
-                </button>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-k3-ftC">
+                    <rect key="frame" x="0.0" y="37" width="600" height="446"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoe-g2-VpM">
                     <rect key="frame" x="0.0" y="483" width="600" height="1"/>
                     <animations/>
@@ -40,21 +47,8 @@
                         <constraint firstAttribute="height" constant="1" id="Jie-79-rGo"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToY-ZG-lHx">
-                    <rect key="frame" x="0.0" y="599" width="600" height="1"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="3ql-C1-tmK"/>
-                    </constraints>
-                </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-k3-ftC">
-                    <rect key="frame" x="0.0" y="37" width="600" height="447"/>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1T-zU-uRJ">
-                    <rect key="frame" x="140" y="485" width="320" height="115"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1T-zU-uRJ">
+                    <rect key="frame" x="140" y="484" width="320" height="115"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="115" id="RMd-XO-nrf"/>
@@ -63,6 +57,26 @@
                         <!--2015-10-09 21:09:03 +0000-->
                     </date>
                 </datePicker>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToY-ZG-lHx">
+                    <rect key="frame" x="0.0" y="599" width="600" height="1"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="3ql-C1-tmK"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-Uh-7GV">
+                    <rect key="frame" x="549" y="517" width="31" height="35"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="YkK-NH-xAA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="addAlarmButtonPressed:" destination="-1" eventType="touchUpInside" id="vht-LA-BhC"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -72,10 +86,12 @@
                 <constraint firstItem="Rgq-Uh-7GV" firstAttribute="centerY" secondItem="A1T-zU-uRJ" secondAttribute="centerY" id="7Yo-fc-2Jg"/>
                 <constraint firstAttribute="trailing" secondItem="yoe-g2-VpM" secondAttribute="trailing" id="8SR-x3-jW6"/>
                 <constraint firstItem="yoe-g2-VpM" firstAttribute="top" secondItem="DIZ-k3-ftC" secondAttribute="bottom" id="8iX-5W-opN"/>
+                <constraint firstItem="zep-0u-XjA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ecw-kI-k5E"/>
                 <constraint firstAttribute="bottom" secondItem="ToY-ZG-lHx" secondAttribute="bottom" id="Efm-8S-5hm"/>
                 <constraint firstItem="A1T-zU-uRJ" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="20" id="I6C-nb-EVb"/>
                 <constraint firstItem="A1T-zU-uRJ" firstAttribute="top" secondItem="yoe-g2-VpM" secondAttribute="bottom" id="K9m-aM-nFY"/>
                 <constraint firstItem="Rgq-Uh-7GV" firstAttribute="top" secondItem="yoe-g2-VpM" secondAttribute="bottom" constant="45" id="NJy-O3-iHe"/>
+                <constraint firstItem="DIZ-k3-ftC" firstAttribute="top" secondItem="zep-0u-XjA" secondAttribute="bottom" id="OkA-45-n3e"/>
                 <constraint firstItem="yoe-g2-VpM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Pii-Mh-CVx"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Pnu-0Z-3x5"/>
                 <constraint firstAttribute="trailing" secondItem="Rgq-Uh-7GV" secondAttribute="trailing" constant="20" id="TSb-WY-ruS"/>
@@ -88,11 +104,14 @@
                 <constraint firstItem="DIZ-k3-ftC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oXV-I3-Dvw"/>
                 <constraint firstItem="ToY-ZG-lHx" firstAttribute="top" secondItem="Rgq-Uh-7GV" secondAttribute="bottom" multiplier="1.0125" constant="40" id="qid-DB-qnl"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
+                <constraint firstItem="zep-0u-XjA" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="5" id="sfZ-AY-C2u"/>
                 <constraint firstAttribute="trailing" secondItem="ToY-ZG-lHx" secondAttribute="trailing" id="uub-Jg-roC"/>
                 <constraint firstItem="Rgq-Uh-7GV" firstAttribute="centerY" secondItem="A1T-zU-uRJ" secondAttribute="centerY" id="vq3-7h-HOr"/>
+                <constraint firstAttribute="trailing" secondItem="zep-0u-XjA" secondAttribute="trailing" id="xN1-Au-B5v"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="dG6-46-zd3"/>
                     <exclude reference="I6C-nb-EVb"/>
                     <exclude reference="YOp-bI-aDn"/>
                     <exclude reference="7Yo-fc-2Jg"/>

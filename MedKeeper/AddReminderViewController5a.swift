@@ -8,12 +8,16 @@
 
 import UIKit
 
-class AddReminderViewController5a: UIViewController {
+class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var addAlarmButton: UIButton!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var alarmTableView: UITableView!
+    var alarmList: NSMutableArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.alarmTableView.delegate = self
+        self.alarmTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,8 +25,34 @@ class AddReminderViewController5a: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func addAlarmButtonPressed(sender: AnyObject) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        let alarmValue = dateFormatter.stringFromDate(self.datePicker.date)
 
+        self.alarmList.insertObject(alarmValue, atIndex: self.alarmList.count)
+        self.alarmTableView.reloadData()
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return alarmList.count
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            var cell: AlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("alarmCustomCell") as? AlarmCustomCell
+            if(cell == nil) {
+                tableView.registerNib(UINib(nibName: "AlarmCustomCell", bundle: nil), forCellReuseIdentifier: "alarmCustomCell")
+                cell = tableView.dequeueReusableCellWithIdentifier("alarmCustomCell") as? AlarmCustomCell
+            }
+            cell.textLabel!.text = alarmList[indexPath.row] as? String
+            return cell
+    }
     /*
     // MARK: - Navigation
 

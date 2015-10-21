@@ -16,6 +16,10 @@
 		8F8E47511BC22BA30021E93A /* MedKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E47501BC22BA30021E93A /* MedKeeperTests.swift */; };
 		8F8E475C1BC22BA30021E93A /* MedKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E475B1BC22BA30021E93A /* MedKeeperUITests.swift */; };
 		8F8E476A1BC22C460021E93A /* AddReminderScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E47691BC22C460021E93A /* AddReminderScrollViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8F91078E1BD739AF001DD4C3 /* AddReminderView7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F91078C1BD739AF001DD4C3 /* AddReminderView7.xib */; settings = {ASSET_TAGS = (); }; };
+		8F91078F1BD739AF001DD4C3 /* AddReminderViewController7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91078D1BD739AF001DD4C3 /* AddReminderViewController7.swift */; settings = {ASSET_TAGS = (); }; };
+		8F9107961BD745DF001DD4C3 /* AlarmCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9107941BD745DF001DD4C3 /* AlarmCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8F9107971BD745DF001DD4C3 /* AlarmCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9107951BD745DF001DD4C3 /* AlarmCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8F9CC41D1BCB266F0011CF37 /* AddReminderView6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9CC41B1BCB266F0011CF37 /* AddReminderView6.xib */; settings = {ASSET_TAGS = (); }; };
 		8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9CC41C1BCB266F0011CF37 /* AddReminderViewController6.swift */; settings = {ASSET_TAGS = (); }; };
 		8F9CC4211BCB2DD90011CF37 /* AddReminderView5b.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9CC4201BCB2DD90011CF37 /* AddReminderView5b.xib */; settings = {ASSET_TAGS = (); }; };
@@ -65,6 +69,10 @@
 		8F8E475B1BC22BA30021E93A /* MedKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedKeeperUITests.swift; sourceTree = "<group>"; };
 		8F8E475D1BC22BA30021E93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F8E47691BC22C460021E93A /* AddReminderScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderScrollViewController.swift; sourceTree = "<group>"; };
+		8F91078C1BD739AF001DD4C3 /* AddReminderView7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView7.xib; sourceTree = "<group>"; };
+		8F91078D1BD739AF001DD4C3 /* AddReminderViewController7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController7.swift; sourceTree = "<group>"; };
+		8F9107941BD745DF001DD4C3 /* AlarmCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCustomCell.swift; sourceTree = "<group>"; };
+		8F9107951BD745DF001DD4C3 /* AlarmCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmCustomCell.xib; sourceTree = "<group>"; };
 		8F9CC41B1BCB266F0011CF37 /* AddReminderView6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView6.xib; sourceTree = "<group>"; };
 		8F9CC41C1BCB266F0011CF37 /* AddReminderViewController6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController6.swift; sourceTree = "<group>"; };
 		8F9CC4201BCB2DD90011CF37 /* AddReminderView5b.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView5b.xib; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 				8F9CC4221BCB350C0011CF37 /* AddReminderViewController5a.swift */,
 				8F9CC4241BCB35140011CF37 /* AddReminderViewController5b.swift */,
 				8F9CC41C1BCB266F0011CF37 /* AddReminderViewController6.swift */,
+				8F91078D1BD739AF001DD4C3 /* AddReminderViewController7.swift */,
 				8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */,
 				8FE8AFC11BC44037000FC2FE /* AddReminderView2.xib */,
 				8FE8AFC01BC44037000FC2FE /* AddReminderView3.xib */,
@@ -177,6 +186,9 @@
 				8FFE27821BC868E1001B2A44 /* AddReminderView5a.xib */,
 				8F9CC4201BCB2DD90011CF37 /* AddReminderView5b.xib */,
 				8F9CC41B1BCB266F0011CF37 /* AddReminderView6.xib */,
+				8F91078C1BD739AF001DD4C3 /* AddReminderView7.xib */,
+				8F9107941BD745DF001DD4C3 /* AlarmCustomCell.swift */,
+				8F9107951BD745DF001DD4C3 /* AlarmCustomCell.xib */,
 			);
 			name = "Add Reminder Screens";
 			sourceTree = "<group>";
@@ -284,11 +296,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9107971BD745DF001DD4C3 /* AlarmCustomCell.xib in Resources */,
 				8FE8AFC51BC44037000FC2FE /* AddReminderView4.xib in Resources */,
 				8FE8AFC31BC44037000FC2FE /* AddReminderView3.xib in Resources */,
 				8F9CC41D1BCB266F0011CF37 /* AddReminderView6.xib in Resources */,
 				8F8E47461BC22BA30021E93A /* LaunchScreen.storyboard in Resources */,
 				8FE8AFC41BC44037000FC2FE /* AddReminderView2.xib in Resources */,
+				8F91078E1BD739AF001DD4C3 /* AddReminderView7.xib in Resources */,
 				8FFE27841BC868E1001B2A44 /* AddReminderView5a.xib in Resources */,
 				8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */,
 				8F8E47431BC22BA30021E93A /* Assets.xcassets in Resources */,
@@ -322,6 +336,7 @@
 				8F8E473A1BC22BA30021E93A /* AppDelegate.swift in Sources */,
 				8FE8AFCC1BC446C8000FC2FE /* AddReminderViewController4.swift in Sources */,
 				8F9CC4231BCB350C0011CF37 /* AddReminderViewController5a.swift in Sources */,
+				8F91078F1BD739AF001DD4C3 /* AddReminderViewController7.swift in Sources */,
 				8F8E476A1BC22C460021E93A /* AddReminderScrollViewController.swift in Sources */,
 				8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */,
 				8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */,
@@ -329,6 +344,7 @@
 				8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */,
 				8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */,
 				8F9CC4251BCB35140011CF37 /* AddReminderViewController5b.swift in Sources */,
+				8F9107961BD745DF001DD4C3 /* AlarmCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
