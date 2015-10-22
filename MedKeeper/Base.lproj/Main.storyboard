@@ -27,14 +27,41 @@
                                         <color key="textColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-7z-HUG">
+                                        <rect key="frame" x="335" y="10" width="30" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="6am-Xi-mQH"/>
+                                            <constraint firstAttribute="height" constant="30" id="Hlw-fT-Wwn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addProfileButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Zmo-dp-odA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="SgS-iG-fyW" firstAttribute="centerX" secondItem="34j-ff-JbH" secondAttribute="centerX" id="3kA-p7-fZT"/>
+                                    <constraint firstItem="Upn-7z-HUG" firstAttribute="centerY" secondItem="34j-ff-JbH" secondAttribute="centerY" id="6t3-25-p71"/>
+                                    <constraint firstItem="Upn-7z-HUG" firstAttribute="centerY" secondItem="SgS-iG-fyW" secondAttribute="centerY" id="9fj-Me-1on"/>
                                     <constraint firstItem="SgS-iG-fyW" firstAttribute="centerY" secondItem="34j-ff-JbH" secondAttribute="centerY" id="Tf0-ZR-X0m"/>
+                                    <constraint firstItem="Upn-7z-HUG" firstAttribute="centerY" secondItem="34j-ff-JbH" secondAttribute="centerY" id="ckw-WG-WzD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Upn-7z-HUG" secondAttribute="trailing" constant="10" id="fEQ-qs-ymd"/>
+                                    <constraint firstItem="Upn-7z-HUG" firstAttribute="centerY" secondItem="SgS-iG-fyW" secondAttribute="centerY" id="sLG-z1-6et"/>
                                     <constraint firstAttribute="height" constant="50" id="uVK-S6-Va6"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9fj-Me-1on"/>
+                                        <exclude reference="ckw-WG-WzD"/>
+                                        <exclude reference="sLG-z1-6et"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jkf-lY-YgD">
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
