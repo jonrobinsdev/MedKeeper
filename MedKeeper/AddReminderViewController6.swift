@@ -17,6 +17,8 @@ class AddReminderViewController6: UIViewController {
     @IBOutlet var thursdayButton: UIButton!
     @IBOutlet var fridayButton: UIButton!
     @IBOutlet var saturdayButton: UIButton!
+    var weekdayList : NSArray = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

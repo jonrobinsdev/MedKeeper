@@ -8,19 +8,24 @@
 
 import UIKit
 
-class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+
+class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet var dosageTextField: UITextField!
     private var medicineType = "Pill"
     private var pillPickerViewData = ["Pills", "mg"]
     private var liquidPickerViewData = ["Tbsp", "tsp", "mL"]
+    private var maxLength = 6
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        
+        self.dosageTextField.delegate = self
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
         self.pickerView.selectRow(0, inComponent: 0, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,9 +67,6 @@ class AddReminderViewController3: UIViewController, UIPickerViewDelegate, UIPick
             }
         }
     }
-    
-
-    
     /*
     // MARK: - Navigation
     

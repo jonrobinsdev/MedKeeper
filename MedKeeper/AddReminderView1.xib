@@ -30,7 +30,7 @@
                         <constraint firstAttribute="height" constant="40" id="fMl-dF-0k7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                 </textField>
             </subviews>
             <animations/>

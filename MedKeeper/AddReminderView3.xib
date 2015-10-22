@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiE-OQ-1TI">
-                    <rect key="frame" x="350" y="63" width="80" height="216"/>
+                    <rect key="frame" x="350" y="68" width="80" height="216"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="ec8-d3-eZ7"/>
@@ -32,15 +32,15 @@
                     </variation>
                 </pickerView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-bh-1qb">
-                    <rect key="frame" x="260" y="146" width="80" height="50"/>
+                    <rect key="frame" x="260" y="146" width="80" height="60"/>
                     <animations/>
                     <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="et7-pg-yhn"/>
+                        <constraint firstAttribute="height" constant="60" id="et7-pg-yhn"/>
                         <constraint firstAttribute="width" constant="80" id="p1K-td-bEx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the dosage of your medication:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
                     <rect key="frame" x="159" y="75" width="282" height="21"/>
