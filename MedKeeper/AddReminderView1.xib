@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the name of your medication?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="158" y="100" width="285" height="21"/>
+                    <rect key="frame" x="158" y="75" width="285" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-mN-Np2">
-                    <rect key="frame" x="10" y="146" width="580" height="40"/>
+                    <rect key="frame" x="10" y="121" width="580" height="40"/>
                     <animations/>
                     <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -41,7 +41,7 @@
                 <constraint firstItem="K1L-mN-Np2" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="25" id="HWT-IG-dfH"/>
                 <constraint firstAttribute="bottom" secondItem="K1L-mN-Np2" secondAttribute="bottom" constant="374" id="JhA-QN-i4o"/>
                 <constraint firstItem="K1L-mN-Np2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Lml-wK-mQP"/>
-                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="RvF-1b-Zvd"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="75" id="RvF-1b-Zvd"/>
                 <constraint firstItem="Yz2-zw-TnJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rFJ-gf-MJ4"/>
                 <constraint firstItem="K1L-mN-Np2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tK0-PD-fbY"/>
             </constraints>

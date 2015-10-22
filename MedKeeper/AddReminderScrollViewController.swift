@@ -22,6 +22,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc6 = AddReminderViewController6(nibName: "AddReminderView6", bundle: nil)
     let vc7 = AddReminderViewController7(nibName: "AddReminderView7", bundle: nil)
     var directionIsForward : Bool = true
+    var previous5aControllerType : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,18 +206,22 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*4){
             self.nextButton.setTitle("Next", forState: .Normal)
-            let alarmType = self.vc4.getAlarmType()
-            if(alarmType == "Normal"){
-                vc5 = AddReminderViewController5a(nibName: "AddReminderView5a", bundle: nil)
+                let alarmType = self.vc4.getAlarmType()
+                if(self.previous5aControllerType != alarmType){
+                    if(alarmType == "Normal"){
+                        vc5 = AddReminderViewController5a(nibName: "AddReminderView5a", bundle: nil)
+                        self.previous5aControllerType = alarmType;
+                    }
+                    else{
+                        vc5 = AddReminderViewController5b(nibName: "AddReminderView5b", bundle: nil)
+                        self.previous5aControllerType = alarmType;
+                    }
+                    vc5.view.removeFromSuperview()
+                    var frame4 = self.scrollView.bounds
+                    frame4.origin.x = self.view.frame.size.width*4
+                    vc5.view.frame = frame4
+                    self.scrollView.addSubview(vc5.view)
             }
-            else{
-                vc5 = AddReminderViewController5b(nibName: "AddReminderView5b", bundle: nil)
-            }
-            vc5.view.removeFromSuperview()
-            var frame4 = self.scrollView.bounds
-            frame4.origin.x = self.view.frame.size.width*4
-            vc5.view.frame = frame4
-            self.scrollView.addSubview(vc5.view)
         }
         else if(self.scrollView.contentOffset.x == self.view.frame.size.width*5){
         }

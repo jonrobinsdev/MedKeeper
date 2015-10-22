@@ -17,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jiE-OQ-1TI">
-                    <rect key="frame" x="351" y="88" width="80" height="216"/>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiE-OQ-1TI">
+                    <rect key="frame" x="350" y="63" width="80" height="216"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="ec8-d3-eZ7"/>
@@ -31,8 +31,8 @@
                         </mask>
                     </variation>
                 </pickerView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-bh-1qb">
-                    <rect key="frame" x="261" y="171" width="80" height="50"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-bh-1qb">
+                    <rect key="frame" x="260" y="146" width="80" height="50"/>
                     <animations/>
                     <color key="backgroundColor" red="0.95031133469999995" green="0.96811868690000003" blue="0.9448641015" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -43,7 +43,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the dosage of your medication:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-zw-TnJ">
-                    <rect key="frame" x="159" y="100" width="282" height="21"/>
+                    <rect key="frame" x="159" y="75" width="282" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +54,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="qBx-bh-1qb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="4L3-Gr-ZuW"/>
-                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="5Y9-A1-SZJ"/>
+                <constraint firstItem="Yz2-zw-TnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="75" id="5Y9-A1-SZJ"/>
                 <constraint firstAttribute="trailingMargin" secondItem="jiE-OQ-1TI" secondAttribute="trailing" constant="20" id="GBt-MD-Fiv"/>
                 <constraint firstItem="qBx-bh-1qb" firstAttribute="top" secondItem="Yz2-zw-TnJ" secondAttribute="bottom" constant="50" id="Px0-aA-ylv"/>
                 <constraint firstAttribute="trailing" secondItem="jiE-OQ-1TI" secondAttribute="trailing" constant="30" id="QOQ-Yb-xwY"/>

@@ -13,8 +13,119 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select which days your alarm will be active for." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlG-1J-O47">
+                    <rect key="frame" x="0.0" y="10" width="600" height="20"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-Jp-YJU">
+                    <rect key="frame" x="30" y="45" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Sunday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wng-qt-Ncy">
+                    <rect key="frame" x="30" y="92" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Monday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWx-AF-Tdd">
+                    <rect key="frame" x="30" y="139" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Tuesday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4R-Q8-Skb">
+                    <rect key="frame" x="30" y="186" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Wednesday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm7-In-nAV">
+                    <rect key="frame" x="30" y="233" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Thursday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0O-CT-dq3">
+                    <rect key="frame" x="30" y="280" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Friday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-Tn-DhR">
+                    <rect key="frame" x="30" y="327" width="540" height="32"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Saturday">
+                        <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="O4R-Q8-Skb" secondAttribute="trailing" constant="30" id="1a2-9D-lAP"/>
+                <constraint firstAttribute="trailing" secondItem="wng-qt-Ncy" secondAttribute="trailing" constant="30" id="1fb-JF-V0x"/>
+                <constraint firstItem="TlG-1J-O47" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="5Al-7P-55B"/>
+                <constraint firstItem="O4R-Q8-Skb" firstAttribute="top" secondItem="VWx-AF-Tdd" secondAttribute="bottom" constant="15" id="8bn-NJ-wpD"/>
+                <constraint firstAttribute="trailing" secondItem="TlG-1J-O47" secondAttribute="trailing" constant="25" id="94D-mO-wm0"/>
+                <constraint firstAttribute="trailing" secondItem="Uxh-Tn-DhR" secondAttribute="trailing" constant="30" id="LuR-m8-ZHo"/>
+                <constraint firstAttribute="trailing" secondItem="u0O-CT-dq3" secondAttribute="trailing" constant="30" id="Nli-KY-Q1I"/>
+                <constraint firstItem="VWx-AF-Tdd" firstAttribute="top" secondItem="wng-qt-Ncy" secondAttribute="bottom" constant="15" id="Y2n-hm-nRg"/>
+                <constraint firstItem="u0O-CT-dq3" firstAttribute="top" secondItem="bm7-In-nAV" secondAttribute="bottom" constant="15" id="a4B-A8-ewU"/>
+                <constraint firstItem="TlG-1J-O47" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bIp-GE-Vdk"/>
+                <constraint firstItem="TlG-1J-O47" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bZt-nG-FWy"/>
+                <constraint firstItem="3ww-Jp-YJU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="bt8-9p-mtD"/>
+                <constraint firstAttribute="trailing" secondItem="bm7-In-nAV" secondAttribute="trailing" constant="30" id="cJu-0K-ApO"/>
+                <constraint firstItem="u0O-CT-dq3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="eL7-ib-eFQ"/>
+                <constraint firstAttribute="trailing" secondItem="TlG-1J-O47" secondAttribute="trailing" id="fJX-Qr-elN"/>
+                <constraint firstItem="bm7-In-nAV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="fcS-eF-NSO"/>
+                <constraint firstItem="Uxh-Tn-DhR" firstAttribute="leading" secondItem="TlG-1J-O47" secondAttribute="leading" id="fli-tH-fei"/>
+                <constraint firstItem="Uxh-Tn-DhR" firstAttribute="top" secondItem="u0O-CT-dq3" secondAttribute="bottom" constant="15" id="gJF-hl-hh5"/>
+                <constraint firstAttribute="trailing" secondItem="3ww-Jp-YJU" secondAttribute="trailing" constant="30" id="jzV-Iz-34i"/>
+                <constraint firstAttribute="trailing" secondItem="VWx-AF-Tdd" secondAttribute="trailing" constant="30" id="m6X-rp-KpY"/>
+                <constraint firstItem="3ww-Jp-YJU" firstAttribute="top" secondItem="TlG-1J-O47" secondAttribute="bottom" constant="15" id="mQt-88-Smb"/>
+                <constraint firstItem="TlG-1J-O47" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="qrZ-Vi-mEg"/>
+                <constraint firstAttribute="bottom" secondItem="Uxh-Tn-DhR" secondAttribute="bottom" constant="241" id="rKb-2T-qSL"/>
+                <constraint firstItem="Uxh-Tn-DhR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="sjG-ai-dDF"/>
+                <constraint firstItem="VWx-AF-Tdd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="tWa-Io-ZfG"/>
+                <constraint firstItem="bm7-In-nAV" firstAttribute="top" secondItem="O4R-Q8-Skb" secondAttribute="bottom" constant="15" id="uF8-np-17c"/>
+                <constraint firstItem="wng-qt-Ncy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="uSA-j0-rwt"/>
+                <constraint firstItem="O4R-Q8-Skb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="v1C-3W-4eK"/>
+                <constraint firstItem="wng-qt-Ncy" firstAttribute="top" secondItem="3ww-Jp-YJU" secondAttribute="bottom" constant="15" id="zjG-8U-fYY"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="5Al-7P-55B"/>
+                    <exclude reference="94D-mO-wm0"/>
+                    <exclude reference="fli-tH-fei"/>
+                    <exclude reference="rKb-2T-qSL"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
