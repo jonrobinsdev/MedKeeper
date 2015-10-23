@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  AlarmsViewController.swift
 //  MedKeeper
 //
 //  Created by Jonathan Robins on 10/4/15.
@@ -10,6 +10,8 @@ import UIKit
 
 class AlarmsViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var alarmsTableView: UITableView!
+    @IBOutlet var alarmsControllerTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,6 +20,11 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(true)
         
         let defaults = NSUserDefaults.standardUserDefaults()
+        
+        var newTitleString = (defaults.objectForKey("CurrentUser") as? String)! + "'s " + "Alarms"
+        newTitleString.replaceRange(newTitleString.startIndex...newTitleString.startIndex, with: String(newTitleString[newTitleString.startIndex]).capitalizedString)
+        self.alarmsControllerTitle.text = newTitleString
+        
         if (defaults.objectForKey("ProfileArray") == nil || defaults.integerForKey("FirstTimeLaunchingApp") != 1){
             
             //initial alertView
@@ -28,7 +35,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
                 tField = textField
                 tField.delegate = self
             }
-            let alert = UIAlertController(title: "Please Enter A Name For Your Medicine Profile", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Please Enter A Name For Your Patient Profile", message: "", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addTextFieldWithConfigurationHandler(configurationTextField)
             //this action is necessary for some reason or else keyboard doesn't dismiss correctly
             alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:nil))
@@ -37,8 +44,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
             })
         }
         else{
-            let profileArray : NSMutableArray = defaults.objectForKey("ProfileArray") as! NSMutableArray
-            print(profileArray)
+            //user has already launched app before and made an initial profile
         }
     }
     

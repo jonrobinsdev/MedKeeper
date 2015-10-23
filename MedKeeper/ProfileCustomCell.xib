@@ -22,8 +22,17 @@
                             <constraint firstAttribute="height" constant="50" id="ONo-4h-xDX"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-yh-zIP">
+                        <rect key="frame" x="399" y="80" width="30" height="38"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="sKN-xb-Xf2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                        <state key="normal" title="&gt;"/>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jonathan Robins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-Xy-Qjn">
-                        <rect key="frame" x="78" y="87" width="351" height="24"/>
+                        <rect key="frame" x="78" y="87" width="311" height="24"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -33,11 +42,19 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="Q6O-t0-o0k" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NzK-BB-03n"/>
+                    <constraint firstItem="j5y-yh-zIP" firstAttribute="leading" secondItem="sVG-Xy-Qjn" secondAttribute="trailing" constant="10" id="Px2-2c-TkF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="j5y-yh-zIP" secondAttribute="trailing" constant="10" id="Z5K-WM-sBo"/>
                     <constraint firstItem="Q6O-t0-o0k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="ZVC-Jh-SdS"/>
                     <constraint firstAttribute="trailingMargin" secondItem="sVG-Xy-Qjn" secondAttribute="trailing" constant="10" id="abt-pi-YMr"/>
                     <constraint firstItem="sVG-Xy-Qjn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cdY-8R-UoB"/>
                     <constraint firstItem="sVG-Xy-Qjn" firstAttribute="leading" secondItem="Q6O-t0-o0k" secondAttribute="trailing" constant="10" id="lRQ-qA-Pyj"/>
+                    <constraint firstItem="j5y-yh-zIP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tz2-w5-225"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="abt-pi-YMr"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>

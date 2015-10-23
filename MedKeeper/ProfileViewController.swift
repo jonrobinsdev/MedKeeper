@@ -13,8 +13,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var profilesTableView: UITableView!
     var profileArray: NSMutableArray = []
     
+    //data to send to Detail Screen
+    var selectedCellName : String = "";
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         profileArray = defaults.objectForKey("ProfileArray") as! NSMutableArray
         
@@ -49,6 +53,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.textLabel?.backgroundColor = UIColor.clearColor()
             return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(self.profileArray[indexPath.row], forKey: "CurrentUser")
+        
+        /*let tabBar = self.tabBarController
+        tabBar!.selectedIndex = 1;*/
+        
+        self.selectedCellName = self.profileArray[indexPath.row] as! String
+        self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
+    }
 
     @IBAction func addProfileButtonPressed(sender: AnyObject) {
         var tField: UITextField!
@@ -58,7 +73,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             tField = textField
             tField.delegate = self
         }
-        let alert = UIAlertController(title: "Please Enter A Name For Your New Medicine Profile", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Please Enter A Name For Your New Patient Profile", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler(configurationTextField)
         //this action is necessary for some reason or else keyboard doesn't dismiss correctly
         alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:nil))
@@ -97,6 +112,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let indexPath = NSIndexPath(forRow: self.profileArray.count-1, inSection: 0)
         self.profilesTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let destVC : ProfileDetailScreen = (segue.destinationViewController as? ProfileDetailScreen)!
+        destVC.incomingName = self.selectedCellName
     }
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F81EAAF1BD962D1001C2160 /* ProfileCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81EAAD1BD962D1001C2160 /* ProfileCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8F81EAB01BD962D1001C2160 /* ProfileCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81EAAE1BD962D1001C2160 /* ProfileCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8F81EAB21BD9D5A3001C2160 /* ProfileDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81EAB11BD9D5A3001C2160 /* ProfileDetailScreen.swift */; settings = {ASSET_TAGS = (); }; };
 		8F8E473A1BC22BA30021E93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E47391BC22BA30021E93A /* AppDelegate.swift */; };
 		8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E473B1BC22BA30021E93A /* ProfileViewController.swift */; };
 		8F8E473E1BC22BA30021E93A /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E473D1BC22BA30021E93A /* AlarmsViewController.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		8F81EAAD1BD962D1001C2160 /* ProfileCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCustomCell.swift; sourceTree = "<group>"; };
 		8F81EAAE1BD962D1001C2160 /* ProfileCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCustomCell.xib; sourceTree = "<group>"; };
+		8F81EAB11BD9D5A3001C2160 /* ProfileDetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailScreen.swift; sourceTree = "<group>"; };
 		8F8E47361BC22BA30021E93A /* MedKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E47391BC22BA30021E93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F8E473B1BC22BA30021E93A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				8F8E473B1BC22BA30021E93A /* ProfileViewController.swift */,
 				8F81EAAD1BD962D1001C2160 /* ProfileCustomCell.swift */,
 				8F81EAAE1BD962D1001C2160 /* ProfileCustomCell.xib */,
+				8F81EAB11BD9D5A3001C2160 /* ProfileDetailScreen.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */,
 				8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */,
 				8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */,
+				8F81EAB21BD9D5A3001C2160 /* ProfileDetailScreen.swift in Sources */,
 				8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */,
 				8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */,
 				8F9CC4251BCB35140011CF37 /* AddReminderViewController5b.swift in Sources */,
