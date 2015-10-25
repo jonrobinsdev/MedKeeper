@@ -15,7 +15,7 @@ class ProfileDetailScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.profileName.text = self.incomingName
         
     }

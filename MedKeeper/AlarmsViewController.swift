@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AlarmsViewController: UIViewController, UITextFieldDelegate {
 
@@ -20,13 +21,11 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(true)
         
         let defaults = NSUserDefaults.standardUserDefaults()
+       // var newTitleString = (defaults.objectForKey("CurrentUser") as? String)! + "'s " + "Alarms"
+        //newTitleString.replaceRange(newTitleString.startIndex...newTitleString.startIndex, with: String(newTitleString[newTitleString.startIndex]).capitalizedString)
+        //self.alarmsControllerTitle.text = newTitleString
         
-        var newTitleString = (defaults.objectForKey("CurrentUser") as? String)! + "'s " + "Alarms"
-        newTitleString.replaceRange(newTitleString.startIndex...newTitleString.startIndex, with: String(newTitleString[newTitleString.startIndex]).capitalizedString)
-        self.alarmsControllerTitle.text = newTitleString
-        
-        if (defaults.objectForKey("ProfileArray") == nil || defaults.integerForKey("FirstTimeLaunchingApp") != 1){
-            
+        if (defaults.integerForKey("FirstTimeLaunchingApp") != 1){
             //initial alertView
             var tField: UITextField!
             func configurationTextField(textField: UITextField!)
@@ -54,7 +53,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField.text?.characters.count > 0){
-            saveInitialProfileNameToNSUserDefaults(textField.text!)
+            saveInitialPatientProfile(textField.text!)
             return true
         }
         else{
@@ -62,18 +61,21 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func saveInitialProfileNameToNSUserDefaults(name : NSString){
+    func saveInitialPatientProfile(name : NSString){
         let defaults = NSUserDefaults.standardUserDefaults()
-        
         defaults.setInteger(1, forKey: "FirstTimeLaunchingApp")
-        
-        let profileArray : NSMutableArray = []
-        profileArray.insertObject(name, atIndex: 0)
-        
         defaults.setValue(name, forKey: "CurrentUser")
-        defaults.setObject(profileArray, forKey: "ProfileArray")
-        
         defaults.synchronize()
+        
+        let managedContext = AppDelegate().managedObjectContext
+        let entity =  NSEntityDescription.entityForName("PatientProfile", inManagedObjectContext: managedContext)
+        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        person.setValue(name, forKey: "name")
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
 }
 

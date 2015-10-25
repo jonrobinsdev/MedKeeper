@@ -7,25 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet var profilesTableView: UITableView!
-    var profileArray: NSMutableArray = []
-    
-    //data to send to Detail Screen
+    var profileArray: NSArray = [NSManagedObject]()
     var selectedCellName : String = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        profileArray = defaults.objectForKey("ProfileArray") as! NSMutableArray
-        
         self.profilesTableView.delegate = self
         self.profilesTableView.dataSource = self
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            profileArray = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,19 +62,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 tableView.registerNib(UINib(nibName: "ProfileCustomCell", bundle: nil), forCellReuseIdentifier: "profileCustomCell")
                 cell = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
             }
-            cell.nameLabel.text = profileArray[indexPath.row] as? String
+            let patientProfile = profileArray[indexPath.row]
+            cell.nameLabel.text = patientProfile.valueForKey("name") as? String
             cell.textLabel?.backgroundColor = UIColor.clearColor()
             return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(self.profileArray[indexPath.row], forKey: "CurrentUser")
+        /*let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(self.profileArray[indexPath.row], forKey: "CurrentUser")*/
         
         /*let tabBar = self.tabBarController
         tabBar!.selectedIndex = 1;*/
         
-        self.selectedCellName = self.profileArray[indexPath.row] as! String
+        let patientProfile = profileArray[indexPath.row]
+        self.selectedCellName = (patientProfile.valueForKey("name") as? String)!
         self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
     }
 
@@ -84,7 +99,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField.text?.characters.count > 0){
-            saveNewProfileNameToNSUserDefaults(textField.text!)
+            saveNewPatientProfile(textField.text!)
             return true
         }
         else{
@@ -92,22 +107,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func saveNewProfileNameToNSUserDefaults(name : NSString){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        let tempNewProfileArray : NSMutableArray = defaults.objectForKey("ProfileArray") as! NSMutableArray
-        let newProfileArray : NSMutableArray = []
-        
-        for var i = 0; i < tempNewProfileArray.count; i++ {
-            newProfileArray.insertObject(tempNewProfileArray[i], atIndex: i)
+    func saveNewPatientProfile(name : NSString){
+        let managedContext = AppDelegate().managedObjectContext
+        let entity =  NSEntityDescription.entityForName("PatientProfile", inManagedObjectContext: managedContext)
+        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        person.setValue(name, forKey: "name")
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
         }
         
-        newProfileArray.insertObject(name, atIndex: newProfileArray.count)
-        
-        defaults.setObject(newProfileArray, forKey: "ProfileArray")
-        defaults.synchronize()
-        
-        self.profileArray = newProfileArray
+        //reload table data
+        let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            profileArray = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
         self.profilesTableView.reloadData()
         
         let indexPath = NSIndexPath(forRow: self.profileArray.count-1, inSection: 0)
