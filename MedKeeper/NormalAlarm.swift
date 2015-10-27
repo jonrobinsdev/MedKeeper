@@ -16,4 +16,10 @@ class NormalAlarm{
     var alarms: NSArray!
     var weekdays: NSArray!
     
+    init(){
+        self.medicationName = nil
+        self.medicationType = nil
+        self.alarms = nil
+        self.weekdays = nil
+    }
 }

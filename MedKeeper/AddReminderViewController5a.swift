@@ -23,7 +23,7 @@ class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITabl
         
         self.alarmTableView.delegate = self
         self.alarmTableView.dataSource = self
-        
+
     }
 
     override func didReceiveMemoryWarning() {

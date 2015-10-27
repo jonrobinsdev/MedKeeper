@@ -23,16 +23,16 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-yh-zIP">
-                        <rect key="frame" x="399" y="80" width="30" height="38"/>
+                        <rect key="frame" x="414" y="81" width="15" height="36"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="sKN-xb-Xf2"/>
+                            <constraint firstAttribute="width" constant="15" id="sKN-xb-Xf2"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                         <state key="normal" title="&gt;"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jonathan Robins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-Xy-Qjn">
-                        <rect key="frame" x="78" y="87" width="311" height="24"/>
+                        <rect key="frame" x="78" y="87" width="326" height="24"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

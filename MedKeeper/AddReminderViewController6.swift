@@ -19,10 +19,8 @@ class AddReminderViewController6: UIViewController {
     @IBOutlet var saturdayButton: UIButton!
     var weekdayList : NSArray = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
@@ -22,6 +23,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     let vc6 = AddReminderViewController6(nibName: "AddReminderView6", bundle: nil)
     var directionIsForward : Bool = true
     var previous5aControllerType : String = ""
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,6 +131,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*5, 0), animated: true)
             break
         case self.view.frame.size.width*5:
+            performDataModelSaving()
             break
         default:
             break
@@ -212,6 +215,64 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         }
         else{
         }
+    }
+    
+    func performDataModelSaving(){
+        NSLog("Attempting to save new data model.")
+        
+        if(vc4.getAlarmType() == "Normal"){
+            var normalAlarm: NormalAlarm = getNormalAlarmPropertiesFromViewControllers()
+        }
+        else{
+            var intervalAlarm: IntervalAlarm = getIntervalAlarmPropertiesFromViewControllers()
+        }
+    }
+    
+    func getNormalAlarmPropertiesFromViewControllers() -> NormalAlarm{
+        let normalAlarm = NormalAlarm()
+        
+        if(vc1.nameField.text?.characters.count > 0){
+            normalAlarm.medicationName = vc1.nameField.text
+            if(vc3.dosageTextField.text?.characters.count > 0){
+                normalAlarm.medicationDosage = vc3.dosageTextField.text
+                let tempVC: AddReminderViewController5a = vc5 as! AddReminderViewController5a
+                if(tempVC.alarmList.count > 0){
+                    normalAlarm.alarms = tempVC.alarmList
+                }
+            }
+            else{
+            }
+        }
+        else{
+        }
+        
+        return normalAlarm
+    }
+    
+    func getIntervalAlarmPropertiesFromViewControllers() -> IntervalAlarm{
+        let intervalAlarm = IntervalAlarm()
+        
+        if(vc1.nameField.text?.characters.count > 0){
+            intervalAlarm.medicationName = vc1.nameField.text
+            if(vc3.dosageTextField.text?.characters.count > 0){
+                intervalAlarm.medicationDosage = vc3.dosageTextField.text
+                let tempVC: AddReminderViewController5b = vc5 as! AddReminderViewController5b
+                if(tempVC.fromRangeField.text?.characters.count > 0 && tempVC.toRangeField.text?.characters.count > 0){
+                    //intervalAlarm.fromRange = tempVC.fromRangeField.text
+                    ///intervalAlarm.toRange = tempVC.toRangeField.text
+                    //intervalAlarm.interval = tempVC.intervalPickerView
+                }
+                else{
+                    
+                }
+            }
+            else{
+            }
+        }
+        else{
+        }
+        
+        return intervalAlarm
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {

@@ -18,4 +18,13 @@ class IntervalAlarm{
     var interval: Float!
     var weekdays: NSArray!
     
+    
+    init(){
+        self.medicationName = nil
+        self.medicationType = nil
+        self.fromRange = nil
+        self.toRange = nil
+        self.interval = nil
+        self.weekdays = nil
+    }
 }
