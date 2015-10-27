@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var profilesTableView: UITableView!
     var profileArray: NSArray = [NSManagedObject]()
     var selectedCellName : String = "";
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +26,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
         do {
             let results =
-            try managedContext.executeFetchRequest(fetchRequest)
+            try managedObjectContext.executeFetchRequest(fetchRequest)
             profileArray = results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
@@ -108,7 +106,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func saveNewPatientProfile(name : NSString){
-        let managedContext = AppDelegate().managedObjectContext
+        let newPatientProfile = NSEntityDescription.insertNewObjectForEntityForName("PatientProfile", inManagedObjectContext: self.managedObjectContext) as! PatientProfile
+        newPatientProfile.name = name as String
+        do{
+            try self.managedObjectContext.save()
+        } catch let error as NSError{
+            print(error)
+        }
+        /*let managedContext = AppDelegate().managedObjectContext
         let entity =  NSEntityDescription.entityForName("PatientProfile", inManagedObjectContext: managedContext)
         let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         person.setValue(name, forKey: "name")
@@ -116,13 +121,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             try managedContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
-        }
-        
+        }*/
         //reload table data
+        
         let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
         do {
             let results =
-            try managedContext.executeFetchRequest(fetchRequest)
+            try self.managedObjectContext.executeFetchRequest(fetchRequest)
             profileArray = results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
