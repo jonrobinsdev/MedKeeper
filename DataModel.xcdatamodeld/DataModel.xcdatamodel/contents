@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="PatientProfile" representedClassName=".PatientProfile" syncable="YES">
-        <attribute name="alarms" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="intervalAlarms" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normalAlarms" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PatientProfile" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="PatientProfile" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

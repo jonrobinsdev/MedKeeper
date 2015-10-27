@@ -14,7 +14,8 @@ import CoreData
 
 extension PatientProfile {
 
-    @NSManaged var alarms: NSData?
+    @NSManaged var normalAlarms: NSData?
+    @NSManaged var intervalAlarms: NSData?
     @NSManaged var image: NSData?
     @NSManaged var name: String?
 
