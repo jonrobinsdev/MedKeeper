@@ -12,7 +12,9 @@ class AddMedicineTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        navigationItem.title = "Add a Medicine"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

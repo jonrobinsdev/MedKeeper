@@ -8,7 +8,6 @@
         <!--Profile View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
                 <viewController id="9pv-A4-QxB" userLabel="Profile View Controller" customClass="ProfileViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
@@ -33,13 +32,16 @@
                             <constraint firstItem="Jkf-lY-YgD" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="eeJ-TG-GLI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Patient Profiles" id="fPy-1X-NeE"/>
+                    <navigationItem key="navigationItem" title="Patient Profiles" id="fPy-1X-NeE">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ike-DZ-F3E"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="profilesTableView" destination="Jkf-lY-YgD" id="ZEJ-7o-eiK"/>
                         <segue destination="i9d-T0-Wy3" kind="show" identifier="profileCellToDetailedProfileVC" id="w3y-Ov-eFL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1209.5" y="-740.5"/>
         </scene>
@@ -70,10 +72,13 @@
                             <constraint firstAttribute="trailing" secondItem="Lns-Zy-9tb" secondAttribute="trailing" id="oil-JZ-Ysx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name's Medicine" id="xa1-2k-i3i"/>
+                    <navigationItem key="navigationItem" title="Name's Medicines" id="xa1-2k-i3i">
+                        <barButtonItem key="backBarButtonItem" title=" " id="nN1-Fv-Nq6"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="alarmsTableView" destination="Lns-Zy-9tb" id="1SM-0Z-g99"/>
+                        <segue destination="h1B-vO-CUy" kind="show" identifier="addMedicineSegue" id="OAR-US-IXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -85,7 +90,7 @@
             <objects>
                 <tableViewController id="h1B-vO-CUy" customClass="AddMedicineTableViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xps-zG-UoE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,7 +133,6 @@
         <!--Profile Detail Screen-->
         <scene sceneID="k4e-Rg-ziU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="swn-mT-3yA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="i9d-T0-Wy3" customClass="ProfileDetailScreen" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V9J-Xm-LBS"/>
@@ -142,13 +146,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swn-mT-3yA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1645.5" y="-740.5"/>
         </scene>
         <!--Add ScrollView Controller-->
         <scene sceneID="4Z5-qB-Khz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YnI-iH-JX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="JVs-5J-ZEo" userLabel="Add ScrollView Controller" customClass="AddReminderScrollViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="far-Sn-rd7"/>
@@ -284,13 +288,13 @@
                         <outlet property="scrollViewTitle" destination="gH8-E1-fby" id="igZ-I7-yne"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnI-iH-JX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1209.5" y="767.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -305,6 +309,7 @@
                         <segue destination="OJn-Jq-8BH" kind="relationship" relationship="viewControllers" id="mbZ-AU-uFJ"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6" y="-8"/>
         </scene>
@@ -318,13 +323,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.94901960780000005" green="0.55294117649999996" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1ZF-BI-wt3">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="ilC-aG-RUz"/>
                     </connections>
@@ -336,7 +346,6 @@
         <!--Add Navigation Controller-->
         <scene sceneID="7jw-9D-GFu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yj-Kn-IlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="OJn-Jq-8BH" userLabel="Add Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add" image="first" id="Eye-vC-uHN"/>
                     <toolbarItems/>
@@ -352,6 +361,7 @@
                         <segue destination="JVs-5J-ZEo" kind="relationship" relationship="rootViewController" id="HRt-Wm-5fq"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yj-Kn-IlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709.5" y="767.5"/>
         </scene>
@@ -365,7 +375,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.94901960780000005" green="0.55294117649999996" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

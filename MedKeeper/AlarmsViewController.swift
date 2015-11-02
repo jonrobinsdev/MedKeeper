@@ -16,7 +16,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let addButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action:nil)
+        let addButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action:"addButtonPressed")
         navigationItem.rightBarButtonItem = addButton
     }
 
@@ -62,6 +62,10 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
         else{
             return false
         }
+    }
+    
+    func addButtonPressed(){
+        performSegueWithIdentifier("addMedicineSegue", sender: self)
     }
     
     func saveInitialPatientProfile(name : NSString){
