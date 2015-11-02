@@ -15,6 +15,9 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var alarmsControllerTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let addButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action:nil)
+        navigationItem.rightBarButtonItem = addButton
     }
 
     override func viewDidAppear(animated: Bool) {
