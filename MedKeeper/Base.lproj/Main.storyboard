@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jkf-lY-YgD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jkf-lY-YgD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -57,8 +57,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-Zy-9tb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-Zy-9tb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -73,62 +73,169 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name's Medicines" id="xa1-2k-i3i">
-                        <barButtonItem key="backBarButtonItem" title=" " id="nN1-Fv-Nq6"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="Cze-gu-83M"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="alarmsTableView" destination="Lns-Zy-9tb" id="1SM-0Z-g99"/>
-                        <segue destination="h1B-vO-CUy" kind="show" identifier="addMedicineSegue" id="OAR-US-IXT"/>
+                        <segue destination="2ID-9g-T0V" kind="show" identifier="addMedicineSegue" id="ba6-Af-jBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209.5" y="-0.5"/>
+            <point key="canvasLocation" x="1209.5" y="15.5"/>
         </scene>
-        <!--Add Medicine Table View Controller-->
-        <scene sceneID="lnG-9u-jjq">
+        <!--Add Medicine Name And Type View Controller-->
+        <scene sceneID="HZE-ah-qtk">
             <objects>
-                <tableViewController id="h1B-vO-CUy" customClass="AddMedicineTableViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xps-zG-UoE">
+                <viewController id="2ID-9g-T0V" customClass="AddMedicineNameAndTypeViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zdI-qh-gl6"/>
+                        <viewControllerLayoutGuide type="bottom" id="bZc-Pe-AMm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5f2-13-haF">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the name of your new medication?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWC-FZ-GIG">
+                                <rect key="frame" x="10" y="30" width="355" height="22"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Tm-NX-ggB">
+                                <rect key="frame" x="10" y="178" width="355" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Pill"/>
+                                    <segment title="Liquid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="2ID-9g-T0V" eventType="valueChanged" id="zvt-hS-Wmb"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication type?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jng-FQ-M85">
+                                <rect key="frame" x="10" y="132" width="355" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txS-A4-HxV">
+                                <rect key="frame" x="10" y="77" width="355" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FtM-Sg-4e3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MedicineNameCell" id="ShG-H5-DR4" customClass="MedicineNameCell" customModule="MedKeeper" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ShG-H5-DR4" id="Udm-Zv-YPT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIx-45-tKn">
-                                            <rect key="frame" x="18" y="7" width="339" height="30"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="CIx-45-tKn" secondAttribute="trailing" constant="10" id="T3b-YE-ygF"/>
-                                        <constraint firstItem="CIx-45-tKn" firstAttribute="centerY" secondItem="Udm-Zv-YPT" secondAttribute="centerY" id="Yd5-rf-hOl"/>
-                                        <constraint firstItem="CIx-45-tKn" firstAttribute="leading" secondItem="Udm-Zv-YPT" secondAttribute="leadingMargin" constant="10" id="ux9-op-6Ke"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="h1B-vO-CUy" id="i2Z-or-FrP"/>
-                            <outlet property="delegate" destination="h1B-vO-CUy" id="5b8-5Z-BsW"/>
-                        </connections>
-                    </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LDm-BE-odE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="txS-A4-HxV" firstAttribute="top" secondItem="FWC-FZ-GIG" secondAttribute="bottom" constant="25" id="3rS-1H-mj5"/>
+                            <constraint firstItem="txS-A4-HxV" firstAttribute="leading" secondItem="5f2-13-haF" secondAttribute="leading" constant="10" id="9Cp-56-oze"/>
+                            <constraint firstItem="Jng-FQ-M85" firstAttribute="top" secondItem="txS-A4-HxV" secondAttribute="bottom" constant="25" id="9Lx-FS-OV5"/>
+                            <constraint firstItem="5Tm-NX-ggB" firstAttribute="top" secondItem="Jng-FQ-M85" secondAttribute="bottom" constant="25" id="Mm2-zw-fVF"/>
+                            <constraint firstAttribute="trailing" secondItem="5Tm-NX-ggB" secondAttribute="trailing" constant="10" id="Wne-dz-Wmk"/>
+                            <constraint firstAttribute="trailing" secondItem="Jng-FQ-M85" secondAttribute="trailing" constant="10" id="XAB-2y-huG"/>
+                            <constraint firstAttribute="trailing" secondItem="txS-A4-HxV" secondAttribute="trailing" constant="10" id="Zru-4Y-Tpi"/>
+                            <constraint firstItem="FWC-FZ-GIG" firstAttribute="leading" secondItem="5f2-13-haF" secondAttribute="leading" constant="10" id="eza-Xs-Wlm"/>
+                            <constraint firstAttribute="trailing" secondItem="FWC-FZ-GIG" secondAttribute="trailing" constant="10" id="fF0-21-gae"/>
+                            <constraint firstItem="5Tm-NX-ggB" firstAttribute="leading" secondItem="5f2-13-haF" secondAttribute="leading" constant="10" id="fV7-4B-m6G"/>
+                            <constraint firstItem="5Tm-NX-ggB" firstAttribute="top" secondItem="txS-A4-HxV" secondAttribute="bottom" constant="37" id="i3z-Pb-I8A"/>
+                            <constraint firstItem="FWC-FZ-GIG" firstAttribute="top" secondItem="zdI-qh-gl6" secondAttribute="bottom" constant="30" id="lyM-sI-dci"/>
+                            <constraint firstItem="Jng-FQ-M85" firstAttribute="leading" secondItem="5f2-13-haF" secondAttribute="leading" constant="10" id="vBD-fR-nsq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i3z-Pb-I8A"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <segue destination="i1Y-EA-IR6" kind="show" identifier="segueToDosage" id="e3N-Bm-hHw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UO2-SX-v7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645.5" y="-0.5"/>
+            <point key="canvasLocation" x="1645.5" y="15.5"/>
+        </scene>
+        <!--Add Medicine Dosage View Controller-->
+        <scene sceneID="O8i-tM-CoX">
+            <objects>
+                <viewController id="i1Y-EA-IR6" customClass="AddMedicineDosageViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tqG-RS-Myl"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSV-89-oGc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GJk-0C-tQt">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the dosage of your medication:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flq-r1-luC">
+                                <rect key="frame" x="0.0" y="30" width="375" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-YT-yaT">
+                                <rect key="frame" x="148" y="101" width="80" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="SdP-hw-1Oi"/>
+                                    <constraint firstAttribute="height" constant="60" id="iOL-y9-gAU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUs-he-bBy">
+                                <rect key="frame" x="236" y="23" width="80" height="216"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Bov-GL-34v"/>
+                                    <constraint firstAttribute="height" constant="150" id="h6J-bs-hrT"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bov-GL-34v"/>
+                                        <exclude reference="h6J-bs-hrT"/>
+                                    </mask>
+                                </variation>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VUs-he-bBy" firstAttribute="width" secondItem="7Kg-YT-yaT" secondAttribute="width" id="0Ns-0L-GDh"/>
+                            <constraint firstItem="VUs-he-bBy" firstAttribute="leading" secondItem="7Kg-YT-yaT" secondAttribute="trailing" constant="10" id="0SQ-vV-dW0"/>
+                            <constraint firstItem="7Kg-YT-yaT" firstAttribute="centerY" secondItem="VUs-he-bBy" secondAttribute="centerY" id="57e-00-pAo"/>
+                            <constraint firstAttribute="trailing" secondItem="flq-r1-luC" secondAttribute="trailing" id="5o2-kb-4fu"/>
+                            <constraint firstItem="7Kg-YT-yaT" firstAttribute="centerX" secondItem="GJk-0C-tQt" secondAttribute="centerX" id="WTp-gl-T4W"/>
+                            <constraint firstItem="7Kg-YT-yaT" firstAttribute="top" secondItem="flq-r1-luC" secondAttribute="bottom" constant="50" id="ZSa-lF-CBW"/>
+                            <constraint firstItem="flq-r1-luC" firstAttribute="top" secondItem="tqG-RS-Myl" secondAttribute="bottom" constant="30" id="mRF-am-P0z"/>
+                            <constraint firstItem="flq-r1-luC" firstAttribute="leading" secondItem="GJk-0C-tQt" secondAttribute="leading" id="mTK-Vv-Rze"/>
+                            <constraint firstItem="flq-r1-luC" firstAttribute="top" secondItem="tqG-RS-Myl" secondAttribute="bottom" constant="10" id="xIo-0X-mDc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xIo-0X-mDc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="dosageAmount" destination="7Kg-YT-yaT" id="kbS-Au-GJK"/>
+                        <outlet property="dosagePickerView" destination="VUs-he-bBy" id="EeW-aX-djK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYN-CJ-aEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2085.5" y="15.5"/>
         </scene>
         <!--Profile Detail Screen-->
         <scene sceneID="k4e-Rg-ziU">

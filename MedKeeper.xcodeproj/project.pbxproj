@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8F6BA6871BE8064B00ED6120 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6BA6861BE8064B00ED6120 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		8F6BA6891BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8F6BA68B1BE83F1200ED6120 /* AddMedicineDosageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8F81EAAF1BD962D1001C2160 /* ProfileCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81EAAD1BD962D1001C2160 /* ProfileCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8F81EAB01BD962D1001C2160 /* ProfileCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81EAAE1BD962D1001C2160 /* ProfileCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8F81EAB21BD9D5A3001C2160 /* ProfileDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81EAB11BD9D5A3001C2160 /* ProfileDetailScreen.swift */; settings = {ASSET_TAGS = (); }; };
@@ -39,8 +41,6 @@
 		8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC71BC446C8000FC2FE /* AddReminderViewController2.swift */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC81BC446C8000FC2FE /* AddReminderViewController3.swift */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFCC1BC446C8000FC2FE /* AddReminderViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC91BC446C8000FC2FE /* AddReminderViewController4.swift */; settings = {ASSET_TAGS = (); }; };
-		8FEEC4BC1BE7F30E0031A1DC /* AddMedicineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEC4BB1BE7F30E0031A1DC /* AddMedicineTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8FEEC4BE1BE7F9AD0031A1DC /* MedicineNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEC4BD1BE7F9AD0031A1DC /* MedicineNameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8FFE27841BC868E1001B2A44 /* AddReminderView5a.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FFE27821BC868E1001B2A44 /* AddReminderView5a.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -63,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		8F6BA6861BE8064B00ED6120 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineNameAndTypeViewController.swift; sourceTree = "<group>"; };
+		8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineDosageViewController.swift; sourceTree = "<group>"; };
 		8F81EAAD1BD962D1001C2160 /* ProfileCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCustomCell.swift; sourceTree = "<group>"; };
 		8F81EAAE1BD962D1001C2160 /* ProfileCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCustomCell.xib; sourceTree = "<group>"; };
 		8F81EAB11BD9D5A3001C2160 /* ProfileDetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailScreen.swift; sourceTree = "<group>"; };
@@ -100,8 +102,6 @@
 		8FE8AFC71BC446C8000FC2FE /* AddReminderViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController2.swift; sourceTree = "<group>"; };
 		8FE8AFC81BC446C8000FC2FE /* AddReminderViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController3.swift; sourceTree = "<group>"; };
 		8FE8AFC91BC446C8000FC2FE /* AddReminderViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController4.swift; sourceTree = "<group>"; };
-		8FEEC4BB1BE7F30E0031A1DC /* AddMedicineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineTableViewController.swift; sourceTree = "<group>"; };
-		8FEEC4BD1BE7F9AD0031A1DC /* MedicineNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineNameCell.swift; sourceTree = "<group>"; };
 		8FFE27821BC868E1001B2A44 /* AddReminderView5a.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView5a.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,8 +243,8 @@
 		8FEEC4BA1BE7EDB60031A1DC /* Add Medication */ = {
 			isa = PBXGroup;
 			children = (
-				8FEEC4BB1BE7F30E0031A1DC /* AddMedicineTableViewController.swift */,
-				8FEEC4BD1BE7F9AD0031A1DC /* MedicineNameCell.swift */,
+				8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */,
+				8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */,
 			);
 			name = "Add Medication";
 			sourceTree = "<group>";
@@ -397,14 +397,14 @@
 				8F9CC4231BCB350C0011CF37 /* AddReminderViewController5a.swift in Sources */,
 				8F8E476A1BC22C460021E93A /* AddReminderScrollViewController.swift in Sources */,
 				8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */,
-				8FEEC4BC1BE7F30E0031A1DC /* AddMedicineTableViewController.swift in Sources */,
 				8FDF4D881BDC917D00F1FA31 /* DataModel.xcdatamodeld in Sources */,
 				8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */,
 				8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */,
 				8F81EAB21BD9D5A3001C2160 /* ProfileDetailScreen.swift in Sources */,
 				8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */,
-				8FEEC4BE1BE7F9AD0031A1DC /* MedicineNameCell.swift in Sources */,
 				8F95F3B11BDF2EED00063281 /* PatientProfile.swift in Sources */,
+				8F6BA68B1BE83F1200ED6120 /* AddMedicineDosageViewController.swift in Sources */,
+				8F6BA6891BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift in Sources */,
 				8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */,
 				8F9CC4251BCB35140011CF37 /* AddReminderViewController5b.swift in Sources */,
 				8F9107961BD745DF001DD4C3 /* AlarmCustomCell.swift in Sources */,
