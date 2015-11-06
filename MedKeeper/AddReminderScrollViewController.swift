@@ -131,7 +131,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
             self.scrollView.setContentOffset(CGPointMake(self.view.frame.size.width*5, 0), animated: true)
             break
         case self.view.frame.size.width*5:
-            performDataModelSaving()
+            //performDataModelSaving()
             break
         default:
             break
@@ -217,10 +217,10 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         }
     }
     
-    func performDataModelSaving(){
+    /*func performDataModelSaving(){
         NSLog("Attempting to save new data model.")
         
-        if(vc4.getAlarmType() == "Normal"){
+        /*if(vc4.getAlarmType() == "Normal"){
             var normalAlarm: NormalAlarm = getNormalAlarmPropertiesFromViewControllers()
         }
         else{
@@ -229,7 +229,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
     }
     
     func getNormalAlarmPropertiesFromViewControllers() -> NormalAlarm{
-        let normalAlarm = NormalAlarm()
+        let normalAlarm = NormalAlarm()*/
         
         if(vc1.nameField.text?.characters.count > 0){
             normalAlarm.medicationName = vc1.nameField.text
@@ -273,7 +273,7 @@ class AddReminderScrollViewController: UIViewController, UITextFieldDelegate, UI
         }
         
         return intervalAlarm
-    }
+    }*/
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if(textField == self.vc1.nameField){

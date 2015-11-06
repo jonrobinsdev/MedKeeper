@@ -19,6 +19,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let addButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action:"addProfileButtonPressed:")
+        navigationItem.rightBarButtonItem = addButton
+        
         self.profilesTableView.delegate = self
         self.profilesTableView.dataSource = self
     }
@@ -50,7 +53,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 75;
+        return 64;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -77,7 +80,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
     }
 
-    @IBAction func addProfileButtonPressed(sender: AnyObject) {
+    func addProfileButtonPressed(sender: AnyObject) {
         var tField: UITextField!
         func configurationTextField(textField: UITextField!)
         {

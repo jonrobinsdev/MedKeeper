@@ -15,22 +15,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-Xg-WZX">
-                        <rect key="frame" x="78" y="99" width="272" height="21"/>
+                        <rect key="frame" x="80" y="99" width="242" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pillIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9nW-n6-m01">
-                        <rect key="frame" x="18" y="70" width="50" height="50"/>
+                        <rect key="frame" x="15" y="70" width="50" height="50"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="7da-y3-JNG"/>
                             <constraint firstAttribute="width" constant="50" id="c6q-Ry-Okv"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seb-Xd-vsB">
+                        <rect key="frame" x="327" y="77" width="15" height="36"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="b0M-hN-KWb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <state key="normal" title="&gt;">
+                            <color key="titleColor" red="0.99517601730000005" green="1" blue="0.99998301270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rw-ld-IsE">
-                        <rect key="frame" x="78" y="70" width="272" height="26"/>
+                        <rect key="frame" x="80" y="70" width="242" height="26"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -40,21 +51,27 @@
                 <animations/>
                 <color key="backgroundColor" red="0.44190807016906486" green="0.6035711944304526" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="0Rw-ld-IsE" firstAttribute="leading" secondItem="9nW-n6-m01" secondAttribute="trailing" constant="10" id="6a8-JE-76O"/>
+                    <constraint firstItem="0Rw-ld-IsE" firstAttribute="leading" secondItem="9nW-n6-m01" secondAttribute="trailing" constant="15" id="6a8-JE-76O"/>
                     <constraint firstItem="0Rw-ld-IsE" firstAttribute="centerY" secondItem="9nW-n6-m01" secondAttribute="centerY" id="6bA-y9-tPJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="seb-Xd-vsB" secondAttribute="trailing" constant="10" id="810-op-1xb"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="top" secondItem="0Rw-ld-IsE" secondAttribute="bottom" constant="5" id="9JT-WI-lNW"/>
-                    <constraint firstItem="9nW-n6-m01" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="LJP-Ph-K8S"/>
+                    <constraint firstItem="seb-Xd-vsB" firstAttribute="leading" secondItem="Ps9-Xg-WZX" secondAttribute="trailing" constant="5" id="CEF-2S-OOY"/>
+                    <constraint firstItem="9nW-n6-m01" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="LJP-Ph-K8S"/>
                     <constraint firstAttribute="trailing" secondItem="0Rw-ld-IsE" secondAttribute="trailing" constant="10" id="SYM-XQ-gLU"/>
                     <constraint firstItem="9nW-n6-m01" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XpK-lk-vgF"/>
                     <constraint firstItem="0Rw-ld-IsE" firstAttribute="top" secondItem="9nW-n6-m01" secondAttribute="top" id="Y08-2a-HZK"/>
                     <constraint firstAttribute="trailing" secondItem="Ps9-Xg-WZX" secondAttribute="trailing" constant="10" id="ffC-FX-26j"/>
+                    <constraint firstItem="seb-Xd-vsB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jwm-1D-hZi"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="bottom" secondItem="9nW-n6-m01" secondAttribute="bottom" id="lrh-4b-JfM"/>
-                    <constraint firstItem="Ps9-Xg-WZX" firstAttribute="leading" secondItem="9nW-n6-m01" secondAttribute="trailing" constant="10" id="mwv-z9-ldT"/>
+                    <constraint firstItem="Ps9-Xg-WZX" firstAttribute="leading" secondItem="9nW-n6-m01" secondAttribute="trailing" constant="15" id="mwv-z9-ldT"/>
+                    <constraint firstItem="seb-Xd-vsB" firstAttribute="leading" secondItem="0Rw-ld-IsE" secondAttribute="trailing" constant="5" id="pAA-nN-cHW"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="6bA-y9-tPJ"/>
+                        <exclude reference="SYM-XQ-gLU"/>
                         <exclude reference="9JT-WI-lNW"/>
+                        <exclude reference="ffC-FX-26j"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
