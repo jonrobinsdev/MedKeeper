@@ -63,7 +63,7 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
             if(dosageAmount.text == "1" && currentMeasurement == "Pills"){
                 currentMeasurement = "Pill"
             }
-            let dosageValue = dosageAmount.text! + currentMeasurement
+            let dosageValue = dosageAmount.text! + " " + currentMeasurement
             medicine.setValue(dosageValue, forKey: "dosageAmount")
             do {
                 try managedContext.save()

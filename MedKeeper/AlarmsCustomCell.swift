@@ -9,10 +9,14 @@
 import UIKit
 
 class AlarmsCustomCell: UITableViewCell {
+    @IBOutlet var alarmTime: UILabel!
+    @IBOutlet var weekdays: UILabel!
+    @IBOutlet var alarmSwitch: UISwitch!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        alarmSwitch.transform = CGAffineTransformMakeScale(0.80, 0.80)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

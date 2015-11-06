@@ -14,7 +14,8 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     @IBOutlet var alarmsTableView: UITableView!
     var medicineArray: NSArray = [NSManagedObject]()
     var alarmsArray: NSArray = [NSManagedObject]()
-
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +50,19 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         else{
             //user has already launched app before and made an initial profile
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let fetchRequest = NSFetchRequest(entityName: "Medicine")
+        do {
+            let results =
+            try managedObjectContext.executeFetchRequest(fetchRequest)
+            medicineArray = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        alarmsTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,7 +101,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return medicineArray.count
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,31 +109,33 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60;
+        return 37
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 65
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell: ProfileCustomCell! = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+            var cell: AlarmsCustomCell! = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
             if(cell == nil) {
-                tableView.registerNib(UINib(nibName: "ProfileCustomCell", bundle: nil), forCellReuseIdentifier: "profileCustomCell")
-                cell = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+                tableView.registerNib(UINib(nibName: "AlarmsCustomCell", bundle: nil), forCellReuseIdentifier: "alarmcustomcell")
+                cell = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
             }
-            cell.nameLabel.text = "lol"
+            //cell.nameLabel.text = "lol"
             cell.textLabel?.backgroundColor = UIColor.clearColor()
             return cell
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var cell: ProfileCustomCell! = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+        var cell: MedicineHeaderCustomCell! = tableView.dequeueReusableCellWithIdentifier("headercustomcell") as? MedicineHeaderCustomCell
         if(cell == nil) {
-            tableView.registerNib(UINib(nibName: "ProfileCustomCell", bundle: nil), forCellReuseIdentifier: "profileCustomCell")
-            cell = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+            tableView.registerNib(UINib(nibName: "MedicineHeaderCustomCell", bundle: nil), forCellReuseIdentifier: "headercustomcell")
+            cell = tableView.dequeueReusableCellWithIdentifier("headercustomcell") as? MedicineHeaderCustomCell
         }
-        cell.nameLabel.text = "lol"
+        let medicine = medicineArray[section]
+        cell.medicineNameLabel.text = medicine.valueForKey("name") as? String
+        cell.dosageLabel.text = "5 mg"
         cell.textLabel?.backgroundColor = UIColor.clearColor()
         return cell
     }

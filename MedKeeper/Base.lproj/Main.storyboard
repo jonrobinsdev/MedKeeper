@@ -194,8 +194,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUs-he-bBy">
-                                <rect key="frame" x="236" y="23" width="80" height="216"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUs-he-bBy">
+                                <rect key="frame" x="238" y="23" width="80" height="216"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Bov-GL-34v"/>

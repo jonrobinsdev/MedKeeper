@@ -9,7 +9,10 @@
 import UIKit
 
 class MedicineHeaderCustomCell: UITableViewCell {
-
+    
+    @IBOutlet var medicineNameLabel: UILabel!
+    @IBOutlet var dosageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
