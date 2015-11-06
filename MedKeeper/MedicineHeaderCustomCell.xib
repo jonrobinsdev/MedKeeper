@@ -14,10 +14,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="360" height="189"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rw-ld-IsE">
-                        <rect key="frame" x="78" y="70" width="140" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-Xg-WZX">
+                        <rect key="frame" x="78" y="99" width="272" height="21"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -29,10 +29,10 @@
                             <constraint firstAttribute="width" constant="50" id="c6q-Ry-Okv"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-Xg-WZX">
-                        <rect key="frame" x="78" y="99" width="59" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rw-ld-IsE">
+                        <rect key="frame" x="78" y="70" width="272" height="26"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -44,8 +44,10 @@
                     <constraint firstItem="0Rw-ld-IsE" firstAttribute="centerY" secondItem="9nW-n6-m01" secondAttribute="centerY" id="6bA-y9-tPJ"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="top" secondItem="0Rw-ld-IsE" secondAttribute="bottom" constant="5" id="9JT-WI-lNW"/>
                     <constraint firstItem="9nW-n6-m01" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="LJP-Ph-K8S"/>
+                    <constraint firstAttribute="trailing" secondItem="0Rw-ld-IsE" secondAttribute="trailing" constant="10" id="SYM-XQ-gLU"/>
                     <constraint firstItem="9nW-n6-m01" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XpK-lk-vgF"/>
                     <constraint firstItem="0Rw-ld-IsE" firstAttribute="top" secondItem="9nW-n6-m01" secondAttribute="top" id="Y08-2a-HZK"/>
+                    <constraint firstAttribute="trailing" secondItem="Ps9-Xg-WZX" secondAttribute="trailing" constant="10" id="ffC-FX-26j"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="bottom" secondItem="9nW-n6-m01" secondAttribute="bottom" id="lrh-4b-JfM"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="leading" secondItem="9nW-n6-m01" secondAttribute="trailing" constant="10" id="mwv-z9-ldT"/>
                 </constraints>
@@ -59,6 +61,7 @@
             <animations/>
             <connections>
                 <outlet property="dosageLabel" destination="Ps9-Xg-WZX" id="Uca-Jg-6Ti"/>
+                <outlet property="medicineImage" destination="9nW-n6-m01" id="ub2-1J-TgT"/>
                 <outlet property="medicineNameLabel" destination="0Rw-ld-IsE" id="7MJ-cH-yOf"/>
             </connections>
             <point key="canvasLocation" x="348" y="337"/>

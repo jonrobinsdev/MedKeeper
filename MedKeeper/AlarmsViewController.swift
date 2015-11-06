@@ -116,6 +116,10 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         return 65
     }
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             var cell: AlarmsCustomCell! = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
             if(cell == nil) {
@@ -135,7 +139,10 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         }
         let medicine = medicineArray[section]
         cell.medicineNameLabel.text = medicine.valueForKey("name") as? String
-        cell.dosageLabel.text = "5 mg"
+        cell.dosageLabel.text = medicine.valueForKey("dosage") as? String
+        if(medicine.type == "Liquid"){
+            cell.medicineImage.image = UIImage(named: "liquidIcon.png")
+        }
         cell.textLabel?.backgroundColor = UIColor.clearColor()
         return cell
     }

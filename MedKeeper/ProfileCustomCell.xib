@@ -32,10 +32,9 @@
                         <state key="normal" title="&gt;"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jonathan Robins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-Xy-Qjn">
-                        <rect key="frame" x="78" y="87" width="326" height="24"/>
+                        <rect key="frame" x="78" y="86" width="326" height="26"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

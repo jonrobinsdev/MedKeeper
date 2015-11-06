@@ -64,7 +64,7 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
                 currentMeasurement = "Pill"
             }
             let dosageValue = dosageAmount.text! + " " + currentMeasurement
-            medicine.setValue(dosageValue, forKey: "dosageAmount")
+            medicine.setValue(dosageValue, forKey: "dosage")
             do {
                 try managedContext.save()
             } catch let error as NSError  {

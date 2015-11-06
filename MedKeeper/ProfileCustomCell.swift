@@ -17,7 +17,7 @@ class ProfileCustomCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        //profileImage.layer.cornerRadius = profileImage.frame.size.width/2
         
     }
 

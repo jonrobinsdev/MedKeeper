@@ -9,13 +9,16 @@
 import UIKit
 
 class MedicineHeaderCustomCell: UITableViewCell {
-    
+
+    @IBOutlet var medicineImage: UIImageView!
     @IBOutlet var medicineNameLabel: UILabel!
     @IBOutlet var dosageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        //medicineImage.layer.cornerRadius = medicineImage.frame.size.width/2
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
