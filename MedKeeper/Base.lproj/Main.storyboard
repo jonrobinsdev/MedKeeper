@@ -122,7 +122,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txS-A4-HxV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txS-A4-HxV">
                                 <rect key="frame" x="10" y="77" width="355" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,6 +157,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="medicineNameTextField" destination="txS-A4-HxV" id="jKw-DU-zwf"/>
                         <segue destination="i1Y-EA-IR6" kind="show" identifier="segueToDosage" id="e3N-Bm-hHw"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,8 @@ class AddMedicineNameAndTypeViewController: UIViewController {
 
         navigationItem.title = "Add a Medication"
         
+        medicineNameTextField.becomeFirstResponder()
+        
         let nextButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: Selector("nextButtonPressed"))
         navigationItem.rightBarButtonItem = nextButton
         
@@ -30,7 +32,14 @@ class AddMedicineNameAndTypeViewController: UIViewController {
     }
     
     func nextButtonPressed(){
-        performSegueWithIdentifier("segueToDosage", sender: self)
+        if(medicineNameTextField.text == ""){
+            let alert = UIAlertController(title: "Please enter a Medicine name.", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else{
+            performSegueWithIdentifier("segueToDosage", sender: self)
+        }
     }
     
     @IBAction func segmentedControlChanged(sender: UISegmentedControl) {
@@ -53,6 +62,7 @@ class AddMedicineNameAndTypeViewController: UIViewController {
         else{
             destVC.setType("Liquid")
         }
+        destVC.retrievedName = medicineNameTextField.text as String!
     }
 
     /*

@@ -9,25 +9,26 @@
 import UIKit
 import CoreData
 
-class AlarmsViewController: UIViewController, UITextFieldDelegate {
+class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var alarmsTableView: UITableView!
-    @IBOutlet var alarmsControllerTitle: UILabel!
+    var medicineArray: NSArray = [NSManagedObject]()
+    var alarmsArray: NSArray = [NSManagedObject]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let addButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action:"addButtonPressed")
         navigationItem.rightBarButtonItem = addButton
+        
+        alarmsTableView.delegate = self
+        alarmsTableView.dataSource = self
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
         let defaults = NSUserDefaults.standardUserDefaults()
-       // var newTitleString = (defaults.objectForKey("CurrentUser") as? String)! + "'s " + "Alarms"
-        //newTitleString.replaceRange(newTitleString.startIndex...newTitleString.startIndex, with: String(newTitleString[newTitleString.startIndex]).capitalizedString)
-        //self.alarmsControllerTitle.text = newTitleString
-        
         if (defaults.integerForKey("FirstTimeLaunchingApp") != 1){
             //initial alertView
             var tField: UITextField!
@@ -83,6 +84,48 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60;
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            var cell: ProfileCustomCell! = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+            if(cell == nil) {
+                tableView.registerNib(UINib(nibName: "ProfileCustomCell", bundle: nil), forCellReuseIdentifier: "profileCustomCell")
+                cell = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+            }
+            cell.nameLabel.text = "lol"
+            cell.textLabel?.backgroundColor = UIColor.clearColor()
+            return cell
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var cell: ProfileCustomCell! = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+        if(cell == nil) {
+            tableView.registerNib(UINib(nibName: "ProfileCustomCell", bundle: nil), forCellReuseIdentifier: "profileCustomCell")
+            cell = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
+        }
+        cell.nameLabel.text = "lol"
+        cell.textLabel?.backgroundColor = UIColor.clearColor()
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
     }
 }
 
