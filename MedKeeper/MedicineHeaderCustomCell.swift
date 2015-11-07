@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol MedicineHeaderCustomCellDelegate {
+    func didSelectUserHeaderTableViewCell(Selected: Bool, UserHeader: MedicineHeaderCustomCell)
+}
+
 class MedicineHeaderCustomCell: UITableViewCell {
 
+    var delegate : MedicineHeaderCustomCellDelegate?
+    
     @IBOutlet var medicineImage: UIImageView!
     @IBOutlet var medicineNameLabel: UILabel!
+    var medicineType = ""
     @IBOutlet var dosageLabel: UILabel!
     
     override func awakeFromNib() {
@@ -25,6 +32,12 @@ class MedicineHeaderCustomCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    
+    @IBAction func selectedHeader(sender: AnyObject) {
+        delegate?.didSelectUserHeaderTableViewCell(true, UserHeader: self)
+        
     }
     
 }

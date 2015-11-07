@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 
-class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, MedicineHeaderCustomCellDelegate {
 
     @IBOutlet var alarmsTableView: UITableView!
     var medicineArray: NSArray = [NSManagedObject]()
     var alarmsArray: NSArray = [NSManagedObject]()
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let tempDestVC : MedicineDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MedicineDetailViewController") as! MedicineDetailViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,15 +141,32 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         let medicine = medicineArray[section]
         cell.medicineNameLabel.text = medicine.valueForKey("name") as? String
         cell.dosageLabel.text = medicine.valueForKey("dosage") as? String
+        cell.medicineType = medicine.type
         if(medicine.type == "Liquid"){
             cell.medicineImage.image = UIImage(named: "liquidIcon.png")
         }
         cell.textLabel?.backgroundColor = UIColor.clearColor()
+        cell.delegate = self
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+    }
+    
+    func didSelectUserHeaderTableViewCell(Selected: Bool, UserHeader: MedicineHeaderCustomCell) {
+        tempDestVC.medicineName = UserHeader.medicineNameLabel.text!
+        tempDestVC.medicineType = UserHeader.medicineType
+        tempDestVC.dosageAmount = UserHeader.dosageLabel.text!
+        performSegueWithIdentifier("segueToMedicineDetail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "segueToMedicineDetail"){
+            let destVC : MedicineDetailViewController = (segue.destinationViewController as? MedicineDetailViewController)!
+            destVC.medicineName = tempDestVC.medicineName
+            destVC.medicineType = tempDestVC.medicineType
+            destVC.dosageAmount = tempDestVC.dosageAmount
+        }
     }
 }
 

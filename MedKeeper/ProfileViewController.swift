@@ -117,16 +117,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             print(error)
         }
         
-        /*let managedContext = AppDelegate().managedObjectContext
-        let entity =  NSEntityDescription.entityForName("PatientProfile", inManagedObjectContext: managedContext)
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        person.setValue(name, forKey: "name")
-        do {
-            try managedContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }*/
-        
         //set new profile array and reload table data
         let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
         do {

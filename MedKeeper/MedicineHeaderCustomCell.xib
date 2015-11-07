@@ -47,6 +47,13 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYW-IV-ClC">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="189"/>
+                        <animations/>
+                        <connections>
+                            <action selector="selectedHeader:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n70-ee-lBh"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" red="0.44190807016906486" green="0.6035711944304526" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,14 +64,18 @@
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="top" secondItem="0Rw-ld-IsE" secondAttribute="bottom" constant="5" id="9JT-WI-lNW"/>
                     <constraint firstItem="seb-Xd-vsB" firstAttribute="leading" secondItem="Ps9-Xg-WZX" secondAttribute="trailing" constant="5" id="CEF-2S-OOY"/>
                     <constraint firstItem="9nW-n6-m01" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="LJP-Ph-K8S"/>
+                    <constraint firstItem="tYW-IV-ClC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QIi-5F-tcU"/>
                     <constraint firstAttribute="trailing" secondItem="0Rw-ld-IsE" secondAttribute="trailing" constant="10" id="SYM-XQ-gLU"/>
                     <constraint firstItem="9nW-n6-m01" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XpK-lk-vgF"/>
                     <constraint firstItem="0Rw-ld-IsE" firstAttribute="top" secondItem="9nW-n6-m01" secondAttribute="top" id="Y08-2a-HZK"/>
+                    <constraint firstAttribute="trailing" secondItem="tYW-IV-ClC" secondAttribute="trailing" id="Yv8-Is-cOO"/>
                     <constraint firstAttribute="trailing" secondItem="Ps9-Xg-WZX" secondAttribute="trailing" constant="10" id="ffC-FX-26j"/>
+                    <constraint firstAttribute="bottom" secondItem="tYW-IV-ClC" secondAttribute="bottom" id="jeO-Vn-P4J"/>
                     <constraint firstItem="seb-Xd-vsB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jwm-1D-hZi"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="bottom" secondItem="9nW-n6-m01" secondAttribute="bottom" id="lrh-4b-JfM"/>
                     <constraint firstItem="Ps9-Xg-WZX" firstAttribute="leading" secondItem="9nW-n6-m01" secondAttribute="trailing" constant="15" id="mwv-z9-ldT"/>
                     <constraint firstItem="seb-Xd-vsB" firstAttribute="leading" secondItem="0Rw-ld-IsE" secondAttribute="trailing" constant="5" id="pAA-nN-cHW"/>
+                    <constraint firstItem="tYW-IV-ClC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vh4-9N-thY"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
