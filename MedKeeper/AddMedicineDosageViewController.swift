@@ -26,7 +26,7 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
         dosageAmount.keyboardType = .DecimalPad
         dosageAmount.becomeFirstResponder()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: Selector("doneButtonPressed"))
+        let doneButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: Selector("nextButtonToAddAlarmPressed"))
         navigationItem.rightBarButtonItem = doneButton
         
         dosageAmount.delegate = self
@@ -73,6 +73,10 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
 
             navigationController?.popToRootViewControllerAnimated(true)
         }
+    }
+    
+    func nextButtonToAddAlarmPressed(){
+         performSegueWithIdentifier("segueToAlarmType", sender: self)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

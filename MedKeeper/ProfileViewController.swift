@@ -69,15 +69,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        /*let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(self.profileArray[indexPath.row], forKey: "CurrentUser")*/
-        
-        /*let tabBar = self.tabBarController
-        tabBar!.selectedIndex = 1;*/
-        
         let patientProfile = profileArray[indexPath.row]
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(patientProfile.valueForKey("name"), forKey: "CurrentUser")
+
         self.selectedCellName = (patientProfile.valueForKey("name") as? String)!
-        self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
+        
+        let tabBar = self.tabBarController
+        tabBar!.selectedIndex = 1;
+        //self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
     }
 
     func addProfileButtonPressed(sender: AnyObject) {

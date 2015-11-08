@@ -20,6 +20,9 @@ class AddMedicineNameAndTypeViewController: UIViewController {
         
         medicineNameTextField.becomeFirstResponder()
         
+        let backButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action:"cancelButtonPressed")
+        navigationItem.leftBarButtonItem = backButton
+        
         let nextButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: Selector("nextButtonPressed"))
         navigationItem.rightBarButtonItem = nextButton
         
@@ -40,6 +43,10 @@ class AddMedicineNameAndTypeViewController: UIViewController {
         else{
             performSegueWithIdentifier("segueToDosage", sender: self)
         }
+    }
+    
+    func cancelButtonPressed(){
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func segmentedControlChanged(sender: UISegmentedControl) {

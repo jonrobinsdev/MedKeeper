@@ -49,6 +49,8 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             })
         }
         else{
+            navigationItem.title = (defaults.valueForKey("CurrentUser") as! String) + "'s Medicines"
+            defaults.synchronize()
             //user has already launched app before and made an initial profile
         }
     }
@@ -88,6 +90,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(1, forKey: "FirstTimeLaunchingApp")
         defaults.setValue(name, forKey: "CurrentUser")
+        navigationItem.title = (name as String) + "'s Medicines"
         defaults.synchronize()
         
         let managedContext = AppDelegate().managedObjectContext

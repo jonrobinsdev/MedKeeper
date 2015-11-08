@@ -73,9 +73,7 @@
                             <constraint firstAttribute="trailing" secondItem="Lns-Zy-9tb" secondAttribute="trailing" id="oil-JZ-Ysx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name's Medicines" id="xa1-2k-i3i">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Cze-gu-83M"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Medicines" id="xa1-2k-i3i"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="alarmsTableView" destination="Lns-Zy-9tb" id="1SM-0Z-g99"/>
@@ -175,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loB-ki-OxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5" y="376.5"/>
+            <point key="canvasLocation" x="1669.5" y="448.5"/>
         </scene>
         <!--Add Medicine Name And Type View Controller-->
         <scene sceneID="HZE-ah-qtk">
@@ -255,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UO2-SX-v7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5" y="-346.5"/>
+            <point key="canvasLocation" x="1669.5" y="-422.5"/>
         </scene>
         <!--Add Medicine Dosage View Controller-->
         <scene sceneID="O8i-tM-CoX">
@@ -324,11 +322,32 @@
                     <connections>
                         <outlet property="dosageAmount" destination="7Kg-YT-yaT" id="kbS-Au-GJK"/>
                         <outlet property="dosagePickerView" destination="VUs-he-bBy" id="EeW-aX-djK"/>
+                        <segue destination="2CJ-th-RMc" kind="show" identifier="segueToAlarmType" id="2fY-1g-XOn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYN-CJ-aEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.5" y="-438.5"/>
+            <point key="canvasLocation" x="2153.5" y="-422.5"/>
+        </scene>
+        <!--Add Alarm Type View Controller-->
+        <scene sceneID="td1-h2-Eio">
+            <objects>
+                <viewController id="2CJ-th-RMc" customClass="AddAlarmTypeViewController" customModule="MedKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qak-uI-ysl"/>
+                        <viewControllerLayoutGuide type="bottom" id="dfU-Xn-bc1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YDY-Nm-Ajn">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vc-ug-7Oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2635.5" y="-422.5"/>
         </scene>
         <!--Profile Detail Screen-->
         <scene sceneID="k4e-Rg-ziU">
@@ -547,7 +566,7 @@
         <scene sceneID="7jw-9D-GFu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="OJn-Jq-8BH" userLabel="Add Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="first" id="Eye-vC-uHN"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="first" id="Eye-vC-uHN"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
