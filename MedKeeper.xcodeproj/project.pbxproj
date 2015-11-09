@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F39005A1BF05DB1006B2C04 /* AddNormalAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3900591BF05DB1006B2C04 /* AddNormalAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8F39005C1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8F6BA6871BE8064B00ED6120 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6BA6861BE8064B00ED6120 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		8F6BA6891BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8F6BA68B1BE83F1200ED6120 /* AddMedicineDosageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -68,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F3900591BF05DB1006B2C04 /* AddNormalAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNormalAlarmViewController.swift; sourceTree = "<group>"; };
+		8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIntervalAlarmViewController.swift; sourceTree = "<group>"; };
 		8F6BA6861BE8064B00ED6120 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineNameAndTypeViewController.swift; sourceTree = "<group>"; };
 		8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineDosageViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +198,7 @@
 				8F95F3B21BDF2EF700063281 /* Data Model */,
 				8F81EAAB1BD9628E001C2160 /* Profile */,
 				8F81EAAC1BD96297001C2160 /* Alarms */,
-				8FEEC4BA1BE7EDB60031A1DC /* Medicine */,
+				8FEEC4BA1BE7EDB60031A1DC /* Add Medicine */,
 				8F9CC41F1BCB2D570011CF37 /* Add Alarms */,
 				8F6BA6861BE8064B00ED6120 /* Images.xcassets */,
 				8F8E47471BC22BA30021E93A /* Info.plist */,
@@ -256,15 +260,17 @@
 			name = "Add Alarms";
 			sourceTree = "<group>";
 		};
-		8FEEC4BA1BE7EDB60031A1DC /* Medicine */ = {
+		8FEEC4BA1BE7EDB60031A1DC /* Add Medicine */ = {
 			isa = PBXGroup;
 			children = (
+				8F9C2DB81BEDA6FA009DF37E /* MedicineDetailViewController.swift */,
 				8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */,
 				8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */,
 				8F9C2DBA1BEEF9DD009DF37E /* AddAlarmTypeViewController.swift */,
-				8F9C2DB81BEDA6FA009DF37E /* MedicineDetailViewController.swift */,
+				8F3900591BF05DB1006B2C04 /* AddNormalAlarmViewController.swift */,
+				8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */,
 			);
-			name = Medicine;
+			name = "Add Medicine";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +428,7 @@
 				8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */,
 				8FDF4D881BDC917D00F1FA31 /* DataModel.xcdatamodeld in Sources */,
 				8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */,
+				8F39005C1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift in Sources */,
 				8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */,
 				8F81EAB21BD9D5A3001C2160 /* ProfileDetailScreen.swift in Sources */,
 				8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */,
@@ -431,6 +438,7 @@
 				8F6BA6891BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift in Sources */,
 				8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */,
 				8F9CC4251BCB35140011CF37 /* AddReminderViewController5b.swift in Sources */,
+				8F39005A1BF05DB1006B2C04 /* AddNormalAlarmViewController.swift in Sources */,
 				8F9107961BD745DF001DD4C3 /* AlarmCustomCell.swift in Sources */,
 				8F81EAAF1BD962D1001C2160 /* ProfileCustomCell.swift in Sources */,
 			);

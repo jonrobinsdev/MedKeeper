@@ -19,6 +19,9 @@ class MedicineDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         navigationItem.title = medicineName
         medicineTypeLabel.text = medicineType
         dosageAmountLabel.text = dosageAmount
