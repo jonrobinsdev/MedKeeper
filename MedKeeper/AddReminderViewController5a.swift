@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol AlarmCustomCellDelegate {
-    func deleteButtonPressed(cell: AlarmCustomCell)
-}
-
-class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITableViewDataSource, AlarmCustomCellDelegate {
+class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITableViewDataSource, NormalAlarmCustomCellDelegate {
     
     @IBOutlet var addAlarmButton: UIButton!
     @IBOutlet var datePicker: UIDatePicker!
@@ -54,17 +50,17 @@ class AddReminderViewController5a: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell: AlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("alarmCustomCell") as? AlarmCustomCell
+            var cell: NormalAlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("normalAlarmCustomCell") as? NormalAlarmCustomCell
             if(cell == nil) {
-                tableView.registerNib(UINib(nibName: "AlarmCustomCell", bundle: nil), forCellReuseIdentifier: "alarmCustomCell")
-                cell = tableView.dequeueReusableCellWithIdentifier("alarmCustomCell") as? AlarmCustomCell
+                tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalAlarmCustomCell")
+                cell = tableView.dequeueReusableCellWithIdentifier("normalAlarmCustomCell") as? NormalAlarmCustomCell
             }
             cell.textLabel!.text = alarmList[indexPath.row] as? String
             cell.delegate = self;
             return cell
     }
     
-    func deleteButtonPressed(cell: AlarmCustomCell){
+    func deleteButtonPressed(cell: NormalAlarmCustomCell){
         let indexPath: NSIndexPath = self.alarmTableView.indexPathForCell(cell)!
         self.alarmList.removeObjectAtIndex(indexPath.row)
         self.alarmTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)

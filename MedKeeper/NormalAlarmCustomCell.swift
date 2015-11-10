@@ -8,15 +8,19 @@
 
 import UIKit
 
-class AlarmCustomCell: UITableViewCell {
+protocol NormalAlarmCustomCellDelegate {
+    func deleteButtonPressed(cell: NormalAlarmCustomCell)
+}
+
+class NormalAlarmCustomCell: UITableViewCell {
     
-    var delegate : AlarmCustomCellDelegate?
+    var delegate : NormalAlarmCustomCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.textLabel!.font = UIFont.systemFontOfSize(22.0)
-        self.textLabel!.backgroundColor = UIColor.clearColor()
+        textLabel?.font = UIFont(name: "Avenir-Light", size: 24)
+        textLabel!.backgroundColor = UIColor.clearColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

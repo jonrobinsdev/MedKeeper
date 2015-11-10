@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Profile View Controller-->
@@ -496,10 +497,93 @@
                     <view key="view" contentMode="scaleToFill" id="gKG-zI-I0p">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your time(s) for consumption." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG0-uU-FcK">
+                                <rect key="frame" x="0.0" y="10" width="375" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJ0-2W-LZH">
+                                <rect key="frame" x="0.0" y="487" width="375" height="115"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="GZb-h2-dvy"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="466117743.18385798">
+                                    <!--2015-10-09 21:09:03 +0000-->
+                                </date>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rw3-nb-wiY">
+                                <rect key="frame" x="0.0" y="486" width="375" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Ndi-Jt-t7t"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjG-QZ-2jl">
+                                <rect key="frame" x="0.0" y="602" width="375" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wV3-VG-COi"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-Ac-D1Z">
+                                <rect key="frame" x="334" y="520" width="31" height="35"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="pYK-Pc-pdN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addAlarmButtonPressed:" destination="W9H-SQ-wYA" eventType="touchUpInside" id="tfh-Hl-sCW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-zM-DGO">
+                                <rect key="frame" x="0.0" y="47" width="375" height="440"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DJ0-2W-LZH" secondAttribute="trailing" id="3I0-py-h63"/>
+                            <constraint firstAttribute="trailing" secondItem="gG0-uU-FcK" secondAttribute="trailing" id="5vu-qH-Omp"/>
+                            <constraint firstItem="DJ0-2W-LZH" firstAttribute="top" secondItem="rw3-nb-wiY" secondAttribute="bottom" id="6Ys-Tz-STd"/>
+                            <constraint firstItem="K5Z-zM-DGO" firstAttribute="leading" secondItem="gKG-zI-I0p" secondAttribute="leading" id="C5X-2X-5aB"/>
+                            <constraint firstItem="gG0-uU-FcK" firstAttribute="leading" secondItem="gKG-zI-I0p" secondAttribute="leading" id="Fd1-3c-JsW"/>
+                            <constraint firstItem="AjG-QZ-2jl" firstAttribute="top" secondItem="bJE-Ac-D1Z" secondAttribute="bottom" multiplier="1.0125" constant="40" id="GKB-kx-bBD"/>
+                            <constraint firstItem="AjG-QZ-2jl" firstAttribute="top" secondItem="DJ0-2W-LZH" secondAttribute="bottom" id="J9T-A5-2Fn"/>
+                            <constraint firstItem="K5Z-zM-DGO" firstAttribute="top" secondItem="gG0-uU-FcK" secondAttribute="bottom" constant="15" id="Pic-fE-7Hg"/>
+                            <constraint firstItem="DJ0-2W-LZH" firstAttribute="leading" secondItem="gKG-zI-I0p" secondAttribute="leading" id="RGA-ZY-na8"/>
+                            <constraint firstItem="rw3-nb-wiY" firstAttribute="leading" secondItem="gKG-zI-I0p" secondAttribute="leading" constant="-113" id="UcU-Uu-bx5"/>
+                            <constraint firstAttribute="trailing" secondItem="K5Z-zM-DGO" secondAttribute="trailing" id="X5g-iI-5bh"/>
+                            <constraint firstAttribute="trailing" secondItem="AjG-QZ-2jl" secondAttribute="trailing" id="Xzc-f6-te7"/>
+                            <constraint firstAttribute="trailing" secondItem="bJE-Ac-D1Z" secondAttribute="trailing" constant="10" id="amO-J5-Rw8"/>
+                            <constraint firstAttribute="trailing" secondItem="rw3-nb-wiY" secondAttribute="trailing" id="g7l-bc-Skh"/>
+                            <constraint firstItem="gG0-uU-FcK" firstAttribute="top" secondItem="Pto-ec-sBZ" secondAttribute="bottom" constant="10" id="hik-g0-S5X"/>
+                            <constraint firstItem="AjG-QZ-2jl" firstAttribute="leading" secondItem="gKG-zI-I0p" secondAttribute="leading" id="jxM-Kb-fxJ"/>
+                            <constraint firstItem="rw3-nb-wiY" firstAttribute="leading" secondItem="gKG-zI-I0p" secondAttribute="leading" id="nSc-RH-OH2"/>
+                            <constraint firstItem="rw3-nb-wiY" firstAttribute="top" secondItem="K5Z-zM-DGO" secondAttribute="bottom" id="sFS-6G-Njw"/>
+                            <constraint firstItem="TVf-eV-u7g" firstAttribute="top" secondItem="AjG-QZ-2jl" secondAttribute="bottom" id="vTP-j7-Pgo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UcU-Uu-bx5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="alarmTableView" destination="K5Z-zM-DGO" id="4Oj-DB-C05"/>
+                        <outlet property="datePicker" destination="DJ0-2W-LZH" id="KaP-ry-Nnq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnu-Ud-1AP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

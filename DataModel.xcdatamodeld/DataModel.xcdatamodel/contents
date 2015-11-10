@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
-    <entity name="Alarm" syncable="YES">
+    <entity name="Alarm" representedClassName=".Alarm" syncable="YES">
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weekdays" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="isOwned" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="has" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="medicines" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="alarms" inverseEntity="Medicine" syncable="YES"/>
     </entity>
     <entity name="Medicine" representedClassName=".Medicine" syncable="YES">
         <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="isOwned" inverseEntity="Alarm" syncable="YES"/>
+        <relationship name="alarms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="medicines" inverseEntity="Alarm" syncable="YES"/>
+        <relationship name="ownedByPatientProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientProfile" inverseName="hasMedicines" inverseEntity="PatientProfile" syncable="YES"/>
     </entity>
     <entity name="PatientProfile" representedClassName=".PatientProfile" syncable="YES">
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="intervalAlarms" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalAlarms" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="hasMedicines" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="ownedByPatientProfile" inverseEntity="Medicine" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="-54" positionY="18" width="128" height="120"/>
-        <element name="PatientProfile" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Alarm" positionX="-36" positionY="45" width="128" height="90"/>
+        <element name="Medicine" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="PatientProfile" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

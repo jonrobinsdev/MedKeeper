@@ -55,6 +55,7 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else{
+            //save medicine into coredata
             let managedContext = AppDelegate().managedObjectContext
             let entity =  NSEntityDescription.entityForName("Medicine", inManagedObjectContext: managedContext)
             let medicine = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
@@ -70,6 +71,11 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
             } catch let error as NSError  {
                 print("Could not save \(error), \(error.userInfo)")
             }
+            
+            //set medicine as current medicine
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(retrievedName, forKey: "CurrentMedicine")
+            defaults.synchronize()
 
             navigationController?.popToRootViewControllerAnimated(true)
         }

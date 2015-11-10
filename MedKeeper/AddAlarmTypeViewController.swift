@@ -40,7 +40,5 @@ class AddAlarmTypeViewController: UIViewController {
     
     @IBAction func backButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    
+    }    
 }
