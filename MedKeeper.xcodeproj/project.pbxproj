@@ -202,7 +202,7 @@
 				8F95F3B21BDF2EF700063281 /* Data Model */,
 				8F81EAAB1BD9628E001C2160 /* Profile */,
 				8F81EAAC1BD96297001C2160 /* Alarms */,
-				8FEEC4BA1BE7EDB60031A1DC /* Add Medicine */,
+				8FEEC4BA1BE7EDB60031A1DC /* Medicine */,
 				8F9CC41F1BCB2D570011CF37 /* Add Alarms */,
 				8F6BA6861BE8064B00ED6120 /* Images.xcassets */,
 				8F8E47471BC22BA30021E93A /* Info.plist */,
@@ -264,7 +264,7 @@
 			name = "Add Alarms";
 			sourceTree = "<group>";
 		};
-		8FEEC4BA1BE7EDB60031A1DC /* Add Medicine */ = {
+		8FEEC4BA1BE7EDB60031A1DC /* Medicine */ = {
 			isa = PBXGroup;
 			children = (
 				8F9C2DB81BEDA6FA009DF37E /* MedicineDetailViewController.swift */,
@@ -276,7 +276,7 @@
 				8F9107951BD745DF001DD4C3 /* NormalAlarmCustomCell.xib */,
 				8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */,
 			);
-			name = "Add Medicine";
+			name = Medicine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

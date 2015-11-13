@@ -14,7 +14,7 @@ import CoreData
 
 extension Alarm {
 
-    @NSManaged var time: String?
+    @NSManaged var time: NSDate?
     @NSManaged var weekdays: String?
     @NSManaged var isOwnedByMedicine: Medicine?
 

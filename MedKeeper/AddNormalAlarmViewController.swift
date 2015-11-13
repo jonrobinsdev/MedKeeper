@@ -40,7 +40,7 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        let alarmValue = dateFormatter.stringFromDate(datePicker.date)
+        let alarmValue:NSDate = datePicker.date
         
         if(alarmList.containsObject(alarmValue)){
             let alert = UIAlertController(title: "Duplicate Alarm", message: "You've already added an alarm for that time.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -79,7 +79,7 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
                 let entity =  NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
                 let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Alarm
                 alarm.setValue("MWF", forKey: "weekdays")
-                alarm.setValue(String(alarmString), forKey: "time")
+                alarm.setValue(alarmString, forKey: "time")
                 fetchedCurrentMedicine.addAlarmObject(alarm)
             }
 

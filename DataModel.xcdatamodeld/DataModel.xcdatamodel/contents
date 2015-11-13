@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="Alarm" representedClassName=".Alarm" syncable="YES">
-        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="weekdays" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="medicines" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="alarms" inverseEntity="Medicine" syncable="YES"/>
     </entity>
@@ -21,7 +21,7 @@
         <relationship name="hasMedicines" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="ownedByPatientProfile" inverseEntity="Medicine" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="196" positionY="9" width="128" height="90"/>
+        <element name="Alarm" positionX="196" positionY="9" width="128" height="88"/>
         <element name="Medicine" positionX="-54" positionY="18" width="90" height="133"/>
         <element name="PatientProfile" positionX="106" positionY="162" width="128" height="120"/>
     </elements>

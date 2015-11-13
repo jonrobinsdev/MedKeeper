@@ -30,6 +30,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
+        //if first time using app, demand name for patient profile
         let defaults = NSUserDefaults.standardUserDefaults()
         if (defaults.integerForKey("FirstTimeLaunchingApp") != 1){
             //initial alertView
@@ -58,11 +59,14 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     override func viewWillAppear(animated: Bool) {
+        //retrieve all the medicines in core data
         let fetchRequest = NSFetchRequest(entityName: "Medicine")
         do {
             let results =
             try managedObjectContext.executeFetchRequest(fetchRequest)
             medicineArray = results as! [NSManagedObject]
+            //sort Medicines alphabetically
+            medicineArray = medicineArray.sort({ $0.name.lowercaseString < $1.name.lowercaseString })
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -87,6 +91,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func saveInitialPatientProfile(name : NSString){
+        //save initial patient profile if user's first time using app, set as CurrentUser
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(1, forKey: "FirstTimeLaunchingApp")
         defaults.setValue(name, forKey: "CurrentUser")
@@ -111,7 +116,12 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let medicine : Medicine = medicineArray[section] as! Medicine
         let alarms : NSSet = medicine.alarms
-        return alarms.count
+        if(alarms.count > 0){
+            return alarms.count
+        }
+        else{
+            return 1
+        }
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -132,13 +142,21 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
                 tableView.registerNib(UINib(nibName: "AlarmsCustomCell", bundle: nil), forCellReuseIdentifier: "alarmcustomcell")
                 cell = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
             }
-        
+            //get medicine at indexPath and assign its alarm's properties to alarm cell
             let medicine : Medicine = medicineArray[indexPath.section] as! Medicine
             let alarms : NSArray = medicine.alarms.allObjects
-            let alarm : Alarm = alarms[indexPath.row] as! Alarm
-            cell.alarmTime.text = alarm.time
-            cell.weekdays.text = alarm.weekdays
-            cell.textLabel?.backgroundColor = UIColor.clearColor()
+            if(alarms.count > 0){
+                let alarm : Alarm = alarms[indexPath.row] as! Alarm
+                cell.alarmTime.text = String(alarm.time)
+                cell.weekdays.text = alarm.weekdays
+                cell.textLabel?.backgroundColor = UIColor.clearColor()
+            }
+            else{
+                cell.alarmTime.text = "No alarms."
+                cell.weekdays.text = ""
+                //cell.imageView.image = imagewithnameblahblah
+                cell.alarmSwitch.alpha = 0.0
+            }
             return cell
     }
     
@@ -148,6 +166,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             tableView.registerNib(UINib(nibName: "MedicineHeaderCustomCell", bundle: nil), forCellReuseIdentifier: "headercustomcell")
             cell = tableView.dequeueReusableCellWithIdentifier("headercustomcell") as? MedicineHeaderCustomCell
         }
+        //assign medicine data object at index to medicine section cell
         let medicine = medicineArray[section]
         cell.medicineNameLabel.text = medicine.valueForKey("name") as? String
         cell.dosageLabel.text = medicine.valueForKey("dosage") as? String
