@@ -53,6 +53,8 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             defaults.synchronize()
             //user has already launched app before and made an initial profile
         }
+        
+        alarmsTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,8 +66,6 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
-        alarmsTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -109,7 +109,9 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        let medicine : Medicine = medicineArray[section] as! Medicine
+        let alarms : NSSet = medicine.alarms
+        return alarms.count
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -130,7 +132,12 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
                 tableView.registerNib(UINib(nibName: "AlarmsCustomCell", bundle: nil), forCellReuseIdentifier: "alarmcustomcell")
                 cell = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
             }
-            //cell.nameLabel.text = "lol"
+        
+            let medicine : Medicine = medicineArray[indexPath.section] as! Medicine
+            let alarms : NSArray = medicine.alarms.allObjects
+            let alarm : Alarm = alarms[indexPath.row] as! Alarm
+            cell.alarmTime.text = alarm.time
+            cell.weekdays.text = alarm.weekdays
             cell.textLabel?.backgroundColor = UIColor.clearColor()
             return cell
     }

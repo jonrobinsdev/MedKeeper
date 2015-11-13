@@ -11,6 +11,6 @@ import CoreData
 
 class Medicine: NSManagedObject {
 
-    @NSManaged var alarms: NSMutableSet
+    @NSManaged var alarms: NSSet
 
 }

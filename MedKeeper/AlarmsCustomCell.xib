@@ -22,7 +22,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MWF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhK-Je-h3r">
-                        <rect key="frame" x="194" y="66" width="40" height="21"/>
+                        <rect key="frame" x="253" y="66" width="40" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -53,35 +53,19 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="Ink-ff-3fp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="70" id="1jl-FI-wOb"/>
+                    <constraint firstItem="rds-qD-7Jw" firstAttribute="leading" secondItem="lhK-Je-h3r" secondAttribute="trailing" constant="10" id="7dD-gW-pZE"/>
                     <constraint firstItem="Ink-ff-3fp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BKp-fo-KcK"/>
                     <constraint firstItem="rds-qD-7Jw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BX8-O1-ft0"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="lhK-Je-h3r" secondAttribute="trailing" constant="10" id="JPk-AV-Nfd"/>
                     <constraint firstItem="d5e-0R-GlE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="70" id="L4f-Ju-DiS"/>
-                    <constraint firstItem="rds-qD-7Jw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LTt-Z2-s17"/>
                     <constraint firstItem="lhK-Je-h3r" firstAttribute="centerY" secondItem="Ink-ff-3fp" secondAttribute="centerY" id="Msb-EN-IoY"/>
                     <constraint firstItem="d5e-0R-GlE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S0Y-h8-jlK"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="rds-qD-7Jw" secondAttribute="bottom" constant="58" id="S23-je-DDN"/>
-                    <constraint firstItem="rds-qD-7Jw" firstAttribute="centerY" secondItem="lhK-Je-h3r" secondAttribute="centerY" id="TU7-Tv-FQg"/>
-                    <constraint firstItem="lhK-Je-h3r" firstAttribute="leading" secondItem="Ink-ff-3fp" secondAttribute="trailing" constant="10" id="Vzl-MQ-bWf"/>
                     <constraint firstItem="Ink-ff-3fp" firstAttribute="leading" secondItem="d5e-0R-GlE" secondAttribute="trailing" constant="10" id="aXQ-fS-ejW"/>
-                    <constraint firstItem="rds-qD-7Jw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="58" id="bUm-ja-lhg"/>
                     <constraint firstAttribute="trailing" secondItem="rds-qD-7Jw" secondAttribute="trailing" constant="5" id="lNJ-Gy-iXZ"/>
-                    <constraint firstItem="rds-qD-7Jw" firstAttribute="height" secondItem="d5e-0R-GlE" secondAttribute="height" id="p9N-Yc-yN7"/>
-                    <constraint firstItem="rds-qD-7Jw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="s2n-ba-e5r"/>
-                    <constraint firstItem="lhK-Je-h3r" firstAttribute="leading" secondItem="Ink-ff-3fp" secondAttribute="trailing" constant="10" id="tDL-Wy-2BN"/>
+                    <constraint firstItem="lhK-Je-h3r" firstAttribute="leading" secondItem="Ink-ff-3fp" secondAttribute="trailing" constant="10" id="x38-gK-wWC"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="1jl-FI-wOb"/>
-                        <exclude reference="JPk-AV-Nfd"/>
-                        <exclude reference="Vzl-MQ-bWf"/>
-                        <exclude reference="LTt-Z2-s17"/>
-                        <exclude reference="S23-je-DDN"/>
-                        <exclude reference="TU7-Tv-FQg"/>
-                        <exclude reference="bUm-ja-lhg"/>
-                        <exclude reference="p9N-Yc-yN7"/>
-                        <exclude reference="s2n-ba-e5r"/>
+                        <exclude reference="x38-gK-wWC"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

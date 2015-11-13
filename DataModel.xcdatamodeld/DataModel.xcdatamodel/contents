@@ -10,7 +10,7 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="alarms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="medicines" inverseEntity="Alarm" syncable="YES"/>
+        <relationship name="alarms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alarm" inverseName="medicines" inverseEntity="Alarm" syncable="YES"/>
         <relationship name="ownedByPatientProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientProfile" inverseName="hasMedicines" inverseEntity="PatientProfile" syncable="YES"/>
     </entity>
     <entity name="PatientProfile" representedClassName=".PatientProfile" syncable="YES">
@@ -21,8 +21,8 @@
         <relationship name="hasMedicines" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="ownedByPatientProfile" inverseEntity="Medicine" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="-36" positionY="45" width="128" height="90"/>
-        <element name="Medicine" positionX="-54" positionY="18" width="128" height="135"/>
-        <element name="PatientProfile" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Alarm" positionX="196" positionY="9" width="128" height="90"/>
+        <element name="Medicine" positionX="-54" positionY="18" width="90" height="133"/>
+        <element name="PatientProfile" positionX="106" positionY="162" width="128" height="120"/>
     </elements>
 </model>

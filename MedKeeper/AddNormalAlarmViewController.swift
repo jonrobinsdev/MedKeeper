@@ -78,10 +78,11 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
             for alarmString in alarmList{
                 let entity =  NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
                 let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Alarm
-                alarm.setValue("lol", forKey: "weekdays")
+                alarm.setValue("MWF", forKey: "weekdays")
                 alarm.setValue(String(alarmString), forKey: "time")
-                fetchedCurrentMedicine.alarms.addObject(alarm)
+                fetchedCurrentMedicine.addAlarmObject(alarm)
             }
+
             do {
                 try managedContext.save()
             } catch let error as NSError  {
