@@ -43,6 +43,8 @@
 		8F9CC4231BCB350C0011CF37 /* AddReminderViewController5a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9CC4221BCB350C0011CF37 /* AddReminderViewController5a.swift */; settings = {ASSET_TAGS = (); }; };
 		8F9CC4251BCB35140011CF37 /* AddReminderViewController5b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9CC4241BCB35140011CF37 /* AddReminderViewController5b.swift */; settings = {ASSET_TAGS = (); }; };
 		8FDF4D881BDC917D00F1FA31 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF4D861BDC917D00F1FA31 /* DataModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		8FE319961BF6D9C200DFE96A /* NoAlarmsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE319941BF6D9C200DFE96A /* NoAlarmsCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8FE319971BF6D9C200DFE96A /* NoAlarmsCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE319951BF6D9C200DFE96A /* NoAlarmsCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFB71BC37A21000FC2FE /* AddReminderViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */; settings = {ASSET_TAGS = (); }; };
 		8FE8AFC31BC44037000FC2FE /* AddReminderView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8AFC01BC44037000FC2FE /* AddReminderView3.xib */; settings = {ASSET_TAGS = (); }; };
@@ -114,6 +116,8 @@
 		8F9CC4221BCB350C0011CF37 /* AddReminderViewController5a.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController5a.swift; sourceTree = "<group>"; };
 		8F9CC4241BCB35140011CF37 /* AddReminderViewController5b.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController5b.swift; sourceTree = "<group>"; };
 		8FDF4D871BDC917D00F1FA31 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		8FE319941BF6D9C200DFE96A /* NoAlarmsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlarmsCustomCell.swift; sourceTree = "<group>"; };
+		8FE319951BF6D9C200DFE96A /* NoAlarmsCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoAlarmsCustomCell.xib; sourceTree = "<group>"; };
 		8FE8AFB41BC37623000FC2FE /* AddReminderView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView1.xib; sourceTree = "<group>"; };
 		8FE8AFB61BC37A21000FC2FE /* AddReminderViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController1.swift; sourceTree = "<group>"; };
 		8FE8AFC01BC44037000FC2FE /* AddReminderView3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReminderView3.xib; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				8F9C2DAB1BEC3BF2009DF37E /* MedicineHeaderCustomCell.xib */,
 				8F9C2DAE1BEC3C25009DF37E /* AlarmsCustomCell.swift */,
 				8F9C2DAF1BEC3C25009DF37E /* AlarmsCustomCell.xib */,
+				8FE319941BF6D9C200DFE96A /* NoAlarmsCustomCell.swift */,
+				8FE319951BF6D9C200DFE96A /* NoAlarmsCustomCell.xib */,
 			);
 			name = Alarms;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 			files = (
 				8F9107971BD745DF001DD4C3 /* NormalAlarmCustomCell.xib in Resources */,
 				8FE8AFC51BC44037000FC2FE /* AddReminderView4.xib in Resources */,
+				8FE319971BF6D9C200DFE96A /* NoAlarmsCustomCell.xib in Resources */,
 				8F81EAB01BD962D1001C2160 /* ProfileCustomCell.xib in Resources */,
 				8FE8AFC31BC44037000FC2FE /* AddReminderView3.xib in Resources */,
 				8F9C2DB11BEC3C25009DF37E /* AlarmsCustomCell.xib in Resources */,
@@ -429,6 +436,7 @@
 				8F9C2DB41BEC6A4D009DF37E /* Medicine+CoreDataProperties.swift in Sources */,
 				8F95F3B01BDF2EED00063281 /* PatientProfile+CoreDataProperties.swift in Sources */,
 				8F9CC4231BCB350C0011CF37 /* AddReminderViewController5a.swift in Sources */,
+				8FE319961BF6D9C200DFE96A /* NoAlarmsCustomCell.swift in Sources */,
 				8F9C2DB91BEDA6FA009DF37E /* MedicineDetailViewController.swift in Sources */,
 				8F8E476A1BC22C460021E93A /* AddReminderScrollViewController.swift in Sources */,
 				8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */,

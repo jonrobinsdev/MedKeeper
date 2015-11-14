@@ -70,6 +70,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
+        alarmsTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -137,27 +138,33 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell: AlarmsCustomCell! = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
+        var cell: AlarmsCustomCell! = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
+        if(cell == nil) {
+            tableView.registerNib(UINib(nibName: "AlarmsCustomCell", bundle: nil), forCellReuseIdentifier: "alarmcustomcell")
+            cell = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
+        }
+        //get medicine at indexPath and assign its alarm's properties to alarm cell
+        let medicine : Medicine = medicineArray[indexPath.section] as! Medicine
+        let alarms : NSArray = medicine.alarms.allObjects
+        if(alarms.count > 0){
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            let alarm : Alarm = alarms[indexPath.row] as! Alarm
+            cell.alarmTime.text = String(dateFormatter.stringFromDate(alarm.time!))
+            cell.weekdays.text = alarm.weekdays
+            cell.textLabel?.backgroundColor = UIColor.clearColor()
+        }
+        else{
+            var cell: NoAlarmsCustomCell! = tableView.dequeueReusableCellWithIdentifier("noalarmscustomcell") as? NoAlarmsCustomCell
             if(cell == nil) {
-                tableView.registerNib(UINib(nibName: "AlarmsCustomCell", bundle: nil), forCellReuseIdentifier: "alarmcustomcell")
-                cell = tableView.dequeueReusableCellWithIdentifier("alarmcustomcell") as? AlarmsCustomCell
-            }
-            //get medicine at indexPath and assign its alarm's properties to alarm cell
-            let medicine : Medicine = medicineArray[indexPath.section] as! Medicine
-            let alarms : NSArray = medicine.alarms.allObjects
-            if(alarms.count > 0){
-                let alarm : Alarm = alarms[indexPath.row] as! Alarm
-                cell.alarmTime.text = String(alarm.time)
-                cell.weekdays.text = alarm.weekdays
-                cell.textLabel?.backgroundColor = UIColor.clearColor()
-            }
-            else{
-                cell.alarmTime.text = "No alarms."
-                cell.weekdays.text = ""
-                //cell.imageView.image = imagewithnameblahblah
-                cell.alarmSwitch.alpha = 0.0
+                tableView.registerNib(UINib(nibName: "NoAlarmsCustomCell", bundle: nil), forCellReuseIdentifier: "noalarmscustomcell")
+                cell = tableView.dequeueReusableCellWithIdentifier("noalarmscustomcell") as? NoAlarmsCustomCell
             }
             return cell
+            //cell.imageView.image = imagewithnameblahblah
+        }
+        return cell
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

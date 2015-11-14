@@ -37,11 +37,13 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     @IBAction func addAlarmButtonPressed(sender: AnyObject) {
+        //get date from date picker
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         let alarmValue:NSDate = datePicker.date
-        
+
+        //add to alarm list of NSDates
         if(alarmList.containsObject(alarmValue)){
             let alert = UIAlertController(title: "Duplicate Alarm", message: "You've already added an alarm for that time.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
@@ -75,11 +77,11 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
             }
             
             //add all the alarms to the Medicine class
-            for alarmString in alarmList{
+            for alarmValue in alarmList{
                 let entity =  NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
                 let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Alarm
                 alarm.setValue("MWF", forKey: "weekdays")
-                alarm.setValue(alarmString, forKey: "time")
+                alarm.setValue(alarmValue as! NSDate, forKey: "time")
                 fetchedCurrentMedicine.addAlarmObject(alarm)
             }
 
@@ -114,7 +116,10 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
                 tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalAlarmCustomCell")
                 cell = tableView.dequeueReusableCellWithIdentifier("normalAlarmCustomCell") as? NormalAlarmCustomCell
             }
-            cell.textLabel!.text = alarmList[indexPath.row] as? String
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            cell.textLabel!.text = dateFormatter.stringFromDate(alarmList[indexPath.row] as! NSDate)
             cell.delegate = self;
             return cell
     }
