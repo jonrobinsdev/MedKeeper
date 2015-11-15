@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0AEF8E1BF84EF9008B25C6 /* MedicineDetailCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEF8C1BF84EF9008B25C6 /* MedicineDetailCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8F0AEF8F1BF84EF9008B25C6 /* MedicineDetailCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0AEF8D1BF84EF9008B25C6 /* MedicineDetailCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8F0AEF931BF865AD008B25C6 /* MedicineImageCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEF911BF865AD008B25C6 /* MedicineImageCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8F0AEF941BF865AD008B25C6 /* MedicineImageCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0AEF921BF865AD008B25C6 /* MedicineImageCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8F39005A1BF05DB1006B2C04 /* AddNormalAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3900591BF05DB1006B2C04 /* AddNormalAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8F39005C1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8F6BA6871BE8064B00ED6120 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6BA6861BE8064B00ED6120 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
@@ -74,6 +78,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F0AEF8C1BF84EF9008B25C6 /* MedicineDetailCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineDetailCustomCell.swift; sourceTree = "<group>"; };
+		8F0AEF8D1BF84EF9008B25C6 /* MedicineDetailCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineDetailCustomCell.xib; sourceTree = "<group>"; };
+		8F0AEF911BF865AD008B25C6 /* MedicineImageCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineImageCustomCell.swift; sourceTree = "<group>"; };
+		8F0AEF921BF865AD008B25C6 /* MedicineImageCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineImageCustomCell.xib; sourceTree = "<group>"; };
 		8F3900591BF05DB1006B2C04 /* AddNormalAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNormalAlarmViewController.swift; sourceTree = "<group>"; };
 		8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIntervalAlarmViewController.swift; sourceTree = "<group>"; };
 		8F6BA6861BE8064B00ED6120 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -154,7 +162,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F81EAAB1BD9628E001C2160 /* Profile */ = {
+		8F0AEF901BF85ED6008B25C6 /* Medicine Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8F9C2DB81BEDA6FA009DF37E /* MedicineDetailViewController.swift */,
+				8F0AEF911BF865AD008B25C6 /* MedicineImageCustomCell.swift */,
+				8F0AEF921BF865AD008B25C6 /* MedicineImageCustomCell.xib */,
+				8F0AEF8C1BF84EF9008B25C6 /* MedicineDetailCustomCell.swift */,
+				8F0AEF8D1BF84EF9008B25C6 /* MedicineDetailCustomCell.xib */,
+			);
+			name = "Medicine Detail";
+			sourceTree = "<group>";
+		};
+		8F81EAAB1BD9628E001C2160 /* Profile Table View */ = {
 			isa = PBXGroup;
 			children = (
 				8F8E473B1BC22BA30021E93A /* ProfileViewController.swift */,
@@ -162,10 +182,10 @@
 				8F81EAAE1BD962D1001C2160 /* ProfileCustomCell.xib */,
 				8F81EAB11BD9D5A3001C2160 /* ProfileDetailScreen.swift */,
 			);
-			name = Profile;
+			name = "Profile Table View";
 			sourceTree = "<group>";
 		};
-		8F81EAAC1BD96297001C2160 /* Alarms */ = {
+		8F81EAAC1BD96297001C2160 /* Alarms Table View */ = {
 			isa = PBXGroup;
 			children = (
 				8F8E473D1BC22BA30021E93A /* AlarmsViewController.swift */,
@@ -176,7 +196,7 @@
 				8FE319941BF6D9C200DFE96A /* NoAlarmsCustomCell.swift */,
 				8FE319951BF6D9C200DFE96A /* NoAlarmsCustomCell.xib */,
 			);
-			name = Alarms;
+			name = "Alarms Table View";
 			sourceTree = "<group>";
 		};
 		8F8E472D1BC22BA30021E93A = {
@@ -206,9 +226,10 @@
 				8F8E47441BC22BA30021E93A /* LaunchScreen.storyboard */,
 				8F8E473F1BC22BA30021E93A /* Main.storyboard */,
 				8F95F3B21BDF2EF700063281 /* Data Model */,
-				8F81EAAB1BD9628E001C2160 /* Profile */,
-				8F81EAAC1BD96297001C2160 /* Alarms */,
-				8FEEC4BA1BE7EDB60031A1DC /* Medicine */,
+				8F81EAAB1BD9628E001C2160 /* Profile Table View */,
+				8F81EAAC1BD96297001C2160 /* Alarms Table View */,
+				8FEEC4BA1BE7EDB60031A1DC /* Add Medicine/Alarm */,
+				8F0AEF901BF85ED6008B25C6 /* Medicine Detail */,
 				8F9CC41F1BCB2D570011CF37 /* Add Alarms */,
 				8F6BA6861BE8064B00ED6120 /* Images.xcassets */,
 				8F8E47471BC22BA30021E93A /* Info.plist */,
@@ -270,10 +291,9 @@
 			name = "Add Alarms";
 			sourceTree = "<group>";
 		};
-		8FEEC4BA1BE7EDB60031A1DC /* Medicine */ = {
+		8FEEC4BA1BE7EDB60031A1DC /* Add Medicine/Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				8F9C2DB81BEDA6FA009DF37E /* MedicineDetailViewController.swift */,
 				8F6BA6881BE8398400ED6120 /* AddMedicineNameAndTypeViewController.swift */,
 				8F6BA68A1BE83F1200ED6120 /* AddMedicineDosageViewController.swift */,
 				8F9C2DBA1BEEF9DD009DF37E /* AddAlarmTypeViewController.swift */,
@@ -282,7 +302,7 @@
 				8F9107951BD745DF001DD4C3 /* NormalAlarmCustomCell.xib */,
 				8F39005B1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift */,
 			);
-			name = Medicine;
+			name = "Add Medicine/Alarm";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +413,7 @@
 				8FE319971BF6D9C200DFE96A /* NoAlarmsCustomCell.xib in Resources */,
 				8F81EAB01BD962D1001C2160 /* ProfileCustomCell.xib in Resources */,
 				8FE8AFC31BC44037000FC2FE /* AddReminderView3.xib in Resources */,
+				8F0AEF8F1BF84EF9008B25C6 /* MedicineDetailCustomCell.xib in Resources */,
 				8F9C2DB11BEC3C25009DF37E /* AlarmsCustomCell.xib in Resources */,
 				8F9CC41D1BCB266F0011CF37 /* AddReminderView6.xib in Resources */,
 				8F8E47461BC22BA30021E93A /* LaunchScreen.storyboard in Resources */,
@@ -401,6 +422,7 @@
 				8F9C2DAD1BEC3BF2009DF37E /* MedicineHeaderCustomCell.xib in Resources */,
 				8FE8AFB51BC37623000FC2FE /* AddReminderView1.xib in Resources */,
 				8F6BA6871BE8064B00ED6120 /* Images.xcassets in Resources */,
+				8F0AEF941BF865AD008B25C6 /* MedicineImageCustomCell.xib in Resources */,
 				8F8E47411BC22BA30021E93A /* Main.storyboard in Resources */,
 				8F9CC4211BCB2DD90011CF37 /* AddReminderView5b.xib in Resources */,
 			);
@@ -442,10 +464,12 @@
 				8F9CC41E1BCB266F0011CF37 /* AddReminderViewController6.swift in Sources */,
 				8FDF4D881BDC917D00F1FA31 /* DataModel.xcdatamodeld in Sources */,
 				8FE8AFCB1BC446C8000FC2FE /* AddReminderViewController3.swift in Sources */,
+				8F0AEF8E1BF84EF9008B25C6 /* MedicineDetailCustomCell.swift in Sources */,
 				8F39005C1BF05DC9006B2C04 /* AddIntervalAlarmViewController.swift in Sources */,
 				8F8E473C1BC22BA30021E93A /* ProfileViewController.swift in Sources */,
 				8F81EAB21BD9D5A3001C2160 /* ProfileDetailScreen.swift in Sources */,
 				8FE8AFCA1BC446C8000FC2FE /* AddReminderViewController2.swift in Sources */,
+				8F0AEF931BF865AD008B25C6 /* MedicineImageCustomCell.swift in Sources */,
 				8F95F3B11BDF2EED00063281 /* PatientProfile.swift in Sources */,
 				8F9C2DBB1BEEF9DD009DF37E /* AddAlarmTypeViewController.swift in Sources */,
 				8F6BA68B1BE83F1200ED6120 /* AddMedicineDosageViewController.swift in Sources */,

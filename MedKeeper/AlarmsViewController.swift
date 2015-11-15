@@ -13,9 +13,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
 
     @IBOutlet var alarmsTableView: UITableView!
     var medicineArray: NSArray = [NSManagedObject]()
-    var alarmsArray: NSArray = [NSManagedObject]()
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    let tempDestVC : MedicineDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MedicineDetailViewController") as! MedicineDetailViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +132,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.001
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -146,6 +144,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         //get medicine at indexPath and assign its alarm's properties to alarm cell
         let medicine : Medicine = medicineArray[indexPath.section] as! Medicine
         let alarms : NSArray = medicine.alarms.allObjects
+        print(alarms.count)
         if(alarms.count > 0){
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
@@ -186,23 +185,21 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         return cell
     }
     
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view:UIView = UIView.init(frame: CGRectMake(0, 0, alarmsTableView.frame.size.width, 50))
+        view.backgroundColor = UIColor.darkGrayColor()
+        return view
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
     func didSelectUserHeaderTableViewCell(Selected: Bool, UserHeader: MedicineHeaderCustomCell) {
-        tempDestVC.medicineName = UserHeader.medicineNameLabel.text!
-        tempDestVC.medicineType = UserHeader.medicineType
-        tempDestVC.dosageAmount = UserHeader.dosageLabel.text!
+        //save header's medicine name as current medicine
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue(UserHeader.medicineNameLabel.text, forKey: "CurrentMedicine")
         performSegueWithIdentifier("segueToMedicineDetail", sender: self)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "segueToMedicineDetail"){
-            let destVC : MedicineDetailViewController = (segue.destinationViewController as? MedicineDetailViewController)!
-            destVC.medicineName = tempDestVC.medicineName
-            destVC.medicineType = tempDestVC.medicineType
-            destVC.dosageAmount = tempDestVC.dosageAmount
-        }
-    }
+
 }
 

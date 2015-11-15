@@ -59,20 +59,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-Zy-9tb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="602"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbc-Mu-4dJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="faX-AY-6Cq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Rbc-Mu-4dJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="7aI-Qk-9H8"/>
                             <constraint firstItem="Lns-Zy-9tb" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="Bim-KW-DSG"/>
+                            <constraint firstItem="Rbc-Mu-4dJ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="EXq-Ia-zfc"/>
+                            <constraint firstAttribute="trailing" secondItem="Rbc-Mu-4dJ" secondAttribute="trailing" id="LrQ-Yd-9S2"/>
                             <constraint firstItem="Lns-Zy-9tb" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="Rmq-6U-R6k"/>
+                            <constraint firstItem="Lns-Zy-9tb" firstAttribute="top" secondItem="Rbc-Mu-4dJ" secondAttribute="bottom" id="Uis-xk-D25"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Lns-Zy-9tb" secondAttribute="bottom" id="hRb-rn-FBg"/>
                             <constraint firstAttribute="trailing" secondItem="Lns-Zy-9tb" secondAttribute="trailing" id="oil-JZ-Ysx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Rmq-6U-R6k"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Medicines" id="xa1-2k-i3i"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -98,78 +115,24 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWw-yM-yCu">
-                                <rect key="frame" x="127" y="170" width="122" height="22"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eV6-ir-iby">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAU-ie-W1o">
-                                <rect key="frame" x="121" y="254" width="134" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pillIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XSs-LP-alx">
-                                <rect key="frame" x="125" y="25" width="125" height="125"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="Aoe-HT-9kz"/>
-                                    <constraint firstAttribute="width" constant="125" id="tUH-8p-Gqc"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGX-E8-Jp4">
-                                <rect key="frame" x="165" y="212" width="44" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-uL-rgh">
-                                <rect key="frame" x="165" y="296" width="44" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yaa-nY-9p4">
-                                <rect key="frame" x="148" y="128" width="142" height="136"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87916272095959591" green="0.87916272095959591" blue="0.87916272095959591" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="TAU-ie-W1o" firstAttribute="top" secondItem="AGX-E8-Jp4" secondAttribute="bottom" constant="30" id="1YN-7z-rx4"/>
-                            <constraint firstItem="ga6-uL-rgh" firstAttribute="top" secondItem="TAU-ie-W1o" secondAttribute="bottom" constant="20" id="2RI-Z9-caI"/>
-                            <constraint firstItem="IWw-yM-yCu" firstAttribute="centerX" secondItem="YXc-vh-aj8" secondAttribute="centerX" id="DD1-hQ-u3B"/>
-                            <constraint firstItem="XSs-LP-alx" firstAttribute="top" secondItem="Am3-pe-yqk" secondAttribute="bottom" constant="25" id="DFA-ci-udW"/>
-                            <constraint firstItem="AGX-E8-Jp4" firstAttribute="centerX" secondItem="YXc-vh-aj8" secondAttribute="centerX" id="Xc7-OK-34P"/>
-                            <constraint firstItem="XSs-LP-alx" firstAttribute="centerX" secondItem="YXc-vh-aj8" secondAttribute="centerX" id="bdQ-j8-UDW"/>
-                            <constraint firstItem="ga6-uL-rgh" firstAttribute="centerX" secondItem="YXc-vh-aj8" secondAttribute="centerX" id="iDg-Fa-ZXF"/>
-                            <constraint firstItem="AGX-E8-Jp4" firstAttribute="top" secondItem="IWw-yM-yCu" secondAttribute="bottom" constant="20" id="p3A-8k-atX"/>
-                            <constraint firstItem="TAU-ie-W1o" firstAttribute="centerX" secondItem="YXc-vh-aj8" secondAttribute="centerX" id="sTw-Vq-OKb"/>
-                            <constraint firstItem="IWw-yM-yCu" firstAttribute="top" secondItem="XSs-LP-alx" secondAttribute="bottom" constant="20" id="wRv-3V-kn0"/>
-                            <constraint firstItem="TAU-ie-W1o" firstAttribute="top" secondItem="AGX-E8-Jp4" secondAttribute="bottom" constant="20" id="zq7-VU-vYJ"/>
+                            <constraint firstItem="qyT-3e-Mtm" firstAttribute="top" secondItem="eV6-ir-iby" secondAttribute="bottom" id="4F1-xi-qAT"/>
+                            <constraint firstItem="eV6-ir-iby" firstAttribute="top" secondItem="Am3-pe-yqk" secondAttribute="bottom" id="6no-Vg-WM1"/>
+                            <constraint firstItem="eV6-ir-iby" firstAttribute="leading" secondItem="YXc-vh-aj8" secondAttribute="leading" id="HtL-Ji-Icl"/>
+                            <constraint firstAttribute="trailing" secondItem="eV6-ir-iby" secondAttribute="trailing" id="fhk-Xs-ULB"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Yaa-nY-9p4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="1YN-7z-rx4"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="dosageAmountLabel" destination="ga6-uL-rgh" id="qtq-hX-HmF"/>
-                        <outlet property="medicineTypeLabel" destination="AGX-E8-Jp4" id="dcG-VN-nfN"/>
+                        <outlet property="medicineDetailTableView" destination="eV6-ir-iby" id="fy9-02-9Zt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loB-ki-OxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,8 +241,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUs-he-bBy">
-                                <rect key="frame" x="236" y="23" width="80" height="216"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUs-he-bBy">
+                                <rect key="frame" x="238" y="23" width="80" height="216"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Bov-GL-34v"/>
@@ -460,6 +423,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addAlarmsLateButton" destination="ESH-Bb-vy5" id="GZK-2s-Vkh"/>
+                        <outlet property="addedMedicineCompletionLabel" destination="H3I-ZO-1jX" id="9H3-KM-Vqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vc-ug-7Oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -543,8 +507,8 @@
                                     <action selector="addAlarmButtonPressed:" destination="W9H-SQ-wYA" eventType="touchUpInside" id="tfh-Hl-sCW"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-zM-DGO">
-                                <rect key="frame" x="0.0" y="47" width="375" height="440"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-zM-DGO">
+                                <rect key="frame" x="0.0" y="46" width="375" height="440"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -858,6 +822,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="pillIcon" width="512" height="512"/>
     </resources>
 </document>

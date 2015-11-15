@@ -86,6 +86,7 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
             }
 
             do {
+                print(fetchedCurrentMedicine.alarms.count)
                 try managedContext.save()
             } catch let error as NSError  {
                 print("Could not save \(error), \(error.userInfo)")
@@ -111,10 +112,10 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell: NormalAlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("normalAlarmCustomCell") as? NormalAlarmCustomCell
+            var cell: NormalAlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
             if(cell == nil) {
-                tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalAlarmCustomCell")
-                cell = tableView.dequeueReusableCellWithIdentifier("normalAlarmCustomCell") as? NormalAlarmCustomCell
+                tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalalarmcustomcell")
+                cell = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
             }
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
