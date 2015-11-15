@@ -68,7 +68,6 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        alarmsTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -144,7 +143,6 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         //get medicine at indexPath and assign its alarm's properties to alarm cell
         let medicine : Medicine = medicineArray[indexPath.section] as! Medicine
         let alarms : NSArray = medicine.alarms.allObjects
-        print(alarms.count)
         if(alarms.count > 0){
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
