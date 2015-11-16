@@ -22,8 +22,8 @@ class AddAlarmTypeViewController: UIViewController {
         //set medicine name in label
         let defaults = NSUserDefaults.standardUserDefaults()
         let currentMedicine : String = defaults.valueForKey("CurrentMedicine") as! String
-        let attributedString:NSMutableAttributedString = NSMutableAttributedString(string:"Your medicine, " + currentMedicine + ", has been successfully added to your Patient Profile!")
-        attributedString.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(17)], range: NSRange(location: 15, length: currentMedicine.characters.count))
+        let attributedString:NSMutableAttributedString = NSMutableAttributedString(string:"If you'd like to set an alarm for your medicine, " + currentMedicine + ", choose the type of alarm that best fits your needs.")
+        attributedString.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(17)], range: NSRange(location: 49, length: currentMedicine.characters.count))
 
         addedMedicineCompletionLabel.attributedText = attributedString
         

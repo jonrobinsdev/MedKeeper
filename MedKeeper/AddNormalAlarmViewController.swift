@@ -97,7 +97,7 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
         else{
             let alert = UIAlertController(title: "No Alarms Set", message: "You haven't set any alarms for this medication.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.recursivePop(self)
         }
     }
     
@@ -129,6 +129,13 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
         let indexPath: NSIndexPath = alarmTableView.indexPathForCell(cell)!
         alarmList.removeObjectAtIndex(indexPath.row)
         alarmTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+    }
+    
+    func recursivePop(viewController:UIViewController){
+        if((viewController.navigationController) != nil){
+            viewController.navigationController?.popToRootViewControllerAnimated(true)
+            self.recursivePop(viewController.navigationController!)
+        }
     }
 
     /*

@@ -11,9 +11,11 @@ import CoreData
 
 class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     @IBOutlet var medicineDetailTableView: UITableView!
     @IBOutlet var medicineImage: UIImageView!
     var fetchedCurrentMedicine : Medicine!
+    var fetchedAlarms: NSArray!
     var medicineName : String = ""
     var medicineType : String = ""
     var dosageAmount : String = ""
@@ -26,26 +28,26 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         medicineDetailTableView.delegate = self
         medicineDetailTableView.dataSource = self
-        
-        navigationItem.title = medicineName
     }
     
     override func viewWillAppear(animated: Bool) {
-        let managedContext = AppDelegate().managedObjectContext
         let defaults = NSUserDefaults.standardUserDefaults()
         let currentMedicine:String = defaults.valueForKey("CurrentMedicine") as! String
         let predicate = NSPredicate(format: "name == %@", currentMedicine)
         let fetchRequest = NSFetchRequest(entityName: "Medicine")
         fetchRequest.predicate = predicate
         do {
-            let fetchedMedicines = try managedContext.executeFetchRequest(fetchRequest) as! [Medicine]
+            let fetchedMedicines = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Medicine]
             fetchedCurrentMedicine = fetchedMedicines.first
+            fetchedAlarms = fetchedCurrentMedicine.alarms.allObjects
         } catch {
         }
         
         medicineName = fetchedCurrentMedicine.name!
         medicineType = fetchedCurrentMedicine.type!
         dosageAmount = fetchedCurrentMedicine.dosage!
+        
+        navigationItem.title = medicineName
     }
     
     override func didReceiveMemoryWarning() {
@@ -136,11 +138,38 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
             return cell
         }
         else if(indexPath.section == 4){
-            var cell: NormalAlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
-            if(cell == nil) {
-                tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalalarmcustomcell")
-                cell = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
+            if(fetchedAlarms.count > 0){
+                var cell: NormalAlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
+                if(cell == nil) {
+                    tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalalarmcustomcell")
+                    cell = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
+                }
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+                dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+                //let alarm:Alarm =  fetchedAlarms[indexPath.row] as! Alarm
+                //print(alarm.time)
+                return cell
             }
+            else{
+            }
+        }
+        else if(indexPath.section == 5){
+            var cell: MedicineAddAlarmButtonCell! = tableView.dequeueReusableCellWithIdentifier("medicineaddalarmbuttoncell") as? MedicineAddAlarmButtonCell
+            if(cell == nil) {
+                tableView.registerNib(UINib(nibName: "MedicineAddAlarmButtonCell", bundle: nil), forCellReuseIdentifier: "medicineaddalarmbuttoncell")
+                cell = tableView.dequeueReusableCellWithIdentifier("medicineaddalarmbuttoncell") as? MedicineAddAlarmButtonCell
+                cell.addAlarmsButton.addTarget(self, action: Selector("addAlarmCellPressed"), forControlEvents: .TouchUpInside)
+            }
+            return cell
+        }
+        else if(indexPath.section == 6){
+            var cell: MedicineDeleteButtonCell! = tableView.dequeueReusableCellWithIdentifier("medicinedeletebuttoncell") as? MedicineDeleteButtonCell
+            if(cell == nil) {
+                tableView.registerNib(UINib(nibName: "MedicineDeleteButtonCell", bundle: nil), forCellReuseIdentifier: "medicinedeletebuttoncell")
+                cell = tableView.dequeueReusableCellWithIdentifier("medicinedeletebuttoncell") as? MedicineDeleteButtonCell
+            }
+            cell.deleteButton.addTarget(self, action: Selector("deleteCurrentMedicine"), forControlEvents: .TouchUpInside)
             return cell
         }
         var cell: MedicineDetailCustomCell! = tableView.dequeueReusableCellWithIdentifier("medicinedetailcustomcell") as? MedicineDetailCustomCell
@@ -166,5 +195,18 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
     }
-
+    
+    func addAlarmCellPressed(){
+        performSegueWithIdentifier("detailToAddAlarmSegue", sender: self)
+    }
+    
+    func deleteCurrentMedicine(){
+        managedObjectContext.deleteObject(fetchedCurrentMedicine)
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
 }

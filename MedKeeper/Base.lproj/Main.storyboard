@@ -133,11 +133,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="medicineDetailTableView" destination="eV6-ir-iby" id="fy9-02-9Zt"/>
+                        <segue destination="5mx-lG-8LL" kind="show" identifier="detailToAddAlarmSegue" id="gF2-tl-y0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loB-ki-OxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5" y="448.5"/>
+            <point key="canvasLocation" x="1669.5" y="438.5"/>
         </scene>
         <!--Add Medicine Name And Type View Controller-->
         <scene sceneID="HZE-ah-qtk">
@@ -328,15 +329,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your medicine, MEDICINE, has been successfully added to your Patient Profile! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-ZO-1jX">
-                                <rect key="frame" x="5" y="30" width="365" height="41"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you'd like to set an alarm for it, choose the type of alarm that best fits your needs." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMy-wJ-PWf">
-                                <rect key="frame" x="5" y="91" width="365" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you'd like to set an alarm for your medicine, MEDICINE, choose the type of alarm that best fits your needs." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-ZO-1jX">
+                                <rect key="frame" x="5" y="50" width="365" height="61"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -392,21 +386,16 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ESH-Bb-vy5" secondAttribute="trailing" id="0RO-ev-QEV"/>
                             <constraint firstItem="ESH-Bb-vy5" firstAttribute="leading" secondItem="YDY-Nm-Ajn" secondAttribute="leading" id="3cq-zG-Cx4"/>
-                            <constraint firstItem="s9W-9h-qfr" firstAttribute="width" secondItem="NMy-wJ-PWf" secondAttribute="width" id="Ety-1x-w7g"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ESH-Bb-vy5" secondAttribute="bottom" constant="30" id="KEj-ez-Hxg"/>
-                            <constraint firstItem="NMy-wJ-PWf" firstAttribute="top" secondItem="Qak-uI-ysl" secondAttribute="bottom" constant="80" id="Ktq-dj-Phs"/>
                             <constraint firstItem="Giq-lO-N7W" firstAttribute="leading" secondItem="YDY-Nm-Ajn" secondAttribute="leading" id="NCS-P5-AVv"/>
                             <constraint firstItem="Giq-lO-N7W" firstAttribute="height" secondItem="s9W-9h-qfr" secondAttribute="height" id="NU9-Ko-J1o"/>
-                            <constraint firstItem="s9W-9h-qfr" firstAttribute="top" secondItem="NMy-wJ-PWf" secondAttribute="bottom" constant="30" id="Ngz-NC-df2"/>
                             <constraint firstAttribute="trailing" secondItem="H3I-ZO-1jX" secondAttribute="trailing" constant="5" id="PEc-RK-Nvt"/>
                             <constraint firstItem="s9W-9h-qfr" firstAttribute="leading" secondItem="YDY-Nm-Ajn" secondAttribute="leading" id="Po2-ZD-UNW"/>
-                            <constraint firstAttribute="trailing" secondItem="NMy-wJ-PWf" secondAttribute="trailing" constant="5" id="SPN-gT-lNE"/>
-                            <constraint firstItem="NMy-wJ-PWf" firstAttribute="top" secondItem="H3I-ZO-1jX" secondAttribute="bottom" constant="20" id="ZLQ-7I-XK9"/>
+                            <constraint firstItem="s9W-9h-qfr" firstAttribute="top" secondItem="H3I-ZO-1jX" secondAttribute="bottom" constant="51" id="ZCV-RN-uRD"/>
                             <constraint firstAttribute="trailing" secondItem="s9W-9h-qfr" secondAttribute="trailing" id="bbc-ba-Wao"/>
                             <constraint firstAttribute="trailing" secondItem="Giq-lO-N7W" secondAttribute="trailing" id="fW2-SU-W8s"/>
-                            <constraint firstItem="H3I-ZO-1jX" firstAttribute="top" secondItem="Qak-uI-ysl" secondAttribute="bottom" constant="30" id="ncl-Ca-1vw"/>
+                            <constraint firstItem="H3I-ZO-1jX" firstAttribute="top" secondItem="Qak-uI-ysl" secondAttribute="bottom" constant="50" id="ncl-Ca-1vw"/>
                             <constraint firstItem="Giq-lO-N7W" firstAttribute="width" secondItem="s9W-9h-qfr" secondAttribute="width" id="qeJ-94-Ied"/>
-                            <constraint firstItem="NMy-wJ-PWf" firstAttribute="leading" secondItem="YDY-Nm-Ajn" secondAttribute="leading" constant="5" id="rof-a2-Xaa"/>
                             <constraint firstItem="Giq-lO-N7W" firstAttribute="top" secondItem="s9W-9h-qfr" secondAttribute="bottom" constant="30" id="ryS-YS-1OT"/>
                             <constraint firstItem="H3I-ZO-1jX" firstAttribute="top" secondItem="Qak-uI-ysl" secondAttribute="bottom" constant="30" id="sCi-8o-EsY"/>
                             <constraint firstItem="H3I-ZO-1jX" firstAttribute="leading" secondItem="YDY-Nm-Ajn" secondAttribute="leading" constant="5" id="tb4-dV-y05"/>
@@ -414,8 +403,6 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="sCi-8o-EsY"/>
-                                <exclude reference="Ktq-dj-Phs"/>
-                                <exclude reference="Ety-1x-w7g"/>
                             </mask>
                         </variation>
                     </view>
