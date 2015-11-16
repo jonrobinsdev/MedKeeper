@@ -50,20 +50,6 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         else{
             navigationItem.title = (defaults.valueForKey("CurrentUser") as! String) + "'s Medicines"
             defaults.synchronize()
-            //get current user and set the medicine array = to their medicines properties
-            let currentUser:String = defaults.valueForKey("CurrentUser") as! String
-            let predicate = NSPredicate(format: "name == %@", currentUser)
-            let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
-            fetchRequest.predicate = predicate
-            var fetchedCurrentUser:PatientProfile!
-            do {
-                let fetchedProfiles = try managedObjectContext.executeFetchRequest(fetchRequest) as! [PatientProfile]
-                fetchedCurrentUser = fetchedProfiles.first
-                medicineArray = (fetchedCurrentUser.medicines?.allObjects)!
-                medicineArray = medicineArray.sort({ $0.name.lowercaseString < $1.name.lowercaseString })
-            } catch {
-            }
-
             //user has already launched app before and made an initial profile
         }
         
@@ -71,8 +57,8 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     override func viewWillAppear(animated: Bool) {
-        /*//retrieve all the medicines in core data
-        let fetchRequest = NSFetchRequest(entityName: "Medicine")
+        //retrieve all the medicines in core data
+        /*let fetchRequest = NSFetchRequest(entityName: "Medicine")
         do {
             let results =
             try managedObjectContext.executeFetchRequest(fetchRequest)
@@ -93,7 +79,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             do {
                 let fetchedProfiles = try managedObjectContext.executeFetchRequest(fetchRequest) as! [PatientProfile]
                 fetchedCurrentUser = fetchedProfiles.first
-                medicineArray = (fetchedCurrentUser.medicines?.allObjects)!
+                medicineArray = (fetchedCurrentUser.medicines?.allObjects)! as! [NSManagedObject]
                 medicineArray = medicineArray.sort({ $0.name.lowercaseString < $1.name.lowercaseString })
             } catch {
             }
