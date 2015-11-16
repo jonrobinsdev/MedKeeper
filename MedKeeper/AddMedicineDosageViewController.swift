@@ -66,6 +66,22 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
             }
             let dosageValue = dosageAmount.text! + " " + currentMeasurement
             medicine.setValue(dosageValue, forKey: "dosage")
+            
+            //save medicine to currentUser
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let currentUser:String = defaults.valueForKey("CurrentUser") as! String
+            let predicate = NSPredicate(format: "name == %@", currentUser)
+            let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
+            fetchRequest.predicate = predicate
+            var fetchedCurrentUser:PatientProfile!
+            do {
+                let fetchedProfiles = try managedContext.executeFetchRequest(fetchRequest) as! [PatientProfile]
+                fetchedCurrentUser = fetchedProfiles.first
+            } catch {
+            }
+            fetchedCurrentUser.addMedicineObject(medicine as! Medicine)
+            
+            //save contect
             do {
                 try managedContext.save()
             } catch let error as NSError  {
@@ -73,7 +89,6 @@ class AddMedicineDosageViewController: UIViewController, UIPickerViewDelegate, U
             }
             
             //set medicine as current medicine
-            let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue(retrievedName, forKey: "CurrentMedicine")
             defaults.synchronize()
 

@@ -22,7 +22,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MWF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhK-Je-h3r">
-                        <rect key="frame" x="253" y="66" width="40" height="21"/>
+                        <rect key="frame" x="238" y="66" width="40" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -53,7 +53,7 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="rds-qD-7Jw" firstAttribute="leading" secondItem="lhK-Je-h3r" secondAttribute="trailing" constant="10" id="7dD-gW-pZE"/>
+                    <constraint firstItem="rds-qD-7Jw" firstAttribute="leading" secondItem="lhK-Je-h3r" secondAttribute="trailing" constant="25" id="7dD-gW-pZE"/>
                     <constraint firstItem="Ink-ff-3fp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BKp-fo-KcK"/>
                     <constraint firstItem="rds-qD-7Jw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BX8-O1-ft0"/>
                     <constraint firstItem="d5e-0R-GlE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="70" id="L4f-Ju-DiS"/>

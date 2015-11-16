@@ -47,7 +47,7 @@ class AddMedicineNameAndTypeViewController: UIViewController {
         else{
             //check that this medicine name hasnt been registered before
             let fetchRequest = NSFetchRequest(entityName: "Medicine")
-            let nameNotTaken:Bool = true
+            var nameNotTaken:Bool = true
             do {
                 let results =
                 try managedObjectContext.executeFetchRequest(fetchRequest)
@@ -58,7 +58,7 @@ class AddMedicineNameAndTypeViewController: UIViewController {
                         let alert = UIAlertController(title: "Medicine name already taken!", message: "Please enter a different medicine name.", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
-                        nameNotTaken == false
+                        nameNotTaken = false
                     }
                 }
             } catch let error as NSError {

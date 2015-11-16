@@ -19,4 +19,14 @@ extension PatientProfile {
     @NSManaged var image: NSData?
     @NSManaged var name: String?
 
+    func addMedicineObject(value:Medicine) {
+        let items = self.mutableSetValueForKey("medicines")
+        items.addObject(value)
+    }
+    
+    func removeMedicineObject(value:Medicine) {
+        let items = self.mutableSetValueForKey("medicines")
+        items.removeObject(value)
+    }
+    
 }

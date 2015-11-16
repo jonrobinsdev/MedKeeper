@@ -33,21 +33,33 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
     override func viewWillAppear(animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
         let currentMedicine:String = defaults.valueForKey("CurrentMedicine") as! String
-        let predicate = NSPredicate(format: "name == %@", currentMedicine)
-        let fetchRequest = NSFetchRequest(entityName: "Medicine")
+        let currentUser:String = defaults.valueForKey("CurrentUser") as! String
+        let predicate = NSPredicate(format: "name == %@", currentUser)
+        let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
         fetchRequest.predicate = predicate
+        var fetchedCurrentUser:PatientProfile!
         do {
-            let fetchedMedicines = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Medicine]
-            fetchedCurrentMedicine = fetchedMedicines.first
-            fetchedAlarms = fetchedCurrentMedicine.alarms.allObjects
+            let fetchedProfiles = try managedObjectContext.executeFetchRequest(fetchRequest) as! [PatientProfile]
+            fetchedCurrentUser = fetchedProfiles.first
         } catch {
         }
+        for object in fetchedCurrentUser.medicines!{
+            let medicine:Medicine = object as! Medicine
+            if(medicine.name == currentMedicine){
+                fetchedCurrentMedicine = medicine
+                medicineName = fetchedCurrentMedicine.name!
+                medicineType = fetchedCurrentMedicine.type!
+                dosageAmount = fetchedCurrentMedicine.dosage!
+                navigationItem.title = medicineName
+            }
+        }
         
-        medicineName = fetchedCurrentMedicine.name!
-        medicineType = fetchedCurrentMedicine.type!
-        dosageAmount = fetchedCurrentMedicine.dosage!
+        medicineDetailTableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         
-        navigationItem.title = medicineName
     }
     
     override func didReceiveMemoryWarning() {
@@ -138,7 +150,7 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
             return cell
         }
         else if(indexPath.section == 4){
-            if(fetchedAlarms.count > 0){
+            if(fetchedCurrentMedicine.alarms.count > 0){
                 var cell: NormalAlarmCustomCell! = tableView.dequeueReusableCellWithIdentifier("normalalarmcustomcell") as? NormalAlarmCustomCell
                 if(cell == nil) {
                     tableView.registerNib(UINib(nibName: "NormalAlarmCustomCell", bundle: nil), forCellReuseIdentifier: "normalalarmcustomcell")
@@ -201,6 +213,18 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func deleteCurrentMedicine(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let currentUser:String = defaults.valueForKey("CurrentUser") as! String
+        let predicate = NSPredicate(format: "name == %@", currentUser)
+        let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
+        fetchRequest.predicate = predicate
+        var fetchedCurrentUser:PatientProfile!
+        do {
+            let fetchedProfiles = try managedObjectContext.executeFetchRequest(fetchRequest) as! [PatientProfile]
+            fetchedCurrentUser = fetchedProfiles.first
+        } catch {
+        }
+        fetchedCurrentUser.removeMedicineObject(fetchedCurrentMedicine)
         managedObjectContext.deleteObject(fetchedCurrentMedicine)
         do {
             try managedObjectContext.save()

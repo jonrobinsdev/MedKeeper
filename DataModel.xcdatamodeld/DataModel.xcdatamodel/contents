@@ -11,18 +11,18 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="alarms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alarm" inverseName="medicines" inverseEntity="Alarm" syncable="YES"/>
-        <relationship name="ownedByPatientProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientProfile" inverseName="hasMedicines" inverseEntity="PatientProfile" syncable="YES"/>
+        <relationship name="patientProfiles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientProfile" inverseName="medicines" inverseEntity="PatientProfile" syncable="YES"/>
     </entity>
     <entity name="PatientProfile" representedClassName=".PatientProfile" syncable="YES">
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="intervalAlarms" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalAlarms" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="hasMedicines" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="ownedByPatientProfile" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="medicines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicine" inverseName="patientProfiles" inverseEntity="Medicine" syncable="YES"/>
     </entity>
     <elements>
         <element name="Alarm" positionX="196" positionY="9" width="128" height="88"/>
-        <element name="Medicine" positionX="-54" positionY="18" width="90" height="133"/>
+        <element name="Medicine" positionX="-54" positionY="18" width="90" height="135"/>
         <element name="PatientProfile" positionX="106" positionY="162" width="128" height="120"/>
     </elements>
 </model>

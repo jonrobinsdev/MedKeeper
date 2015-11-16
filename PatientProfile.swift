@@ -11,6 +11,6 @@ import CoreData
 
 class PatientProfile: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    @NSManaged var medicines:NSSet?
 
 }

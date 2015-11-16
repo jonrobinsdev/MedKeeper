@@ -86,18 +86,17 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
             }
 
             do {
-                print(fetchedCurrentMedicine.alarms.count)
+                //print(fetchedCurrentMedicine.alarms.count)
                 try managedContext.save()
             } catch let error as NSError  {
                 print("Could not save \(error), \(error.userInfo)")
             }
             //go back to alarm timeline
-            navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }
         else{
             let alert = UIAlertController(title: "No Alarms Set", message: "You haven't set any alarms for this medication.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.recursivePop(self)
         }
     }
     
@@ -129,13 +128,6 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
         let indexPath: NSIndexPath = alarmTableView.indexPathForCell(cell)!
         alarmList.removeObjectAtIndex(indexPath.row)
         alarmTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
-    }
-    
-    func recursivePop(viewController:UIViewController){
-        if((viewController.navigationController) != nil){
-            viewController.navigationController?.popToRootViewControllerAnimated(true)
-            self.recursivePop(viewController.navigationController!)
-        }
     }
 
     /*

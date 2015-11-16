@@ -13,7 +13,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet var profilesTableView: UITableView!
     var profileArray: NSArray = [NSManagedObject]()
-    var selectedCellName : String = "";
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
@@ -38,6 +37,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
+        profilesTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,73 +69,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let patientProfile = profileArray[indexPath.row]
-
+        let patientProfile:PatientProfile = profileArray[indexPath.row] as! PatientProfile
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(patientProfile.valueForKey("name"), forKey: "CurrentUser")
-
-        self.selectedCellName = (patientProfile.valueForKey("name") as? String)!
         
-        let tabBar = self.tabBarController
-        tabBar!.selectedIndex = 1;
         //self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
     }
 
     func addProfileButtonPressed(sender: AnyObject) {
-        var tField: UITextField!
-        func configurationTextField(textField: UITextField!)
-        {
-            textField.returnKeyType = UIReturnKeyType.Done
-            tField = textField
-            tField.delegate = self
-        }
-        let alert = UIAlertController(title: "Please Enter A Name For Your New Patient Profile", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addTextFieldWithConfigurationHandler(configurationTextField)
-        //this action is necessary for some reason or else keyboard doesn't dismiss correctly
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:nil))
-        self.presentViewController(alert, animated: true, completion: {
-            print("New profile alert view appeared!")
-        })
+        self.performSegueWithIdentifier("addNewProfileSegue", sender: self)
     }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if(textField.text?.characters.count > 0){
-            saveNewPatientProfile(textField.text!)
-            return true
-        }
-        else{
-            return false
-        }
-    }
-    
-    func saveNewPatientProfile(name : NSString){
-        //save patient profile
-        let newPatientProfile = NSEntityDescription.insertNewObjectForEntityForName("PatientProfile", inManagedObjectContext: self.managedObjectContext) as! PatientProfile
-        newPatientProfile.name = name as String
-        do{
-            try self.managedObjectContext.save()
-        } catch let error as NSError{
-            print(error)
-        }
-        
-        //set new profile array and reload table data
-        let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
-        do {
-            let results =
-            try self.managedObjectContext.executeFetchRequest(fetchRequest)
-            profileArray = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-        self.profilesTableView.reloadData()
-        
-        let indexPath = NSIndexPath(forRow: self.profileArray.count-1, inSection: 0)
-        self.profilesTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let destVC : ProfileDetailScreen = (segue.destinationViewController as? ProfileDetailScreen)!
-        destVC.incomingName = self.selectedCellName
-    }
+
 }
 
