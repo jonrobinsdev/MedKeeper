@@ -10,7 +10,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCustomCell" rowHeight="198" id="KGk-i7-Jjw" customClass="ProfileCustomCell" customModule="MedKeeper" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="447" height="198"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.94999999999999996" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="447" height="197"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -39,7 +39,7 @@
                     </label>
                 </subviews>
                 <animations/>
-                <color key="backgroundColor" red="0.22142635022057996" green="0.95294117647058818" blue="0.63472666136984579" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.56084713259695351" green="1" blue="0.67089143154688191" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="Q6O-t0-o0k" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NzK-BB-03n"/>
                     <constraint firstItem="j5y-yh-zIP" firstAttribute="leading" secondItem="sVG-Xy-Qjn" secondAttribute="trailing" constant="10" id="Px2-2c-TkF"/>

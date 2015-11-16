@@ -73,6 +73,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(patientProfile.valueForKey("name"), forKey: "CurrentUser")
         
+        let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
+        do {
+            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+            profileArray = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        profilesTableView.reloadData()
+
         //self.performSegueWithIdentifier("profileCellToDetailedProfileVC", sender: self)
     }
 

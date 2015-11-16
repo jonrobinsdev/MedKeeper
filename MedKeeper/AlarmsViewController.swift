@@ -57,17 +57,6 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     override func viewWillAppear(animated: Bool) {
-        //retrieve all the medicines in core data
-        /*let fetchRequest = NSFetchRequest(entityName: "Medicine")
-        do {
-            let results =
-            try managedObjectContext.executeFetchRequest(fetchRequest)
-            medicineArray = results as! [NSManagedObject]
-            //sort Medicines alphabetically
-            medicineArray = medicineArray.sort({ $0.name.lowercaseString < $1.name.lowercaseString })
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }*/
         let defaults = NSUserDefaults.standardUserDefaults()
         if (defaults.integerForKey("FirstTimeLaunchingApp") == 1){
             //get current user and set the medicine array = to their medicines properties
