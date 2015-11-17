@@ -30,13 +30,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let fetchRequest = NSFetchRequest(entityName: "PatientProfile")
         do {
-            let results =
             try managedObjectContext.executeFetchRequest(fetchRequest)
-            profileArray = results as! [NSManagedObject]
+            profileArray = try managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
         profilesTableView.reloadData()
     }
     
@@ -62,8 +60,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 tableView.registerNib(UINib(nibName: "ProfileCustomCell", bundle: nil), forCellReuseIdentifier: "profileCustomCell")
                 cell = tableView.dequeueReusableCellWithIdentifier("profileCustomCell") as? ProfileCustomCell
             }
-            let patientProfile = profileArray[indexPath.row]
-            cell.nameLabel.text = patientProfile.valueForKey("name") as? String
+            let patientProfile:PatientProfile = profileArray[indexPath.row] as! PatientProfile
+            cell.nameLabel.text = patientProfile.name
             cell.textLabel?.backgroundColor = UIColor.clearColor()
             return cell
     }

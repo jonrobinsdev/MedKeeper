@@ -52,7 +52,6 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             defaults.synchronize()
             //user has already launched app before and made an initial profile
         }
-        
         alarmsTableView.reloadData()
     }
     
@@ -68,7 +67,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             do {
                 let fetchedProfiles = try managedObjectContext.executeFetchRequest(fetchRequest) as! [PatientProfile]
                 fetchedCurrentUser = fetchedProfiles.first
-                medicineArray = (fetchedCurrentUser.medicines?.allObjects)! as! [NSManagedObject]
+                medicineArray = (fetchedCurrentUser.medicines.allObjects) as! [NSManagedObject]
                 medicineArray = medicineArray.sort({ $0.name.lowercaseString < $1.name.lowercaseString })
             } catch {
             }

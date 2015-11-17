@@ -18,9 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        
         let tabBar = self.window?.rootViewController as! UITabBarController;
         tabBar.selectedIndex = 1;
         return true
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        let alert = UIAlertController(title: "MedKeeper Reminder", message: notification.alertBody, preferredStyle: UIAlertControllerStyle.Alert)
+        //this action is necessary for some reason or else keyboard doesn't dismiss correctly
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler:nil))
+        self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

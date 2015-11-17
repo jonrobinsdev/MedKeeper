@@ -83,6 +83,16 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
                 alarm.setValue("MWF", forKey: "weekdays")
                 alarm.setValue(alarmValue as! NSDate, forKey: "time")
                 fetchedCurrentMedicine.addAlarmObject(alarm)
+                
+                //create local notification
+                let notification = UILocalNotification()
+                notification.alertTitle = "MedKeeper Reminder"
+                notification.alertBody = "TAKE YA " + (fetchedCurrentMedicine.name?.uppercaseString)!
+                notification.alertAction = "Okay"
+                notification.fireDate = alarm.time
+                notification.soundName = "bell_ring.wav"
+                notification.category = "MEDICINES"
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
 
             do {

@@ -43,7 +43,7 @@ class MedicineDetailViewController: UIViewController, UITableViewDelegate, UITab
             fetchedCurrentUser = fetchedProfiles.first
         } catch {
         }
-        for object in fetchedCurrentUser.medicines!{
+        for object in fetchedCurrentUser.medicines{
             let medicine:Medicine = object as! Medicine
             if(medicine.name == currentMedicine){
                 fetchedCurrentMedicine = medicine

@@ -459,7 +459,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJ0-2W-LZH">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJ0-2W-LZH">
                                 <rect key="frame" x="0.0" y="487" width="375" height="115"/>
                                 <animations/>
                                 <constraints>
@@ -469,7 +469,7 @@
                                     <!--2015-10-09 21:09:03 +0000-->
                                 </date>
                             </datePicker>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rw3-nb-wiY">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rw3-nb-wiY">
                                 <rect key="frame" x="0.0" y="486" width="375" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -477,7 +477,7 @@
                                     <constraint firstAttribute="height" constant="1" id="Ndi-Jt-t7t"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjG-QZ-2jl">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AjG-QZ-2jl">
                                 <rect key="frame" x="0.0" y="602" width="375" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -485,7 +485,7 @@
                                     <constraint firstAttribute="height" constant="1" id="wV3-VG-COi"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-Ac-D1Z">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-Ac-D1Z">
                                 <rect key="frame" x="334" y="520" width="31" height="35"/>
                                 <animations/>
                                 <constraints>
@@ -497,7 +497,7 @@
                                     <action selector="addAlarmButtonPressed:" destination="W9H-SQ-wYA" eventType="touchUpInside" id="tfh-Hl-sCW"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-zM-DGO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-zM-DGO">
                                 <rect key="frame" x="0.0" y="46" width="375" height="440"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -618,7 +618,7 @@
         <scene sceneID="hEI-3V-3eD">
             <objects>
                 <navigationController id="sgb-19-9LW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medicines" image="first" id="jwT-xk-oKA"/>
+                    <tabBarItem key="tabBarItem" title="Medicines" image="TabBarPill" id="jwT-xk-oKA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Wes-HQ-dOY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -648,7 +648,7 @@
         <scene sceneID="7jw-9D-GFu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OJn-Jq-8BH" userLabel="Add Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="first" id="Eye-vC-uHN"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="TabBarGear" id="Eye-vC-uHN"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -709,7 +709,7 @@
         <scene sceneID="DEy-aG-yXf">
             <objects>
                 <navigationController id="NQI-01-2JX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profiles" image="first" id="sRm-09-quu"/>
+                    <tabBarItem key="tabBarItem" title="Profiles" image="TabBarProfile" id="sRm-09-quu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zCJ-Cz-Knz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -732,6 +732,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="TabBarGear" width="24" height="24"/>
+        <image name="TabBarPill" width="29" height="14"/>
+        <image name="TabBarProfile" width="25" height="25"/>
     </resources>
 </document>

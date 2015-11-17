@@ -11,6 +11,6 @@ import CoreData
 
 class PatientProfile: NSManagedObject {
 
-    @NSManaged var medicines:NSSet?
+    @NSManaged var medicines:NSSet
 
 }

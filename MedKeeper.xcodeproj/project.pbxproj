@@ -42,6 +42,7 @@
 		8F9107971BD745DF001DD4C3 /* NormalAlarmCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9107951BD745DF001DD4C3 /* NormalAlarmCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8F95F3B01BDF2EED00063281 /* PatientProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F95F3AE1BDF2EED00063281 /* PatientProfile+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		8F95F3B11BDF2EED00063281 /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F95F3AF1BDF2EED00063281 /* PatientProfile.swift */; settings = {ASSET_TAGS = (); }; };
+		8F97C1BA1BFAE2D0002D8AEF /* bell_ring.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8F97C1B91BFAE2D0002D8AEF /* bell_ring.wav */; settings = {ASSET_TAGS = (); }; };
 		8F9C2DAC1BEC3BF2009DF37E /* MedicineHeaderCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C2DAA1BEC3BF2009DF37E /* MedicineHeaderCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8F9C2DAD1BEC3BF2009DF37E /* MedicineHeaderCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C2DAB1BEC3BF2009DF37E /* MedicineHeaderCustomCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8F9C2DB01BEC3C25009DF37E /* AlarmsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C2DAE1BEC3C25009DF37E /* AlarmsCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -114,6 +115,7 @@
 		8F9107951BD745DF001DD4C3 /* NormalAlarmCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalAlarmCustomCell.xib; sourceTree = "<group>"; };
 		8F95F3AE1BDF2EED00063281 /* PatientProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PatientProfile+CoreDataProperties.swift"; path = "../PatientProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8F95F3AF1BDF2EED00063281 /* PatientProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientProfile.swift; path = ../PatientProfile.swift; sourceTree = "<group>"; };
+		8F97C1B91BFAE2D0002D8AEF /* bell_ring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bell_ring.wav; path = ../../../../Downloads/bell_ring/bell_ring.wav; sourceTree = "<group>"; };
 		8F9C2DAA1BEC3BF2009DF37E /* MedicineHeaderCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineHeaderCustomCell.swift; sourceTree = "<group>"; };
 		8F9C2DAB1BEC3BF2009DF37E /* MedicineHeaderCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineHeaderCustomCell.xib; sourceTree = "<group>"; };
 		8F9C2DAE1BEC3C25009DF37E /* AlarmsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsCustomCell.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				8F0AEF901BF85ED6008B25C6 /* Medicine Detail */,
 				8F9CC41F1BCB2D570011CF37 /* Settings */,
 				8F6BA6861BE8064B00ED6120 /* Images.xcassets */,
+				8F97C1B81BFAE2B9002D8AEF /* Sounds */,
 				8F8E47471BC22BA30021E93A /* Info.plist */,
 			);
 			path = MedKeeper;
@@ -262,6 +265,14 @@
 				8F85D46E1BF19D4B00555FD0 /* Alarm+CoreDataProperties.swift */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		8F97C1B81BFAE2B9002D8AEF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8F97C1B91BFAE2D0002D8AEF /* bell_ring.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		8F9CC41F1BCB2D570011CF37 /* Settings */ = {
@@ -405,6 +416,7 @@
 				8F0AEFAC1BF995F0008B25C6 /* SettingsProfileImageCustomCell.xib in Resources */,
 				8F0AEF981BF93966008B25C6 /* MedicineAddAlarmButtonCell.xib in Resources */,
 				8F6BA6871BE8064B00ED6120 /* Images.xcassets in Resources */,
+				8F97C1BA1BFAE2D0002D8AEF /* bell_ring.wav in Resources */,
 				8F0AEF941BF865AD008B25C6 /* MedicineImageCustomCell.xib in Resources */,
 				8F8E47411BC22BA30021E93A /* Main.storyboard in Resources */,
 			);
