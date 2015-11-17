@@ -41,8 +41,9 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        let alarmValue:NSDate = datePicker.date
-
+        let alarmValueBeforeSecondsChange:NSDate = datePicker.date
+        let time:NSTimeInterval = floor(alarmValueBeforeSecondsChange.timeIntervalSinceReferenceDate/60.0) * 60.0
+        let alarmValue:NSDate = NSDate.init(timeIntervalSinceReferenceDate: time)
         //add to alarm list of NSDates
         if(alarmList.containsObject(alarmValue)){
             let alert = UIAlertController(title: "Duplicate Alarm", message: "You've already added an alarm for that time.", preferredStyle: UIAlertControllerStyle.Alert)
