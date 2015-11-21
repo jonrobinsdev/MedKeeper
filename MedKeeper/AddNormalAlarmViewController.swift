@@ -91,7 +91,7 @@ class AddNormalAlarmViewController: UIViewController, UITableViewDataSource, UIT
                 notification.alertBody = "TAKE YA " + (fetchedCurrentMedicine.name?.uppercaseString)!
                 notification.alertAction = "Okay"
                 notification.fireDate = alarm.time
-                notification.soundName = "bell_ring.wav"
+                notification.soundName = "bell_ring.mp3"
                 notification.category = "MEDICINES"
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
