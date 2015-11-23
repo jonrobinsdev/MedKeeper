@@ -15,11 +15,13 @@ protocol MedicineHeaderCustomCellDelegate {
 class MedicineHeaderCustomCell: UITableViewCell {
 
     var delegate : MedicineHeaderCustomCellDelegate?
+    var section:Int?
     
     @IBOutlet var medicineImage: UIImageView!
     @IBOutlet var medicineNameLabel: UILabel!
     var medicineType = ""
     @IBOutlet var dosageLabel: UILabel!
+    @IBOutlet var arrowLabel: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,5 +41,6 @@ class MedicineHeaderCustomCell: UITableViewCell {
         delegate?.didSelectUserHeaderTableViewCell(true, UserHeader: self)
         
     }
+
     
 }

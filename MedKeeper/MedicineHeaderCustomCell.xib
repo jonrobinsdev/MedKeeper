@@ -88,6 +88,7 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="arrowLabel" destination="seb-Xd-vsB" id="Oc6-Ou-Rya"/>
                 <outlet property="dosageLabel" destination="Ps9-Xg-WZX" id="Uca-Jg-6Ti"/>
                 <outlet property="medicineImage" destination="9nW-n6-m01" id="ub2-1J-TgT"/>
                 <outlet property="medicineNameLabel" destination="0Rw-ld-IsE" id="7MJ-cH-yOf"/>

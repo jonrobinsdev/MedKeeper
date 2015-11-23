@@ -13,6 +13,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
 
     @IBOutlet var alarmsTableView: UITableView!
     var medicineArray: NSArray = [NSManagedObject]()
+    var sectionBooleanArray:[Bool] = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
@@ -69,6 +70,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
                 fetchedCurrentUser = fetchedProfiles.first
                 medicineArray = (fetchedCurrentUser.medicines.allObjects) as! [NSManagedObject]
                 medicineArray = medicineArray.sort({ $0.name.lowercaseString < $1.name.lowercaseString })
+                sectionBooleanArray = [Bool](count: medicineArray.count, repeatedValue: false)
             } catch {
             }
         }
@@ -118,12 +120,19 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let medicine : Medicine = medicineArray[section] as! Medicine
         let alarms : NSSet = medicine.alarms
-        if(alarms.count > 0){
-            return alarms.count
+        
+        if(sectionBooleanArray[section] == true){
+            if(alarms.count > 0){
+                return alarms.count
+            }
+            else{
+                return 1
+            }
         }
         else{
-            return 1
+            return 0
         }
+
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -135,7 +144,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1
+        return 0.0001
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -179,6 +188,7 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         cell.medicineNameLabel.text = medicine.valueForKey("name") as? String
         cell.dosageLabel.text = medicine.valueForKey("dosage") as? String
         cell.medicineType = medicine.type
+        cell.section = section
         if(medicine.type == "Liquid"){
             cell.medicineImage.image = UIImage(named: "liquidIcon.png")
         }
@@ -200,7 +210,18 @@ class AlarmsViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         //save header's medicine name as current medicine
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(UserHeader.medicineNameLabel.text, forKey: "CurrentMedicine")
-        performSegueWithIdentifier("segueToMedicineDetail", sender: self)
+        //performSegueWithIdentifier("segueToMedicineDetail", sender: self)
+        
+        sectionBooleanArray[UserHeader.section!] = !sectionBooleanArray[UserHeader.section!]
+        if(sectionBooleanArray[UserHeader.section!] == true){
+            UserHeader.arrowLabel.titleLabel!.text = "V"
+        }
+        else{
+            UserHeader.arrowLabel.titleLabel!.text = ">"
+        }
+        //let indexPath: NSIndexSet = NSIndexSet.init(index: UserHeader.section!)
+        //self.alarmsTableView.reloadSections(indexPath, withRowAnimation: .Automatic)
+        alarmsTableView.reloadData()
     }
 
 }
